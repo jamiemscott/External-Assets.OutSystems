@@ -15,6 +15,9 @@ const replace = require('gulp-replace');
 const beautify = require('gulp-html-beautify');
 const accessibility = require('gulp-accessibility');
 const kss = require('kss');
+const imagemin = require('gulp-imagemin');
+const newer = require('gulp-newer');
+const webp = require('gulp-webp');
 
 // Environment flag
 const isDev = process.env.NODE_ENV !== 'production';
@@ -27,7 +30,7 @@ function compileSass() {
     .pipe(sass({
       outputStyle: isDev ? 'expanded' : 'compressed'
     }).on('error', sass.logError))
-    .pipe(postcss([autoprefixer()]))  // Changed this line
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulpif(!isDev, cleanCSS()))
     .pipe(gulpif(isDev, sourcemaps.write('.')))
     .pipe(gulp.dest('dist/assets/css'))
@@ -56,6 +59,39 @@ function processHTML() {
     })))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
+}
+
+// Optimize images
+function optimizeImages() {
+  return gulp.src('src/images/**/*.{jpg,jpeg,png,svg,gif}')
+    .pipe(newer('dist/assets/images'))
+    .pipe(imagemin([
+      imagemin.mozjpeg({ quality: 80, progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.svgo({
+        plugins: [
+          { removeViewBox: false },
+          { cleanupIDs: false }
+        ]
+      }),
+      imagemin.gifsicle({ interlaced: true })
+    ]))
+    .pipe(gulp.dest('dist/assets/images'))
+    .pipe(browserSync.stream());
+}
+
+// Generate WebP versions
+function generateWebP() {
+  return gulp.src('src/images/**/*.{jpg,jpeg,png}')
+    .pipe(newer('dist/assets/images'))
+    .pipe(webp({ quality: 80 }))
+    .pipe(gulp.dest('dist/assets/images'));
+}
+
+// Copy other assets (fonts, videos, etc)
+function copyAssets() {
+  return gulp.src('src/assets/**/*')
+    .pipe(gulp.dest('dist/assets'));
 }
 
 // Check accessibility
@@ -99,25 +135,20 @@ async function styleGuide() {
   }
 }
 
-// Copy CSS to style guide (optional backup)
-function copyStyleGuideCSS() {
-  return gulp.src('dist/assets/css/style.css')
-    .pipe(gulp.dest('dist/styleguide/assets/css/'));
-}
-
 // Initialize BrowserSync server
 function serve() {
   browserSync.init({
     server: {
       baseDir: './dist'
     },
-    port: 3000
+    port: 3000,
+    notify: false
   });
   
   gulp.watch('src/scss/**/*.scss', compileSass);
-  gulp.watch('src/**/*.html', processHTML);
-  gulp.watch('src/partials/**/*.html', processHTML);
-  gulp.watch('dist/*.html').on('change', browserSync.reload); // Added this line
+  gulp.watch(['src/**/*.html', 'src/partials/**/*.html'], processHTML);
+  gulp.watch('src/images/**/*', optimizeImages);
+  gulp.watch('src/assets/**/*', copyAssets);
 }
 
 // Serve style guide
@@ -136,7 +167,7 @@ function serveStyleGuide() {
 function build() {
   process.env.NODE_ENV = 'production';
   return gulp.series(
-    gulp.parallel(compileSass, processHTML),
+    gulp.parallel(compileSass, processHTML, optimizeImages, generateWebP, copyAssets),
     styleGuide
   )();
 }
@@ -150,6 +181,9 @@ const test = gulp.series(build, checkA11y);
 // Export tasks
 exports.sass = compileSass;
 exports.html = processHTML;
+exports.images = optimizeImages;
+exports.webp = generateWebP;
+exports.assets = copyAssets;
 exports.a11y = checkA11y;
 exports.test = test;
 exports.styleguide = generateStyleGuide;
