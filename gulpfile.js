@@ -13,6 +13,7 @@ const fileinclude = require('gulp-file-include');
 const replace = require('gulp-replace');
 const beautify = require('gulp-html-beautify');
 const accessibility = require('gulp-accessibility');
+const kss = require('kss');
 
 // Environment flag
 const isDev = process.env.NODE_ENV !== 'production';
@@ -30,7 +31,7 @@ function compileSass() {
     }))
     .pipe(gulpif(!isDev, cleanCSS()))
     .pipe(gulpif(isDev, sourcemaps.write('.')))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist/assets/css'))
     .pipe(browserSync.stream());
 }
 
@@ -62,9 +63,9 @@ function processHTML() {
 function checkA11y() {
   return gulp.src('dist/*.html')
     .pipe(accessibility({
-      force: true, // Continue on errors
-      accessibilityLevel: 'WCAG2AA', // WCAG2A, WCAG2AA, or WCAG2AAA
-      reportType: 'txt', // txt, json, or both
+      force: true,
+      accessibilityLevel: 'WCAG2AA',
+      reportType: 'txt',
       reportLocation: 'reports/accessibility',
       reportLevels: {
         notice: true,
@@ -78,6 +79,31 @@ function checkA11y() {
       console.log('\n✓ Accessibility check complete');
       console.log('Report saved to: reports/accessibility/');
     });
+}
+
+// Generate style guide to dist folder
+async function styleGuide() {
+  try {
+    await kss({
+      source: 'src/scss/',
+      destination: 'dist/styleguide/',
+      css: '../assets/css/style.css',
+      title: 'Project Style Guide',
+      homepage: 'styleguide.md',
+      placeholder: '[modifier]',
+      nav: true
+    });
+    console.log('\n✓ Style guide generated successfully');
+    console.log('View at: dist/styleguide/index.html');
+  } catch (error) {
+    console.error('Style guide generation failed:', error);
+  }
+}
+
+// Copy CSS to style guide (optional backup)
+function copyStyleGuideCSS() {
+  return gulp.src('dist/assets/css/style.css')
+    .pipe(gulp.dest('dist/styleguide/assets/css/'));
 }
 
 // Initialize BrowserSync server
@@ -94,11 +120,29 @@ function serve() {
   gulp.watch('src/partials/**/*.html', processHTML);
 }
 
+// Serve style guide
+function serveStyleGuide() {
+  browserSync.init({
+    server: {
+      baseDir: './dist/styleguide'
+    },
+    port: 3001
+  });
+  
+  gulp.watch('src/scss/**/*.scss', gulp.series(compileSass, styleGuide));
+}
+
 // Build task for production
 function build() {
   process.env.NODE_ENV = 'production';
-  return gulp.parallel(compileSass, processHTML)();
+  return gulp.series(
+    gulp.parallel(compileSass, processHTML),
+    styleGuide
+  )();
 }
+
+// Generate complete style guide
+const generateStyleGuide = gulp.series(compileSass, styleGuide);
 
 // Test task - build and check accessibility
 const test = gulp.series(build, checkA11y);
@@ -108,6 +152,8 @@ exports.sass = compileSass;
 exports.html = processHTML;
 exports.a11y = checkA11y;
 exports.test = test;
+exports.styleguide = generateStyleGuide;
+exports['styleguide:serve'] = serveStyleGuide;
 exports.serve = serve;
 exports.build = build;
 exports.default = serve;
