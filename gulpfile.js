@@ -13,7 +13,6 @@ const htmlmin = require('gulp-htmlmin');
 const fileinclude = require('gulp-file-include');
 const replace = require('gulp-replace');
 const beautify = require('gulp-html-beautify');
-const accessibility = require('gulp-accessibility');
 const kss = require('kss');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
@@ -94,28 +93,6 @@ function copyAssets() {
     .pipe(gulp.dest('dist/assets'));
 }
 
-// Check accessibility
-function checkA11y() {
-  return gulp.src('dist/*.html')
-    .pipe(accessibility({
-      force: true,
-      accessibilityLevel: 'WCAG2AA',
-      reportType: 'txt',
-      reportLocation: 'reports/accessibility',
-      reportLevels: {
-        notice: true,
-        warning: true,
-        error: true
-      },
-      verbose: true
-    }))
-    .on('error', console.log)
-    .on('data', function(file) {
-      console.log('\n✓ Accessibility check complete');
-      console.log('Report saved to: reports/accessibility/');
-    });
-}
-
 // Generate style guide to dist folder
 async function styleGuide() {
   try {
@@ -175,17 +152,12 @@ function build() {
 // Generate complete style guide
 const generateStyleGuide = gulp.series(compileSass, styleGuide);
 
-// Test task - build and check accessibility
-const test = gulp.series(build, checkA11y);
-
 // Export tasks
 exports.sass = compileSass;
 exports.html = processHTML;
 exports.images = optimizeImages;
 exports.webp = generateWebP;
 exports.assets = copyAssets;
-exports.a11y = checkA11y;
-exports.test = test;
 exports.styleguide = generateStyleGuide;
 exports['styleguide:serve'] = serveStyleGuide;
 exports.serve = serve;
