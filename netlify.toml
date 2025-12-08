@@ -1,0 +1,17 @@
+[build]
+  # The command to build your project
+  command = "npm install && npm run build"
+  publish = "dist"
+  
+  # The folder to deploy (your dist folder)
+  publish = "dist"
+
+[build.environment]
+  # Specify Node version if needed
+  NODE_VERSION = "18"
+
+# Optional: Redirect rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

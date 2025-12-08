@@ -1,7 +1,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
-const autoprefixer = require('gulp-autoprefixer');
+const autoprefixer = require('autoprefixer');
+const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
@@ -26,9 +27,7 @@ function compileSass() {
     .pipe(sass({
       outputStyle: isDev ? 'expanded' : 'compressed'
     }).on('error', sass.logError))
-    .pipe(autoprefixer({
-      cascade: false
-    }))
+    .pipe(postcss([autoprefixer()]))  // Changed this line
     .pipe(gulpif(!isDev, cleanCSS()))
     .pipe(gulpif(isDev, sourcemaps.write('.')))
     .pipe(gulp.dest('dist/assets/css'))
