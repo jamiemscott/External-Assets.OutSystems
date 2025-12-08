@@ -117,6 +117,7 @@ function serve() {
   gulp.watch('src/scss/**/*.scss', compileSass);
   gulp.watch('src/**/*.html', processHTML);
   gulp.watch('src/partials/**/*.html', processHTML);
+  gulp.watch('dist/*.html').on('change', browserSync.reload); // Added this line
 }
 
 // Serve style guide
