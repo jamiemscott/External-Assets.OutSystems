@@ -1,3 +1,11 @@
+.btn--primary {
+  color: red;
+}
+
+.btn--secondary {
+  color: blue;
+}
+
 body {
   background: black;
   color: white;

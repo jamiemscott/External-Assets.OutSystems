@@ -14,6 +14,7 @@ const fileinclude = require('gulp-file-include');
 const replace = require('gulp-replace');
 const beautify = require('gulp-html-beautify');
 const kss = require('kss');
+const fs = require('fs');
 
 // Environment flag
 const isDev = process.env.NODE_ENV !== 'production';
@@ -58,15 +59,33 @@ function processHTML() {
 }
 
 // Copy images (without optimization)
-function copyImages() {
+function copyImages(done) {
+  // Check if src/assets/images exists
+  if (!fs.existsSync('src/assets/images')) {
+    console.log('No images folder found, skipping...');
+    done();
+    return;
+  }
+  
   return gulp.src('src/assets/images/**/*.{jpg,jpeg,png,svg,gif,webp}')
     .pipe(gulp.dest('dist/assets/images'))
     .pipe(browserSync.stream());
 }
 
 // Copy other assets (fonts, videos, etc)
-function copyAssets() {
-  return gulp.src('src/assets/**/*')
+function copyAssets(done) {
+  // Check if src/assets exists and has files other than scss and images
+  if (!fs.existsSync('src/assets')) {
+    console.log('No assets folder found, skipping...');
+    done();
+    return;
+  }
+  
+  return gulp.src([
+    'src/assets/**/*',
+    '!src/assets/scss/**',
+    '!src/assets/images/**'
+  ])
     .pipe(gulp.dest('dist/assets'));
 }
 
@@ -74,7 +93,7 @@ function copyAssets() {
 async function styleGuide() {
   try {
     await kss({
-      source: 'src/scss/',
+      source: 'src/assets/scss/',
       destination: 'dist/styleguide/',
       css: '../assets/css/style.css',
       title: 'Project Style Guide',
@@ -99,9 +118,9 @@ function serve() {
     notify: false
   });
   
-  gulp.watch('src/scss/**/*.scss', compileSass);
+  gulp.watch('src/assets/scss/**/*.scss', compileSass);
   gulp.watch(['src/**/*.html', 'src/partials/**/*.html'], processHTML);
-  gulp.watch('src/images/**/*', copyImages);
+  gulp.watch('src/assets/images/**/*', copyImages);
   gulp.watch('src/assets/**/*', copyAssets);
 }
 
@@ -114,16 +133,16 @@ function serveStyleGuide() {
     port: 3001
   });
   
-  gulp.watch('src/scss/**/*.scss', gulp.series(compileSass, styleGuide));
+  gulp.watch('src/assets/scss/**/*.scss', gulp.series(compileSass, styleGuide));
 }
 
 // Build task for production
-function build() {
+function build(done) {
   process.env.NODE_ENV = 'production';
   return gulp.series(
     gulp.parallel(compileSass, processHTML, copyImages, copyAssets),
     styleGuide
-  )();
+  )(done);
 }
 
 // Generate complete style guide
