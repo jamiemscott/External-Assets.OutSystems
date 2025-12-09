@@ -14,9 +14,6 @@ const fileinclude = require('gulp-file-include');
 const replace = require('gulp-replace');
 const beautify = require('gulp-html-beautify');
 const kss = require('kss');
-const imagemin = require('gulp-imagemin');
-const newer = require('gulp-newer');
-const webp = require('gulp-webp');
 
 // Environment flag
 const isDev = process.env.NODE_ENV !== 'production';
@@ -60,31 +57,11 @@ function processHTML() {
     .pipe(browserSync.stream());
 }
 
-// Optimize images
-function optimizeImages() {
-  return gulp.src('src/images/**/*.{jpg,jpeg,png,svg,gif}')
-    .pipe(newer('dist/assets/images'))
-    .pipe(imagemin([
-      imagemin.mozjpeg({ quality: 80, progressive: true }),
-      imagemin.optipng({ optimizationLevel: 5 }),
-      imagemin.svgo({
-        plugins: [
-          { removeViewBox: false },
-          { cleanupIDs: false }
-        ]
-      }),
-      imagemin.gifsicle({ interlaced: true })
-    ]))
+// Copy images (without optimization)
+function copyImages() {
+  return gulp.src('src/images/**/*.{jpg,jpeg,png,svg,gif,webp}')
     .pipe(gulp.dest('dist/assets/images'))
     .pipe(browserSync.stream());
-}
-
-// Generate WebP versions
-function generateWebP() {
-  return gulp.src('src/images/**/*.{jpg,jpeg,png}')
-    .pipe(newer('dist/assets/images'))
-    .pipe(webp({ quality: 80 }))
-    .pipe(gulp.dest('dist/assets/images'));
 }
 
 // Copy other assets (fonts, videos, etc)
@@ -124,7 +101,7 @@ function serve() {
   
   gulp.watch('src/scss/**/*.scss', compileSass);
   gulp.watch(['src/**/*.html', 'src/partials/**/*.html'], processHTML);
-  gulp.watch('src/images/**/*', optimizeImages);
+  gulp.watch('src/images/**/*', copyImages);
   gulp.watch('src/assets/**/*', copyAssets);
 }
 
@@ -144,7 +121,7 @@ function serveStyleGuide() {
 function build() {
   process.env.NODE_ENV = 'production';
   return gulp.series(
-    gulp.parallel(compileSass, processHTML, optimizeImages, generateWebP, copyAssets),
+    gulp.parallel(compileSass, processHTML, copyImages, copyAssets),
     styleGuide
   )();
 }
@@ -155,8 +132,7 @@ const generateStyleGuide = gulp.series(compileSass, styleGuide);
 // Export tasks
 exports.sass = compileSass;
 exports.html = processHTML;
-exports.images = optimizeImages;
-exports.webp = generateWebP;
+exports.images = copyImages;
 exports.assets = copyAssets;
 exports.styleguide = generateStyleGuide;
 exports['styleguide:serve'] = serveStyleGuide;
