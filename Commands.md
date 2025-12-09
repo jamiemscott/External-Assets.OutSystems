@@ -97,26 +97,15 @@ gulp html
 ### Asset Processing Commands
 
 #### `gulp images`
-- Optimizes all images in `src/images/`
-- Compresses JPG, PNG, SVG, and GIF files
-- Only processes new/changed images
-- Outputs to `dist/assets/images/`
-- **Best for:** Manually optimizing images
+- Copies all images from `src/images/` to `dist/assets/images/`
+- Supports JPG, PNG, SVG, GIF, and WebP formats
+- Images are copied as-is without optimization
+- **Best for:** Moving images to the build folder
+- **Note:** Optimize images manually before adding them to `src/images/`
 
 **Usage:**
 ```bash
 gulp images
-```
-
-#### `gulp webp`
-- Generates WebP versions of JPG and PNG images
-- WebP format provides ~30% better compression
-- Outputs to `dist/assets/images/`
-- **Best for:** Creating modern image formats
-
-**Usage:**
-```bash
-gulp webp
 ```
 
 #### `gulp assets`
@@ -129,30 +118,19 @@ gulp webp
 gulp assets
 ```
 
-### Quality & Testing Commands
+### Quality & Testing
 
-#### `gulp a11y`
-- Runs accessibility checks on HTML files in `dist/` folder
-- Generates reports in `reports/accessibility/` folder
-- Checks against WCAG 2.0 AA standards
-- **Best for:** Checking accessibility compliance during development
+For accessibility testing, use browser-based tools instead of gulp tasks:
 
-**Usage:**
-```bash
-gulp a11y
-```
+- **Chrome DevTools Lighthouse** - Built-in (F12 → Lighthouse tab)
+- **Browser Extensions:**
+  - axe DevTools for Chrome/Firefox
+  - WAVE for Chrome/Firefox
+- **Online Tools:**
+  - https://wave.webaim.org/
+  - https://www.accessibilitychecker.org/
 
-#### `gulp test`
-- Builds the project for production
-- Then runs accessibility checks automatically
-- **Best for:** Pre-deployment testing and validation
 
-**Usage:**
-```bash
-gulp test
-# or
-npm test
-```
 
 ### Style Guide Commands
 
@@ -183,8 +161,7 @@ gulp styleguide:serve
 - Builds production-ready files
 - Compiles and minifies CSS
 - Processes and minifies HTML
-- Optimizes all images
-- Generates WebP versions
+- Copies all images
 - Copies assets
 - Generates style guide
 - Removes source maps and comments
@@ -208,7 +185,6 @@ If you prefer using npm commands:
 | `npm start` | `gulp serve` | Start development server |
 | `npm run dev` | `gulp serve` | Start development server |
 | `npm run build` | `gulp build` | Build for production |
-| `npm test` | `gulp test` | Build and run accessibility tests |
 
 ---
 
@@ -251,9 +227,36 @@ The `{{timestamp}}` variable is automatically replaced during build for cache bu
 
 ## Working with Images
 
+### Image Optimization
+
+**Important:** Images are NOT automatically optimized during the build process. You should optimize images manually before adding them to your project.
+
+### Recommended Tools for Manual Optimization:
+
+**Online Tools:**
+- **TinyPNG** - https://tinypng.com/ (PNG & JPG)
+- **Squoosh** - https://squoosh.app/ (All formats, by Google)
+- **Compressor.io** - https://compressor.io/ (Multiple formats)
+
+**Desktop Apps:**
+- **ImageOptim** (Mac) - https://imageoptim.com/
+- **RIOT** (Windows) - https://riot-optimizer.com/
+
+### Workflow:
+
+1. **Optimize images first** using one of the tools above
+2. **Place optimized images** in `src/images/`:
+```
+src/images/
+├── hero.jpg
+├── logo.png
+└── icon.svg
+```
+3. **Run build** - images are copied to `dist/assets/images/`
+
 ### Basic Usage
 
-Place images in `src/images/`:
+Place images in `src/images/` and reference them in HTML:
 ```
 src/images/
 ├── hero.jpg
@@ -261,14 +264,16 @@ src/images/
 └── icon.svg
 ```
 
-Reference them in HTML:
 ```html
 <img src="assets/images/hero.jpg" alt="Hero image">
 ```
 
-### Using WebP with Fallback
+### WebP Images
 
-For better performance with modern browsers:
+If you want to use WebP format for better compression:
+1. Convert images to WebP using online tools (like Squoosh)
+2. Save both formats (JPG and WebP) in `src/images/`
+3. Use the `<picture>` element for fallback:
 
 ```html
 <picture>
@@ -281,8 +286,19 @@ For better performance with modern browsers:
 
 ## Accessibility Checking
 
-The `gulp a11y` command validates your HTML for:
+Use browser-based tools to validate accessibility:
 
+### Chrome DevTools Lighthouse
+1. Open DevTools (F12)
+2. Click the "Lighthouse" tab
+3. Select "Accessibility" category
+4. Click "Generate report"
+
+### Browser Extensions
+- **axe DevTools** - Comprehensive accessibility testing
+- **WAVE** - Visual feedback on accessibility issues
+
+### What to Check:
 - ✅ Missing alt attributes on images
 - ✅ Proper heading hierarchy (h1, h2, h3...)
 - ✅ Form labels and input associations
@@ -291,8 +307,6 @@ The `gulp a11y` command validates your HTML for:
 - ✅ Semantic HTML structure
 - ✅ Keyboard navigation support
 - ✅ Link text clarity
-
-Reports are saved to `reports/accessibility/` after running checks.
 
 ---
 
@@ -397,10 +411,11 @@ npm install -g gulp-cli
 - Verify the file exists in `dist/assets/css/`
 - Hard refresh browser (Ctrl+Shift+R / Cmd+Shift+R)
 
-### Images not optimizing
+### Images not copying
 - Ensure images are in `src/images/`
 - Run `gulp images` or `gulp build`
 - Check `dist/assets/images/` for output
+- Remember: images are copied as-is, not optimized
 
 ### BrowserSync not reloading
 - Check terminal for error messages
@@ -411,12 +426,14 @@ npm install -g gulp-cli
 - Run `npm audit` to see issues
 - Run `npm audit fix` (without --force) for safe updates
 - Most low-severity dev dependency warnings are safe to ignore
+- Avoid `npm audit fix --force` as it can break compatibility
 
-### Build fails on Netlify
+### Netlify build fails
 - Check build logs in Netlify dashboard
 - Verify all dependencies are in `devDependencies`
 - Ensure `netlify.toml` is properly configured
 - Test build locally with `npm run build`
+- If you see ESM/CommonJS errors, packages may be incompatible with current Node version
 
 ---
 
@@ -442,9 +459,10 @@ git push
 - ✅ Source files (`src/`)
 - ✅ Configuration files (`gulpfile.js`, `package.json`, `netlify.toml`)
 - ✅ Documentation files (`.md` files)
+- ✅ `.gitignore`
 - ❌ `node_modules/` (excluded in `.gitignore`)
 - ❌ `dist/` (excluded in `.gitignore` - built on deploy)
-- ❌ `reports/` (excluded in `.gitignore`)
+- ❌ `reports/` (excluded in `.gitignore` - if present)
 
 ---
 
@@ -462,23 +480,44 @@ git push
 
 Core dependencies installed in this project:
 
+**Build Tools:**
 - `gulp` - Task runner
+- `gulp-if` - Conditional tasks
+- `gulp-plumber` - Error handling
+
+**CSS Processing:**
 - `gulp-sass` & `sass` - Sass compilation
 - `gulp-clean-css` - CSS minification
 - `autoprefixer` & `gulp-postcss` - Vendor prefixing
 - `gulp-sourcemaps` - Source map generation
-- `browser-sync` - Live reload server
-- `gulp-if` - Conditional tasks
-- `gulp-plumber` - Error handling
+
+**HTML Processing:**
 - `gulp-htmlmin` - HTML minification
 - `gulp-file-include` - HTML partials
 - `gulp-replace` - Text replacement
 - `gulp-html-beautify` - HTML formatting
-- `gulp-accessibility` - Accessibility checking
+
+**Development:**
+- `browser-sync` - Live reload server
+
+**Documentation:**
 - `kss` - Style guide generation
-- `gulp-imagemin` - Image optimization
-- `gulp-newer` - Process only new files
-- `gulp-webp` - WebP generation
+
+**Utilities:**
+- `gulp-concat` - File concatenation
+- `gulp-rename` - File renaming
+
+---
+
+## Additional Notes
+
+### Why No Image Optimization?
+
+Image optimization packages (`gulp-imagemin`, `gulp-webp`) were removed due to compatibility issues with modern Node.js and ES modules. Manual optimization before adding images to the project is now the recommended approach and is commonly used in professional workflows.
+
+### Why No Accessibility Task?
+
+The `gulp-accessibility` package was removed due to dependency issues with the unmaintained `phantomjs` package. Browser-based tools like Lighthouse provide better, more up-to-date accessibility testing.
 
 ---
 
