@@ -20,7 +20,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 
 // Compile Sass to CSS
 function compileSass() {
-  return gulp.src('src/scss/**/*.scss')
+  return gulp.src('src/assets/scss/**/*.scss')
     .pipe(plumber())
     .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(sass({
@@ -59,7 +59,7 @@ function processHTML() {
 
 // Copy images (without optimization)
 function copyImages() {
-  return gulp.src('src/images/**/*.{jpg,jpeg,png,svg,gif,webp}')
+  return gulp.src('src/assets/images/**/*.{jpg,jpeg,png,svg,gif,webp}')
     .pipe(gulp.dest('dist/assets/images'))
     .pipe(browserSync.stream());
 }
