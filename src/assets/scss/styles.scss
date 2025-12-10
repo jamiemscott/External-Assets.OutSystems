@@ -1,11 +1,37 @@
-@use '_buttons';
+// ==========================================================================
+// Main Stylesheet
+// ==========================================================================
 
-body {
-  background: black;
-  color: white;
-  padding: 20px;
-}
-h1 {
-  color: pink;
-}
+// Base
+// ==========================================================================
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/reset';
+@use 'base/typography';
 
+// Layout
+// ==========================================================================
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/sidebar';
+@use 'layout/navigation';
+
+// Modules (Components)
+// ==========================================================================
+@use 'modules/buttons';
+@use 'modules/cards';
+@use 'modules/forms';
+@use 'modules/tables';
+@use 'modules/modals';
+@use 'modules/alerts';
+
+// State
+// ==========================================================================
+@use 'state/states';
+@use 'state/animations';
+
+// Theme
+// ==========================================================================
+@use 'theme/colors';
+// @use 'theme/dark-mode'; // Uncomment if using dark mode
