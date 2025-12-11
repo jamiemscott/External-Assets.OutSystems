@@ -67,7 +67,7 @@ function copyImages(done) {
     return;
   }
   
-  return gulp.src('src/assets/images/**/*.{jpg,jpeg,png,svg,gif,webp}')
+  return gulp.src('src/assets/images/**/*.{jpg,jpeg,png,svg,gif,webp}', { encoding: false })
     .pipe(gulp.dest('dist/assets/images'))
     .pipe(browserSync.stream());
 }
@@ -83,7 +83,9 @@ function copyAssets(done) {
   
   return gulp.src([
     'src/assets/**/*',
+    '!src/assets/scss',
     '!src/assets/scss/**',
+    '!src/assets/images',
     '!src/assets/images/**'
   ])
     .pipe(gulp.dest('dist/assets'));
