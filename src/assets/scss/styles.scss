@@ -35,3 +35,9 @@
 // ==========================================================================
 @use 'theme/colors';
 // @use 'theme/dark-mode'; // Uncomment if using dark mode
+
+body {
+  background: purple;
+  color: white;
+  padding: 20px;
+}

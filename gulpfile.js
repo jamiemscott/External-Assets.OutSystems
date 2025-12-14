@@ -16,20 +16,31 @@ const beautify = require('gulp-html-beautify');
 const kss = require('kss');
 const fs = require('fs');
 
-// Environment flag
-const isDev = process.env.NODE_ENV !== 'production';
+// Environment flag - use function to check at runtime
+function isDev() {
+  return process.env.NODE_ENV !== 'production';
+}
 
 // Compile Sass to CSS
 function compileSass() {
-  return gulp.src('src/assets/scss/**/*.scss')
+  const isProduction = !isDev();
+  
+  let stream = gulp.src('src/assets/scss/**/*.scss')
     .pipe(plumber())
-    .pipe(gulpif(isDev, sourcemaps.init()))
+    .pipe(gulpif(isDev(), sourcemaps.init()))
     .pipe(sass({
-      outputStyle: isDev ? 'expanded' : 'compressed'
+      outputStyle: isDev() ? 'expanded' : 'compressed'
     }).on('error', sass.logError))
     .pipe(postcss([autoprefixer()]))
-    .pipe(gulpif(!isDev, cleanCSS()))
-    .pipe(gulpif(isDev, sourcemaps.write('.')))
+    .pipe(gulpif(isProduction, cleanCSS()));
+  
+  // In production, rename to .min.css
+  if (isProduction) {
+    stream = stream.pipe(rename('styles.min.css'));
+  }
+  
+  return stream
+    .pipe(gulpif(isDev(), sourcemaps.write('.')))
     .pipe(gulp.dest('dist/assets/css'))
     .pipe(browserSync.stream());
 }
@@ -43,12 +54,12 @@ function processHTML() {
       basepath: '@file'
     }))
     .pipe(replace('{{timestamp}}', Date.now()))
-    .pipe(gulpif(isDev, beautify({
+    .pipe(gulpif(isDev(), beautify({
       indent_size: 2,
       preserve_newlines: true,
       max_preserve_newlines: 1
     })))
-    .pipe(gulpif(!isDev, htmlmin({
+    .pipe(gulpif(!isDev(), htmlmin({
       collapseWhitespace: true,
       removeComments: true,
       minifyJS: true,
@@ -97,7 +108,7 @@ async function styleGuide() {
     await kss({
       source: 'src/assets/scss/',
       destination: 'dist/styleguide/',
-      css: '../assets/css/style.css',
+      css: '../assets/css/styles.min.css',
       title: 'Project Style Guide',
       homepage: 'styleguide.md',
       placeholder: '[modifier]',
