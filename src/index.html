@@ -2,16 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Project</title>
-  <link rel="stylesheet" href="assets/css/styles.css?v={{timestamp}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Your page description here">
+  <meta name="keywords" content="your, keywords, here">
+  <meta name="author" content="Your Name">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://outsystems.front-end-ninja.co.uk/">
+  <meta property="og:title" content="Your Page Title">
+  <meta property="og:description" content="Your page description here">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://outsystems.front-end-ninja.co.uk/">
+  <meta property="twitter:title" content="Your Page Title">
+  <meta property="twitter:description" content="Your page description here">
+  <meta property="twitter:image" content="assets/images/twitter-image.jpg">
+  
+  <title>Your Page Title</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.min.css?v={{timestamp}}">
 </head>
 <body>
+  
+  <!-- Header -->
   @@include('partials/header.html')
   
+  <!-- Main Content -->
   <main>
-    <h2>Welcome</h2>
+    
+    <!-- Hero Section -->
+    @@include('partials/hero.html')
+    
+    <!-- Benefits Section -->
+    @@include('partials/benefits.html')
+    
+    <!-- Services Section -->
+    @@include('partials/services.html')
+    
+    <!-- Community Section -->
+    @@include('partials/community.html')
+    
+    <!-- Testimonials Section -->
+    @@include('partials/testimonials.html')
+    
+    <!-- FAQs Section -->
+    @@include('partials/faqs.html')
+    
   </main>
   
+  <!-- Footer -->
   @@include('partials/footer.html')
+  
 </body>
 </html>
