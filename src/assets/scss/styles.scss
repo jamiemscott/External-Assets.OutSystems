@@ -37,7 +37,7 @@
 // @use 'theme/dark-mode'; // Uncomment if using dark mode
 
 body {
-  background: purple;
+  background: var(--base-color);
   color: white;
-  padding: 20px;
+  padding: 25px;
 }

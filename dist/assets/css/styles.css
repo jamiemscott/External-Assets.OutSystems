@@ -1,19 +1,22 @@
 :root {
   --base-color: #070322;
-
-    --triadic-color-primary: oklch(from var(--base-color) l c calc(h + 120));
-    --triadic-color-secondary: oklch(from var(--base-color) l c calc(h - 120));
-
+  --triadic-color-primary: oklch(from var(--base-color) l c calc(h + 120));
+  --triadic-color-secondary: oklch(from var(--base-color) l c calc(h - 120));
   --complement-color: oklch(from var(--base-color) l c calc(h + 180));
   --border-highlight: var(--complement-color);
-
-    /* Darken the --base-color by 15% */
-    --base-color-darkened: oklch(from var(--base-color) calc(l * 0.85) c h);
+  /* Darken the --base-color by 15% */
+  --base-color-darkened: oklch(from var(--base-color) calc(l * 0.85) c h);
   /* Assign this color a meaningful variable name */
   --action-color: var(--base-color-darkened);
-  
   /* Lighten the --action-color by 15% */
   --action-color-light: oklch(from var(--action-color) calc(l * 1.15) c h);
   /* Darken the --action-color by 10% */
   --action-color-dark: oklch(from var(--action-color) calc(l * 0.9) c h);
 }
+
+body {
+  background: var(--base-color);
+  color: white;
+  padding: 25px;
+}
+/*# sourceMappingURL=styles.css.map */
