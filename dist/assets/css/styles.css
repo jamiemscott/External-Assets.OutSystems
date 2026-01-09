@@ -1,4 +1,9 @@
 :root {
+  --canvas: var(--base-color);
+  --ink: #ffffff;
+}
+
+:root {
   --base-color: #070322;
   --triadic-color-primary: oklch(from var(--base-color) l c calc(h + 120));
   --triadic-color-secondary: oklch(from var(--base-color) l c calc(h - 120));
@@ -14,9 +19,17 @@
   --action-color-dark: oklch(from var(--action-color) calc(l * 0.9) c h);
 }
 
+html {
+  background: var(--canvas);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--base-color);
-  color: white;
-  padding: 25px;
+  color: inherit;
+  container-type: inline-size;
+  margin: 0;
+  min-height: 100svh;
+  position: relative;
 }
 /*# sourceMappingURL=styles.css.map */

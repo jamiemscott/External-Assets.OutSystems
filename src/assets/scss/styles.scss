@@ -36,8 +36,16 @@
 @use 'theme/colors';
 // @use 'theme/dark-mode'; // Uncomment if using dark mode
 
+html {
+  background: var(--canvas);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--base-color);
-  color: white;
-  padding: 25px;
+  color: inherit;
+  container-type: inline-size;
+  margin: 0;
+  min-height: 100svh;
+  position: relative;
 }
