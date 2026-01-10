@@ -11,11 +11,12 @@
 
 // Layout
 // ==========================================================================
+@use 'layout/footer';
 @use 'layout/grid';
 @use 'layout/header';
-@use 'layout/footer';
-@use 'layout/sidebar';
+@use 'layout/main';
 @use 'layout/navigation';
+@use 'layout/sidebar';
 
 // Modules (Components)
 // ==========================================================================
@@ -49,3 +50,4 @@ body {
   min-height: 100svh;
   position: relative;
 }
+
