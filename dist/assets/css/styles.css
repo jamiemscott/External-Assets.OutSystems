@@ -27,16 +27,14 @@ body > .layout {
        column-gap: var(--spacing-inline);
   row-gap: var(--spacing-block);
   grid-auto-columns: 1fr;
-  grid-template-rows: [header] min-content [content] 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-columns: [full-width-start breakout-start] var(--size-fluid-4) [aside-primary-start] 1fr [aside-primary-end content-start] 2fr [content-end aside-secondary-start] 1fr [aside-secondary-end] var(--size-fluid-4) [breakout-end full-width-end];
   padding-block: var(--spacing-block);
   padding-inline: var(--spacing-inline);
   width: clamp(300px, 75svw, var(--content-max-width));
 }
-@container (min-width: 500px) {
-  .content-grid {
-    grid-auto-rows: 1fr;
-    grid-template-columns: [full-width-start breakout-start] var(--size-fluid-4) [aside-primary-start] 1fr [aside-primary-end content-start] 2fr [content-end aside-secondary-start] 1fr [aside-secondary-end] var(--size-fluid-4) [breakout-end full-width-end];
-  }
+.content-grid > * {
+  grid-column: content;
 }
 
 header[role=banner] {
