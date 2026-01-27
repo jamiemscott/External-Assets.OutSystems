@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gulp sass:*)"
+      "Bash(gulp sass:*)",
+      "WebFetch(domain:coolors.co)",
+      "Bash(gulp styleguide)"
     ]
   }
 }

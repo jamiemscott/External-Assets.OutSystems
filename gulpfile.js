@@ -108,7 +108,7 @@ async function styleGuide() {
     await kss({
       source: 'src/assets/scss/',
       destination: 'dist/styleguide/',
-      css: '../assets/css/styles.min.css',
+      css: '../assets/css/styles.css',
       title: 'Project Style Guide',
       homepage: 'styleguide.md',
       placeholder: '[modifier]',

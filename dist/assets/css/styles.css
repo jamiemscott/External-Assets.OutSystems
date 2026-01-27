@@ -3,6 +3,121 @@
   --ink: #ffffff;
 }
 
+@font-face {
+  font-family: "Clash Display";
+  src: url("../fonts/ClashDisplay/ClashDisplay-Variable.woff2") format("woff2"), url("../fonts/ClashDisplay/ClashDisplay-Variable.woff") format("woff");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi/Satoshi-Variable.woff2") format("woff2"), url("../fonts/Satoshi/Satoshi-Variable.woff") format("woff");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi/Satoshi-VariableItalic.woff2") format("woff2"), url("../fonts/Satoshi/Satoshi-VariableItalic.woff") format("woff");
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+:root {
+  --font-family-heading: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-body: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+:root {
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 4rem;
+}
+
+:root {
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
+
+:root {
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: var(--base-color);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+strong, b {
+  font-weight: var(--font-weight-bold);
+}
+
+em, i {
+  font-style: italic;
+}
+
 footer {
   grid-row: footer;
 }
@@ -48,18 +163,14 @@ main {
 
 :root {
   --base-color: #070322;
-  --triadic-color-primary: oklch(from var(--base-color) l c calc(h + 120));
-  --triadic-color-secondary: oklch(from var(--base-color) l c calc(h - 120));
-  --complement-color: oklch(from var(--base-color) l c calc(h + 180));
-  --border-highlight: var(--complement-color);
-  /* Darken the --base-color by 15% */
-  --base-color-darkened: oklch(from var(--base-color) calc(l * 0.85) c h);
-  /* Assign this color a meaningful variable name */
-  --action-color: var(--base-color-darkened);
-  /* Lighten the --action-color by 15% */
-  --action-color-light: oklch(from var(--action-color) calc(l * 1.15) c h);
-  /* Darken the --action-color by 10% */
-  --action-color-dark: oklch(from var(--action-color) calc(l * 0.9) c h);
+  --color-primary: oklch(from var(--base-color) calc(l * 3.10) calc(c * 2.23) calc(h + 3.89));
+  --color-secondary: oklch(from var(--base-color) calc(l * 3.60) calc(c * 1.84) calc(h + 2.3));
+  --color-accent: oklch(from var(--base-color) calc(l * 5.47) calc(c * 0.61) calc(h - 105.4));
+  --color-surface: oklch(from var(--base-color) calc(l * 5.27) calc(c * 0.43) calc(h - 112.33));
+  --action-color: var(--color-primary);
+  --action-color-hover: oklch(from var(--action-color) calc(l * 1.1) c h);
+  --action-color-active: oklch(from var(--action-color) calc(l * 0.9) c h);
+  --border-highlight: var(--color-surface);
 }
 
 html {

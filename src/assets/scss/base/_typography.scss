@@ -1,0 +1,232 @@
+// Typography
+//
+// Font definitions and typography system using Clash Display for headings
+// and Satoshi for body copy. Variable fonts are used for optimal performance.
+//
+// Styleguide 2.0
+
+// Font Face Declarations
+// ======================
+
+// Clash Display - Variable Font (Headings)
+// Supports weights from 200 (Extralight) to 700 (Bold)
+@font-face {
+  font-family: 'Clash Display';
+  src: url('../fonts/ClashDisplay/ClashDisplay-Variable.woff2') format('woff2'),
+       url('../fonts/ClashDisplay/ClashDisplay-Variable.woff') format('woff');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Satoshi - Variable Font (Body Copy)
+// Supports weights from 300 (Light) to 900 (Black)
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi/Satoshi-Variable.woff2') format('woff2'),
+       url('../fonts/Satoshi/Satoshi-Variable.woff') format('woff');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Satoshi - Variable Font Italic (Body Copy)
+// Supports weights from 300 (Light) to 900 (Black)
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi/Satoshi-VariableItalic.woff2') format('woff2'),
+       url('../fonts/Satoshi/Satoshi-VariableItalic.woff') format('woff');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Font Family Variables
+// =====================
+
+:root {
+  // Heading font - Clash Display
+  --font-family-heading: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  // Body font - Satoshi
+  --font-family-body: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  // Monospace font stack
+  --font-family-mono: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+// Typography Scale
+// ================
+
+// Font Sizes
+//
+// A harmonious type scale for consistent typography throughout the design.
+//
+// Markup:
+// <div style="font-family: var(--font-family-body); font-size: var(--font-size-xs);">Extra Small Text (12px)</div>
+// <div style="font-family: var(--font-family-body); font-size: var(--font-size-sm);">Small Text (14px)</div>
+// <div style="font-family: var(--font-family-body); font-size: var(--font-size-base);">Base Text (16px)</div>
+// <div style="font-family: var(--font-family-body); font-size: var(--font-size-lg);">Large Text (18px)</div>
+// <div style="font-family: var(--font-family-body); font-size: var(--font-size-xl);">Extra Large Text (20px)</div>
+// <div style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl);">2XL Heading (24px)</div>
+// <div style="font-family: var(--font-family-heading); font-size: var(--font-size-3xl);">3XL Heading (30px)</div>
+// <div style="font-family: var(--font-family-heading); font-size: var(--font-size-4xl);">4XL Heading (36px)</div>
+// <div style="font-family: var(--font-family-heading); font-size: var(--font-size-5xl);">5XL Heading (48px)</div>
+// <div style="font-family: var(--font-family-heading); font-size: var(--font-size-6xl);">6XL Heading (64px)</div>
+//
+// Weight: 1
+//
+// Styleguide 2.1
+
+:root {
+  // Font sizes
+  --font-size-xs: 0.75rem;    // 12px
+  --font-size-sm: 0.875rem;   // 14px
+  --font-size-base: 1rem;     // 16px
+  --font-size-lg: 1.125rem;   // 18px
+  --font-size-xl: 1.25rem;    // 20px
+  --font-size-2xl: 1.5rem;    // 24px
+  --font-size-3xl: 1.875rem;  // 30px
+  --font-size-4xl: 2.25rem;   // 36px
+  --font-size-5xl: 3rem;      // 48px
+  --font-size-6xl: 4rem;      // 64px
+}
+
+// Font Weights
+//
+// Font weight variations. Clash Display (headings) supports 200-700,
+// Satoshi (body) supports 300-900.
+//
+// Markup:
+// <div style="margin-bottom: 10px;"><strong>Clash Display (Headings):</strong></div>
+// <div style="font-family: var(--font-family-heading); font-weight: 200; font-size: 24px; margin-bottom: 5px;">Extralight (200)</div>
+// <div style="font-family: var(--font-family-heading); font-weight: 300; font-size: 24px; margin-bottom: 5px;">Light (300)</div>
+// <div style="font-family: var(--font-family-heading); font-weight: 400; font-size: 24px; margin-bottom: 5px;">Regular (400)</div>
+// <div style="font-family: var(--font-family-heading); font-weight: 500; font-size: 24px; margin-bottom: 5px;">Medium (500)</div>
+// <div style="font-family: var(--font-family-heading); font-weight: 600; font-size: 24px; margin-bottom: 5px;">Semibold (600)</div>
+// <div style="font-family: var(--font-family-heading); font-weight: 700; font-size: 24px; margin-bottom: 20px;">Bold (700)</div>
+// <div style="margin-bottom: 10px;"><strong>Satoshi (Body):</strong></div>
+// <div style="font-family: var(--font-family-body); font-weight: 300; font-size: 18px; margin-bottom: 5px;">Light (300)</div>
+// <div style="font-family: var(--font-family-body); font-weight: 400; font-size: 18px; margin-bottom: 5px;">Regular (400)</div>
+// <div style="font-family: var(--font-family-body); font-weight: 500; font-size: 18px; margin-bottom: 5px;">Medium (500)</div>
+// <div style="font-family: var(--font-family-body); font-weight: 700; font-size: 18px; margin-bottom: 5px;">Bold (700)</div>
+// <div style="font-family: var(--font-family-body); font-weight: 900; font-size: 18px;">Black (900)</div>
+//
+// Weight: 2
+//
+// Styleguide 2.2
+
+:root {
+  // Font weights
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
+
+// Line Heights
+//
+// Line height scale for optimal readability.
+//
+// Weight: 3
+//
+// Styleguide 2.3
+
+:root {
+  // Line heights
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+}
+
+// Headings
+//
+// Heading styles using Clash Display.
+//
+// Markup:
+// <h1>Heading 1 - Clash Display</h1>
+// <h2>Heading 2 - Clash Display</h2>
+// <h3>Heading 3 - Clash Display</h3>
+// <h4>Heading 4 - Clash Display</h4>
+// <h5>Heading 5 - Clash Display</h5>
+// <h6>Heading 6 - Clash Display</h6>
+//
+// Weight: 4
+//
+// Styleguide 2.4
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: var(--base-color);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+// Body Text
+//
+// Body text uses Satoshi for optimal readability.
+//
+// Markup:
+// <p>This is a paragraph of body text using Satoshi. It's designed for excellent readability at smaller sizes. Variable fonts allow for precise weight adjustments.</p>
+// <p><strong>Bold text</strong> and <em>italic text</em> are both supported with the variable font.</p>
+// <p style="font-weight: 300;">Light weight text (300)</p>
+// <p style="font-weight: 500;">Medium weight text (500)</p>
+//
+// Weight: 5
+//
+// Styleguide 2.5
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+strong, b {
+  font-weight: var(--font-weight-bold);
+}
+
+em, i {
+  font-style: italic;
+}

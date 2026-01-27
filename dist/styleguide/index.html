@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Project Style Guide</title>
+
+  <meta name="description" content=""/>
+  <meta name="generator" content="kss-node"/>
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="kss-assets/kss.css"/>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+
+</head>
+<body id="kss-node" >
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">Project Style Guide</h1>
+  </header>
+  <nav class="kss-nav" aria-label="Style Guide">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-1.html">
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Colors</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-2.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Typography</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<main class="kss-main" aria-label="Content">
+  <article>
+      <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
+        <h1>Project Style Guide</h1>
+<p>Welcome to the style guide for this project. This living document showcases all available UI components, styling patterns, and design tokens used throughout the site.</p>
+<h2>Overview</h2>
+<p>This style guide is automatically generated from inline documentation in our Sass files using KSS (Knyle Style Sheets) notation. It provides:</p>
+<ul>
+<li>Visual examples of all components</li>
+<li>Code snippets for implementation</li>
+<li>Available modifiers and variations</li>
+<li>Usage guidelines</li>
+</ul>
+<h2>How to Use This Guide</h2>
+<p>Browse through the sections in the navigation menu to explore different components:</p>
+<ul>
+<li><strong>Base</strong> - Foundation styles including colors, typography, and variables</li>
+<li><strong>Layout</strong> - Page structure components like headers, footers, and grids</li>
+<li><strong>Modules</strong> - Reusable UI components such as buttons, cards, and forms</li>
+<li><strong>State</strong> - Dynamic states and animations</li>
+</ul>
+<h2>Getting Started</h2>
+<p>All components are built using the SMACSS (Scalable and Modular Architecture for CSS) methodology, which organizes styles into five categories:</p>
+<ol>
+<li><strong>Base</strong> - Default HTML element styles</li>
+<li><strong>Layout</strong> - Major structural components</li>
+<li><strong>Modules</strong> - Reusable, modular components</li>
+<li><strong>State</strong> - How modules look in different states</li>
+<li><strong>Theme</strong> - Color schemes and visual themes</li>
+</ol>
+<h2>Design Tokens</h2>
+<h3>Colors</h3>
+<p>Our color palette is defined in <code>base/_variables.scss</code> and includes:</p>
+<ul>
+<li>Primary, secondary, and accent colors</li>
+<li>Semantic colors (success, warning, danger, info)</li>
+<li>Neutral grays for text and backgrounds</li>
+</ul>
+<h3>Typography</h3>
+<p>Typography scales and font families are defined to maintain visual hierarchy and readability across the site.</p>
+<h3>Spacing</h3>
+<p>We use a consistent spacing scale based on an 8px grid system for predictable and harmonious layouts.</p>
+<h2>Code Standards</h2>
+<ul>
+<li>Use BEM naming convention for modules</li>
+<li>Prefix layout classes with <code>l-</code></li>
+<li>Prefix state classes with <code>is-</code> or <code>has-</code></li>
+<li>Keep specificity low</li>
+<li>Use Sass variables for all values that may change</li>
+</ul>
+<h2>Contributing</h2>
+<p>When adding new components:</p>
+<ol>
+<li>Create the component file in the appropriate SMACSS folder</li>
+<li>Add KSS documentation comments</li>
+<li>Import the file in <code>style.scss</code></li>
+<li>Run <code>gulp styleguide</code> to regenerate the style guide</li>
+</ol>
+<h2>Questions?</h2>
+<p>For more information about KSS documentation syntax, see the <a href="KSS-DOCUMENTATION-GUIDE.md">KSS Documentation Guide</a>.</p>
+
+      </div>
+</article>
+</main>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script>
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

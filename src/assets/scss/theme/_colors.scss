@@ -1,19 +1,111 @@
+// Colors
+//
+// A curated color palette using OKLCH color space for consistent, accessible,
+// and perceptually uniform colors across the design system.
+//
+// Styleguide 1.0
+
+// Complete Palette
+//
+// All five colors derived from the base color. This palette matches the
+// Coolors scheme: https://coolors.co/bdede0-bbdbd1-070322-7e78d2-6f58c9
+//
+// Markup:
+// <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px;">
+//   <div style="background-color: var(--color-accent); padding: 30px; color: var(--base-color); text-align: center;">
+//     <strong>Accent</strong><br>#bdede0
+//   </div>
+//   <div style="background-color: var(--color-surface); padding: 30px; color: var(--base-color); text-align: center;">
+//     <strong>Surface</strong><br>#bbdbd1
+//   </div>
+//   <div style="background-color: var(--base-color); padding: 30px; color: white; text-align: center;">
+//     <strong>Base</strong><br>#070322
+//   </div>
+// </div>
+// <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+//   <div style="background-color: var(--color-secondary); padding: 30px; color: white; text-align: center;">
+//     <strong>Secondary</strong><br>#7e78d2
+//   </div>
+//   <div style="background-color: var(--color-primary); padding: 30px; color: white; text-align: center;">
+//     <strong>Primary</strong><br>#6f58c9
+//   </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide 1.1
+
+// Semantic Colors
+//
+// Colors mapped to specific use cases for consistency across the application.
+// All derived from the base color using OKLCH transformations.
+//
+// Markup:
+// <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px;">
+//   <div style="background-color: var(--color-primary); padding: 20px; color: white;">
+//     Primary - Main brand color
+//   </div>
+//   <div style="background-color: var(--color-secondary); padding: 20px; color: white;">
+//     Secondary - Supporting color
+//   </div>
+// </div>
+// <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+//   <div style="background-color: var(--color-accent); padding: 20px; color: var(--base-color);">
+//     Accent - Highlight color
+//   </div>
+//   <div style="background-color: var(--color-surface); padding: 20px; color: var(--base-color); border: 1px solid var(--base-color);">
+//     Surface - Background color
+//   </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide 1.2
+
+// Action Colors
+//
+// Colors for interactive elements with hover and active states.
+//
+// Markup:
+// <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+//   <div style="background-color: var(--action-color); padding: 20px; color: white;">
+//     Default
+//   </div>
+//   <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
+//     Hover
+//   </div>
+//   <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
+//     Active
+//   </div>
+// </div>
+//
+// --action-color - Default action state
+// --action-color-hover - Hover state (+10% lightness)
+// --action-color-active - Active/pressed state (-10% lightness)
+//
+// Weight: 3
+//
+// Styleguide 1.3
+
 :root {
+  // Base Color
+  // ----------
   --base-color: #070322;
 
-    --triadic-color-primary: oklch(from var(--base-color) l c calc(h + 120));
-    --triadic-color-secondary: oklch(from var(--base-color) l c calc(h - 120));
+  // Semantic Colors (derived from base using OKLCH)
+  // ------------------------------------------------
+  --color-primary: oklch(from var(--base-color) calc(l * 3.10) calc(c * 2.23) calc(h + 3.89));
+  --color-secondary: oklch(from var(--base-color) calc(l * 3.60) calc(c * 1.84) calc(h + 2.3));
+  --color-accent: oklch(from var(--base-color) calc(l * 5.47) calc(c * 0.61) calc(h - 105.4));
+  --color-surface: oklch(from var(--base-color) calc(l * 5.27) calc(c * 0.43) calc(h - 112.33));
 
-  --complement-color: oklch(from var(--base-color) l c calc(h + 180));
-  --border-highlight: var(--complement-color);
+  // Action Colors
+  // -------------
+  --action-color: var(--color-primary);
+  --action-color-hover: oklch(from var(--action-color) calc(l * 1.1) c h);
+  --action-color-active: oklch(from var(--action-color) calc(l * 0.9) c h);
 
-    /* Darken the --base-color by 15% */
-    --base-color-darkened: oklch(from var(--base-color) calc(l * 0.85) c h);
-  /* Assign this color a meaningful variable name */
-  --action-color: var(--base-color-darkened);
-  
-  /* Lighten the --action-color by 15% */
-  --action-color-light: oklch(from var(--action-color) calc(l * 1.15) c h);
-  /* Darken the --action-color by 10% */
-  --action-color-dark: oklch(from var(--action-color) calc(l * 0.9) c h);
+  // Utility Colors
+  // --------------
+  --border-highlight: var(--color-surface);
 }
