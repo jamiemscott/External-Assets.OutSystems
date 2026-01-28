@@ -53,7 +53,7 @@
                   #permalink
               </span>
             </span>
-            Semantic Colors
+            Neutral Colors
           </a>
         </h2>
 
@@ -89,8 +89,9 @@
           </p>
 
           <div class="kss-description">
-            <p>Colors mapped to specific use cases for consistency across the application.
-All derived from the base color using OKLCH transformations.</p>
+            <p>Near-black and near-white colors for better visual comfort.
+Avoiding pure #000000 and #ffffff reduces eye strain and provides
+better color harmonization.</p>
 
           </div>
 
@@ -104,20 +105,12 @@ All derived from the base color using OKLCH transformations.</p>
 
 
           <div class="kss-modifier__example">
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px;">
-  <div style="background-color: var(--color-primary); padding: 20px; color: white;">
-    Primary - Main brand color
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+  <div style="background-color: var(--color-black); padding: 30px; color: var(--color-white); text-align: center;">
+    <strong>Black</strong><br>#0a0a0a
   </div>
-  <div style="background-color: var(--color-secondary); padding: 20px; color: white;">
-    Secondary - Supporting color
-  </div>
-</div>
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-  <div style="background-color: var(--color-accent); padding: 20px; color: var(--base-color);">
-    Accent - Highlight color
-  </div>
-  <div style="background-color: var(--color-surface); padding: 20px; color: var(--base-color); border: 1px solid var(--base-color);">
-    Surface - Background color
+  <div style="background-color: var(--color-white); padding: 30px; color: var(--color-black); text-align: center; border: 1px solid #ddd;">
+    <strong>White</strong><br>#fafafa
   </div>
 </div>
             <div class="kss-modifier__example-footer"></div>
@@ -129,20 +122,12 @@ All derived from the base color using OKLCH transformations.</p>
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px;&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-primary); padding: 20px; color: white;&quot;</span>&gt;</span>
-    Primary - Main brand color
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-black); padding: 30px; color: var(--color-white); text-align: center;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Black<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>#0a0a0a
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-secondary); padding: 20px; color: white;&quot;</span>&gt;</span>
-    Secondary - Supporting color
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-accent); padding: 20px; color: var(--base-color);&quot;</span>&gt;</span>
-    Accent - Highlight color
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-surface); padding: 20px; color: var(--base-color); border: 1px solid var(--base-color);&quot;</span>&gt;</span>
-    Surface - Background color
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-white); padding: 30px; color: var(--color-black); text-align: center; border: 1px solid #ddd;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>White<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>#fafafa
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
           </details>

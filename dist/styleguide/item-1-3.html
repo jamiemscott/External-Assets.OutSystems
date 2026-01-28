@@ -53,7 +53,7 @@
                   #permalink
               </span>
             </span>
-            Action Colors
+            Semantic Colors
           </a>
         </h2>
 
@@ -89,7 +89,8 @@
           </p>
 
           <div class="kss-description">
-            <p>Colors for interactive elements with hover and active states.</p>
+            <p>Colors mapped to specific use cases for consistency across the application.
+All derived from the base color using OKLCH transformations.</p>
 
           </div>
 
@@ -98,109 +99,56 @@
 
         <div class="kss-modifier__wrapper">
           <div class="kss-modifier__heading kss-style">
-            Examples
+            Example
           </div>
 
-            <div class="kss-modifier__default-name kss-style">
-              Default styling
-            </div>
 
           <div class="kss-modifier__example">
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--action-color); padding: 20px; color: white;">
-    Default
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px;">
+  <div style="background-color: var(--color-primary); padding: 20px; color: white;">
+    Primary - Main brand color
   </div>
-  <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
-    Hover
+  <div style="background-color: var(--color-secondary); padding: 20px; color: white;">
+    Secondary - Supporting color
   </div>
-  <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
-    Active
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+  <div style="background-color: var(--color-accent); padding: 20px; color: var(--base-color);">
+    Accent - Highlight color
+  </div>
+  <div style="background-color: var(--color-surface); padding: 20px; color: var(--base-color); border: 1px solid var(--base-color);">
+    Surface - Background color
   </div>
 </div>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
-            <div class="kss-modifier__name kss-style">
-              --action-color
-            </div>
-            <div class="kss-modifier__description kss-style">
-              Default action state
-            </div>
-            <div class="kss-modifier__example">
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--action-color); padding: 20px; color: white;">
-    Default
-  </div>
-  <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
-    Hover
-  </div>
-  <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
-    Active
-  </div>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-            <div class="kss-modifier__name kss-style">
-              --action-color-hover
-            </div>
-            <div class="kss-modifier__description kss-style">
-              Hover state (+10% lightness)
-            </div>
-            <div class="kss-modifier__example">
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--action-color); padding: 20px; color: white;">
-    Default
-  </div>
-  <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
-    Hover
-  </div>
-  <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
-    Active
-  </div>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-            <div class="kss-modifier__name kss-style">
-              --action-color-active
-            </div>
-            <div class="kss-modifier__description kss-style">
-              Active/pressed state (-10% lightness)
-            </div>
-            <div class="kss-modifier__example">
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--action-color); padding: 20px; color: white;">
-    Default
-  </div>
-  <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
-    Hover
-  </div>
-  <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
-    Active
-  </div>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
         </div>
 
           <details class="kss-markup kss-style">
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--action-color); padding: 20px; color: white;&quot;</span>&gt;</span>
-    Default
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-primary); padding: 20px; color: white;&quot;</span>&gt;</span>
+    Primary - Main brand color
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--action-color-hover); padding: 20px; color: white;&quot;</span>&gt;</span>
-    Hover
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-secondary); padding: 20px; color: white;&quot;</span>&gt;</span>
+    Secondary - Supporting color
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--action-color-active); padding: 20px; color: white;&quot;</span>&gt;</span>
-    Active
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-accent); padding: 20px; color: var(--base-color);&quot;</span>&gt;</span>
+    Accent - Highlight color
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-surface); padding: 20px; color: var(--base-color); border: 1px solid var(--base-color);&quot;</span>&gt;</span>
+    Surface - Background color
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>src/assets/scss/theme/_colors.scss</code>, line 65
+          Source: <code>src/assets/scss/theme/_colors.scss</code>, line 192
         </div>
 
     </div>

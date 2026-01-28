@@ -79,16 +79,16 @@
 // Styleguide 2.1
 
 :root {
-  // Font sizes
+  // Font sizes (from Figma style guide)
   --font-size-xs: 0.75rem;    // 12px
   --font-size-sm: 0.875rem;   // 14px
   --font-size-base: 1rem;     // 16px
-  --font-size-lg: 1.125rem;   // 18px
-  --font-size-xl: 1.25rem;    // 20px
+  --font-size-lg: 1.125rem;   // 18px (Medium Text)
+  --font-size-xl: 1.25rem;    // 20px (Large Text)
   --font-size-2xl: 1.5rem;    // 24px
-  --font-size-3xl: 1.875rem;  // 30px
-  --font-size-4xl: 2.25rem;   // 36px
-  --font-size-5xl: 3rem;      // 48px
+  --font-size-3xl: 2.5rem;    // 40px (Heading 3)
+  --font-size-4xl: 3rem;      // 48px (Heading 2)
+  --font-size-5xl: 3.625rem;  // 58px (Heading 1)
   --font-size-6xl: 4rem;      // 64px
 }
 

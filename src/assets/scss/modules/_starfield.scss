@@ -1,0 +1,73 @@
+$stars: 350;         // Number of start per layer
+$depth: 300;         // Depth between star layers
+$speed: 3s;          // Number of seconds to transition between layers
+$width: 3000;        // Width of the starfield
+$height: 960;        // Height of the starfield
+
+.stars-wrapper {
+  background: var(--color-black);
+  clip-path: circle(75% at 50% 50%);
+  height: 100vh; // adjust as needed
+  overflow: hidden;
+  perspective: 340px;
+  width: 100%;
+}
+.stars {
+
+  $box-shadow: ();
+  @for $i from 0 through $stars {
+    $box-shadow: $box-shadow, (random($width) - $width / 2) * 1px (random($height) - $height / 2) * 1px hsl(90, 0%, (75 + random(25)) * 1%);
+  }
+
+  animation: fly $speed linear infinite;
+  border-radius: 50%; // rounded stars - remove or set to 0 if you want squared stars/particles
+  box-shadow: $box-shadow;
+  height: 2px; // adjust as needed, works with 1px too
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform-style: preserve-3d;
+  width: 2px; // adjust as needed, works with 1px too
+
+  &:before, &:after {
+    box-shadow: inherit;
+    content: "";
+    height: inherit;
+    position: absolute;
+    width: inherit;
+  }
+  &:before {
+    animation: fade1 $speed linear infinite;
+    transform: translateZ(-$depth * 1px);
+  }
+  &:after {
+    animation: fade2 $speed linear infinite;
+    transform: translateZ(-$depth * 2 * 1px);
+  }
+}
+
+@keyframes fly {
+  from {
+    transform: translateZ(0px);
+  }
+  to {
+    transform: translateZ($depth * 1px);
+  }
+}
+
+@keyframes fade1 {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .5;
+  }
+}
