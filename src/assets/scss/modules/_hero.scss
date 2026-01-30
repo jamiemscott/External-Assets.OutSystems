@@ -14,10 +14,11 @@
   content: '';
   display: block;
   left: 50%;
+  max-width: 100vw; /* Prevents horizontal overflow */
   position: absolute;
   top: 0;
-  transform: translate(-50%, -35%);
-  width: 140vw;
+  transform: translate(-50%, -50%); /* Centers horizontally, pushes half above */
+  width: 100vw; /* Changed from 140vw */
   z-index: 0;
 }
 

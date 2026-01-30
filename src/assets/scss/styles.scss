@@ -54,6 +54,6 @@ body {
   min-height: 100svh;
   position: relative;
   display: grid;
-
+  overflow-x: clip;
 }
 
