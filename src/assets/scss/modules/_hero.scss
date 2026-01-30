@@ -1,0 +1,10 @@
+#hero {
+  width: 150vw; /* Ensures it's large enough */
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0) 70%);
+  place-self: center; /* If parent is grid/flex */
+  transform: translateY(-75%); /* Push most of it above viewport */
+  background: hotpink;
+  border: 1px dotted white;
+}

@@ -1,4 +1,12 @@
+// Starfield
+// ---------
+// Depth in pixels between star layers. Used by both the starfield
+// module and the stars-fly keyframe animation.
+$depth: 300;
+
 :root {
-  --canvas: var(--base-color);
-  --ink: #ffffff; 
+  color-scheme: dark light;
+
+  --canvas: light-dark(var(--color-white), var(--bg-page));
+  --ink: light-dark(var(--bg-page), var(--color-white));
 }

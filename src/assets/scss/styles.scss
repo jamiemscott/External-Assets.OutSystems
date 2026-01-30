@@ -16,6 +16,7 @@
 @use 'layout/header';
 @use 'layout/main';
 @use 'layout/navigation';
+@use 'layout/section';
 @use 'layout/sidebar';
 
 // Modules (Components)
@@ -24,6 +25,7 @@
 @use 'modules/buttons';
 @use 'modules/cards';
 @use 'modules/forms';
+@use 'modules/hero';
 @use 'modules/modals';
 @use 'modules/starfield';
 @use 'modules/tables';
@@ -35,6 +37,7 @@
 
 // Theme
 // ==========================================================================
+@use 'theme/animations' as theme-animations;
 @use 'theme/colors';
 // @use 'theme/dark-mode'; // Uncomment if using dark mode
 
@@ -50,5 +53,7 @@ body {
   margin: 0;
   min-height: 100svh;
   position: relative;
+  display: grid;
+  overflow: clip;
 }
 

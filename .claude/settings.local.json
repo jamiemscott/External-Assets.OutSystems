@@ -5,7 +5,8 @@
       "WebFetch(domain:coolors.co)",
       "Bash(gulp styleguide)",
       "WebFetch(domain:web.dev)",
-      "WebFetch(domain:www.figma.com)"
+      "WebFetch(domain:www.figma.com)",
+      "Bash(npm run styleguide:*)"
     ]
   }
 }

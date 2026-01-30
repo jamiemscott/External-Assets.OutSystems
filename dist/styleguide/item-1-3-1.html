@@ -42,23 +42,23 @@
 <main class="kss-main" aria-label="Content">
   <article>
 
-    <div id="kssref-1-2-3" class="kss-section kss-section--depth-3 is-fullscreen">
+    <div id="kssref-1-3-1" class="kss-section kss-section--depth-3 is-fullscreen">
 
       <div class="kss-style">
         <h3 class="kss-title kss-title--level-3">
-          <a class="kss-title__permalink" href="#kssref-1-2-3">
+          <a class="kss-title__permalink" href="#kssref-1-3-1">
             <span class="kss-title__ref">
-              1.2.3
+              1.3.1
               <span class="kss-title__permalink-hash">
                   #permalink
               </span>
             </span>
-            Background Colors
+            Notification Colors
           </a>
         </h3>
 
           <p class="kss-toolbar">
-            <a href="#kssref-1-2-3" data-kss-guides="true">
+            <a href="#kssref-1-3-1" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -79,7 +79,7 @@
                 <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
               </svg>
             </a>
-            <a href="#kssref-1-2-3" data-kss-markup="true">
+            <a href="#kssref-1-3-1" data-kss-markup="true">
               <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -89,8 +89,9 @@
           </p>
 
           <div class="kss-description">
-            <p>Dark background shades for page, section, and card surfaces.
-All derived from the base color, providing depth through subtle tinting.</p>
+            <p>Status colors for feedback and notifications. These use fixed OKLCH values
+rather than deriving from the base color, ensuring they remain recognisable
+regardless of brand colour changes.</p>
 
           </div>
 
@@ -104,15 +105,18 @@ All derived from the base color, providing depth through subtle tinting.</p>
 
 
           <div class="kss-modifier__example">
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--bg-page); padding: 30px; color: var(--color-white); text-align: center;">
-    <strong>Page</strong><br>--bg-page
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+  <div style="background-color: var(--color-error); padding: 20px; color: white; text-align: center;">
+    <strong>Error</strong><br>--color-error
   </div>
-  <div style="background-color: var(--bg-section); padding: 30px; color: var(--color-white); text-align: center;">
-    <strong>Section</strong><br>--bg-section
+  <div style="background-color: var(--color-alert); padding: 20px; color: var(--color-black); text-align: center;">
+    <strong>Alert</strong><br>--color-alert
   </div>
-  <div style="background-color: var(--bg-card); padding: 30px; color: var(--color-white); text-align: center;">
-    <strong>Card</strong><br>--bg-card
+  <div style="background-color: var(--color-info); padding: 20px; color: white; text-align: center;">
+    <strong>Info</strong><br>--color-info
+  </div>
+  <div style="background-color: var(--color-success); padding: 20px; color: white; text-align: center;">
+    <strong>Success</strong><br>--color-success
   </div>
 </div>
             <div class="kss-modifier__example-footer"></div>
@@ -124,21 +128,24 @@ All derived from the base color, providing depth through subtle tinting.</p>
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--bg-page); padding: 30px; color: var(--color-white); text-align: center;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Page<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>--bg-page
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-error); padding: 20px; color: white; text-align: center;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>--color-error
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--bg-section); padding: 30px; color: var(--color-white); text-align: center;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Section<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>--bg-section
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-alert); padding: 20px; color: var(--color-black); text-align: center;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Alert<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>--color-alert
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--bg-card); padding: 30px; color: var(--color-white); text-align: center;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Card<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>--bg-card
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-info); padding: 20px; color: white; text-align: center;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Info<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>--color-info
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--color-success); padding: 20px; color: white; text-align: center;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>--color-success
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>src/assets/scss/theme/_colors.scss</code>, line 148
+          Source: <code>src/assets/scss/theme/_colors.scss</code>, line 219
         </div>
 
     </div>
