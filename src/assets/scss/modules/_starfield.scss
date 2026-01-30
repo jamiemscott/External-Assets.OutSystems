@@ -1,36 +1,37 @@
 @use '../base/variables';
 
-$stars: 350;         // Number of start per layer
-$speed: 3s;          // Number of seconds to transition between layers
-$width: 3000;        // Width of the starfield
-$height: 960;        // Height of the starfield
+$stars: 350;
+$speed: 3s;
+$width: 3000;
+$height: 960;
 
 .stars-wrapper {
   background: var(--base-200);
-  height: 100%; // adjust as needed
+  clip-path: circle(50% at 50% 50%); /* Clips to match the circle shape */
+  height: 100%;
+  inset: 0;
   overflow: hidden;
   perspective: 340px;
-  width: 100%;
   position: absolute;
-  inset: 0;
+  width: 100%;
   z-index: 0;
 }
-.stars {
 
+.stars {
   $box-shadow: ();
   @for $i from 0 through $stars {
     $box-shadow: $box-shadow, (random($width) - $width / 2) * 1px (random($height) - $height / 2) * 1px hsl(90, 0%, (75 + random(25)) * 1%);
   }
 
   animation: stars-fly $speed linear infinite;
-  border-radius: 50%; // rounded stars - remove or set to 0 if you want squared stars/particles
+  border-radius: 50%;
   box-shadow: $box-shadow;
-  height: 2px; // adjust as needed, works with 1px too
+  height: 2px;
   left: 50%;
   position: absolute;
   top: 50%;
   transform-style: preserve-3d;
-  width: 2px; // adjust as needed, works with 1px too
+  width: 2px;
 
   &:before, &:after {
     box-shadow: inherit;
