@@ -1,9 +1,11 @@
 #hero {
-  width: 200vw;
   aspect-ratio: 1 / 1;
-  background-color: rgba(138, 43, 226, 0.6);
+  background-color: rgba(138, 43, 226, 0.8);
   clip-path: circle(50% at 50% 50%);
+  filter: drop-shadow(0 0 200px white) 
+          drop-shadow(0 0 100px white)
+          drop-shadow(0 0 50px white);
   margin-left: -50vw;
   transform: translateY(-75%);
-  filter: drop-shadow(0 0 80px rgba(255, 255, 255, 1));
+  width: 200vw;
 }
