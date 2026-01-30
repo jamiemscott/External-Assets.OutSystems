@@ -1,9 +1,4 @@
 #hero {
-  background: linear-gradient(circle at center top, 
-                             yellow 0%, 
-                             orange 30%, 
-                             red 60%, 
-                             transparent 100%);
   display: grid;
   height: 100vh;
   overflow: hidden;
@@ -13,14 +8,15 @@
 
 #hero::before {
   aspect-ratio: 1 / 1;
-  background: radial-gradient(circle, 
-                             cyan 0%, 
-                             blue 40%, 
-                             transparent 70%);
+  background: cyan; /* Solid color for crisp edge */
+  border-radius: 50%; /* Creates the perfect circle */
+  box-shadow: 0 0 100px 50px orange,
+              0 0 200px 100px red; /* Corona glow layers */
   content: '';
   display: block;
   left: 50%;
+  position: absolute; /* Need this to center properly, sorry! */
   top: 0;
-  transform: translate(-50%, -60%);
-  width: 150vw;
+  transform: translate(-50%, -50%); /* Centers horizontally, half above viewport */
+  width: 120vw;
 }
