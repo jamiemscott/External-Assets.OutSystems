@@ -1,22 +1,22 @@
 #hero {
   display: grid;
-  height: 100vh;
+  height: 66vh; /* 2/3 of viewport */
   overflow: hidden;
   place-items: center;
   position: relative;
 }
 
 #hero::before {
-  aspect-ratio: 1 / 1;
-  background: cyan; /* Solid color for crisp edge */
-  border-radius: 50%; /* Creates the perfect circle */
-  box-shadow: 0 0 100px 50px orange,
-              0 0 200px 100px red; /* Corona glow layers */
+  aspect-ratio: 16 / 9; /* Makes it elliptical - wider than tall */
+  background: #5b2c91; /* Dark purple like the reference */
+  border-radius: 50%;
+  box-shadow: 0 0 60px 30px rgba(200, 150, 255, 0.8), /* Tight white/light purple glow */
+              0 0 100px 50px rgba(180, 130, 255, 0.4); /* Slightly softer outer glow */
   content: '';
   display: block;
   left: 50%;
-  position: absolute; /* Need this to center properly, sorry! */
+  position: absolute;
   top: 0;
-  transform: translate(-50%, -50%); /* Centers horizontally, half above viewport */
-  width: 120vw;
+  transform: translate(-50%, -35%); /* Adjusted to show bottom 2/3 */
+  width: 140vw;
 }
