@@ -1,11 +1,26 @@
 #hero {
+  background: linear-gradient(circle at center top, 
+                             yellow 0%, 
+                             orange 30%, 
+                             red 60%, 
+                             transparent 100%);
+  display: grid;
+  height: 100vh;
+  overflow: hidden;
+  place-items: center;
+  position: relative;
+}
+
+#hero::before {
   aspect-ratio: 1 / 1;
-  background-color: rgba(138, 43, 226, 0.8);
-  clip-path: circle(50% at 50% 50%);
-  filter: drop-shadow(0 0 200px white) 
-          drop-shadow(0 0 100px white)
-          drop-shadow(0 0 50px white);
-  margin-left: -50vw;
-  transform: translateY(-75%);
-  width: 200vw;
+  background: radial-gradient(circle, 
+                             cyan 0%, 
+                             blue 40%, 
+                             transparent 70%);
+  content: '';
+  display: block;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -60%);
+  width: 150vw;
 }
