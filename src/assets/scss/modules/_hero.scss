@@ -17,8 +17,8 @@
   max-width: 120vw;
   position: absolute;
   top: 0;
-  transform: translate(-50%, -60%); /* Moved up more */
-  width: 120vw; /* Made wider */
+  transform: translate(-50%, -50%); /* Less negative = lower */
+  width: 120vw;
   z-index: 0;
 }
 
