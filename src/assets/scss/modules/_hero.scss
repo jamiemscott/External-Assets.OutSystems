@@ -1,7 +1,7 @@
 #hero {
   display: grid;
-  height: 66vh;
-  isolation: isolate; /* Creates new stacking context */
+  height: 33.75vw; /* Half the circle height (67.5vw ÷ 2) */
+  isolation: isolate;
   place-items: center;
   position: relative;
 }
@@ -37,6 +37,7 @@
                     var(--base-800) 0%, 
                     var(--base-700) 50%,
                     transparent 100%);
+  bottom: -5%; /* Negative value to push it down beyond the hero boundary */
   content: '';
   display: block;
   filter: blur(25px);
@@ -44,7 +45,6 @@
   left: 50%;
   opacity: 0.85;
   position: absolute;
-  top: 32vh; /* Position at bottom of visible circle */
   transform: translateX(-50%);
   width: 100px;
   z-index: 1;
