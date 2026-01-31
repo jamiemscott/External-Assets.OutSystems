@@ -122,39 +122,19 @@
 }
 
 .hero-starburst {
-  background: conic-gradient(from 45deg at 50% 50%,
-                             transparent 0deg,
-                             var(--base-800) 15deg,
-                             transparent 30deg,
-                             var(--base-700) 45deg,
-                             transparent 60deg,
-                             var(--base-800) 75deg,
-                             transparent 90deg,
-                             var(--base-700) 105deg,
-                             transparent 120deg,
-                             var(--base-800) 135deg,
-                             transparent 150deg,
-                             var(--base-700) 165deg,
-                             transparent 180deg,
-                             var(--base-800) 195deg,
-                             transparent 210deg,
-                             var(--base-700) 225deg,
-                             transparent 240deg,
-                             var(--base-800) 255deg,
-                             transparent 270deg,
-                             var(--base-700) 285deg,
-                             transparent 300deg,
-                             var(--base-800) 315deg,
-                             transparent 330deg,
-                             var(--base-700) 345deg,
-                             transparent 360deg);
-  filter: blur(20px);
-  height: 400px;
-  opacity: 0.6;
+  background: repeating-conic-gradient(from 0deg at 50% 50%,
+                                       transparent 0deg,
+                                       var(--base-700) 2deg,
+                                       var(--base-800) 4deg,
+                                       transparent 6deg,
+                                       transparent 30deg);
+  filter: blur(30px);
+  height: 600px;
+  opacity: 0.5;
   pointer-events: none;
   position: absolute;
-  right: -10%;
-  top: -10%;
-  width: 400px;
+  right: -20%;
+  top: -20%;
+  width: 600px;
   z-index: 4;
 }
