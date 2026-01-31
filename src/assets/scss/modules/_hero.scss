@@ -65,6 +65,30 @@
   width: 400px;
 }
 
+.hero-glow::after {
+  aspect-ratio: 1.5 / 1;
+  background: 
+    radial-gradient(ellipse 70% 60% at 50% 40%,
+                    var(--glow-soft) 0%,
+                    var(--base-800) 20%,
+                    var(--base-700) 40%,
+                    transparent 70%),
+    radial-gradient(ellipse 90% 80% at 50% 50%,
+                    var(--base-700) 0%,
+                    var(--base-600) 30%,
+                    transparent 60%);
+  bottom: -20%;
+  content: '';
+  display: block;
+  filter: blur(120px);
+  height: 350px;
+  left: 50%;
+  opacity: 0.7;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 500px;
+}
+
 /* White Bottom Glow Layer */
 #hero::after {
   aspect-ratio: 4 / 1;
