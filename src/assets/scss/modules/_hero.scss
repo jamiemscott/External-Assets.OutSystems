@@ -6,22 +6,27 @@
   position: relative;
 }
 
-#hero::before {
-  aspect-ratio: 16 / 9;
-  background: var(--canvas);
-  border-radius: 50%;
-  box-shadow: 0 0 20px 8px var(--base-700),
-              0 0 40px 15px var(--base-800),
-              0 0 80px 30px rgba(189, 173, 224, 0.3);
+.hero-glow::before {
+  aspect-ratio: 1 / 1.2;
+  background: 
+    radial-gradient(ellipse 60% 80% at 40% 50%,
+                    var(--glow-mid) 0%,
+                    var(--base-700) 20%,
+                    var(--base-600) 40%,
+                    transparent 70%),
+    radial-gradient(ellipse 80% 100% at 60% 50%,
+                    var(--base-600) 0%,
+                    var(--base-500) 30%,
+                    transparent 60%);
   content: '';
   display: block;
-  left: 50%;
-  max-width: 120vw;
+  filter: blur(100px);
+  height: 500px;
+  opacity: 0.8;
   position: absolute;
-  top: 0;
-  transform: translate(-50%, -50%);
-  width: 120vw;
-  z-index: 2; /* Circle on top */
+  right: -15%;
+  top: 30%;
+  width: 400px;
 }
 
 #hero::after {
