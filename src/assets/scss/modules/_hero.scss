@@ -24,30 +24,16 @@
 }
 
 #hero::after {
-  aspect-ratio: 1 / 1.2; /* Slightly taller than wide, teardrop-ish */
-  background: 
-    radial-gradient(ellipse 80% 70% at 50% 30%, 
-                    var(--color-white) 0%, 
-                    transparent 50%),
-    radial-gradient(ellipse 100% 90% at 50% 40%, 
-                    var(--base-900) 0%, 
-                    var(--base-800) 40%, 
-                    transparent 70%),
-    radial-gradient(ellipse 120% 100% at 50% 50%, 
-                    var(--base-700) 0%, 
-                    var(--base-600) 30%, 
-                    transparent 60%);
+  background: red; /* Temporary - just to see if it renders */
   content: '';
   display: block;
-  filter: blur(15px);
-  height: 15vh; /* Much smaller */
+  height: 200px;
   left: 50%;
-  opacity: 0.9;
   position: absolute;
-  top: 48%; /* Right at bottom edge of circle */
+  top: 40%;
   transform: translateX(-50%);
-  width: 15vh;
-  z-index: -1;
+  width: 200px;
+  z-index: 10; /* Put it on top temporarily */
 }
 
 #hero .container {
