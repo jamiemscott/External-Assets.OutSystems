@@ -1,17 +1,18 @@
 #hero {
   display: grid;
   height: 66vh;
+  isolation: isolate; /* Creates new stacking context */
   place-items: center;
   position: relative;
 }
 
 #hero::before {
   aspect-ratio: 16 / 9;
-  background: var(--canvas);
+  background: var(--base-400);
   border-radius: 50%;
-  box-shadow: 0 0 20px 8px var(--base-700),           /* Light purple tight at edge */
-              0 0 40px 15px var(--base-800),          /* Lighter purple spreading */
-              0 0 80px 30px rgba(189, 173, 224, 0.3); /* Very light purple fading out */
+  box-shadow: 0 0 20px 8px var(--base-700),
+              0 0 40px 15px var(--base-800),
+              0 0 80px 30px rgba(189, 173, 224, 0.3);
   content: '';
   display: block;
   left: 50%;
@@ -20,23 +21,36 @@
   top: 0;
   transform: translate(-50%, -50%);
   width: 120vw;
-  z-index: 0;
+  z-index: 2; /* Circle on top */
 }
 
 #hero::after {
-  background: red; /* Temporary - just to see if it renders */
+  aspect-ratio: 1 / 1.5;
+  background: 
+    radial-gradient(ellipse 60% 50% at 50% 20%, 
+                    var(--color-white) 0%, 
+                    transparent 100%),
+    radial-gradient(ellipse 90% 80% at 50% 30%, 
+                    var(--base-900) 0%, 
+                    transparent 100%),
+    radial-gradient(ellipse 120% 100% at 50% 40%, 
+                    var(--base-800) 0%, 
+                    var(--base-700) 50%,
+                    transparent 100%);
   content: '';
   display: block;
-  height: 200px;
+  filter: blur(25px);
+  height: 120px;
   left: 50%;
+  opacity: 0.85;
   position: absolute;
-  top: 40%;
+  top: 52%;
   transform: translateX(-50%);
-  width: 200px;
-  z-index: 10; /* Put it on top temporarily */
+  width: 100px;
+  z-index: 1;
 }
 
 #hero .container {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
