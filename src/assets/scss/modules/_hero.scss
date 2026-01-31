@@ -37,7 +37,6 @@
                     var(--base-800) 0%, 
                     var(--base-700) 50%,
                     transparent 100%);
-  bottom: 0; /* Position from bottom */
   content: '';
   display: block;
   filter: blur(25px);
@@ -45,6 +44,7 @@
   left: 50%;
   opacity: 0.85;
   position: absolute;
+  top: 32vh; /* Position at bottom of visible circle */
   transform: translateX(-50%);
   width: 100px;
   z-index: 1;
