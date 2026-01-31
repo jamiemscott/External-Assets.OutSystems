@@ -7,7 +7,7 @@ $height: 960;
 
 .stars-wrapper {
   aspect-ratio: 16 / 9;
-  background: var(--base-200);
+  background: var(--canvas);
   border-radius: 50%;
   height: auto;
   left: 50%;
@@ -19,7 +19,7 @@ $height: 960;
   top: 0;
   transform: translate(-50%, -50%);
   width: 120vw;
-  z-index: -1;
+  z-index: 2; /* Same level as circle */
 }
 
 .stars {

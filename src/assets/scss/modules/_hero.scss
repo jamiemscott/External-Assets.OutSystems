@@ -8,7 +8,7 @@
 
 #hero::before {
   aspect-ratio: 16 / 9;
-  background: var(--base-400);
+  background: var(--canvas);
   border-radius: 50%;
   box-shadow: 0 0 20px 8px var(--base-700),
               0 0 40px 15px var(--base-800),
@@ -37,6 +37,7 @@
                     var(--base-800) 0%, 
                     var(--base-700) 50%,
                     transparent 100%);
+  bottom: 0; /* Position from bottom */
   content: '';
   display: block;
   filter: blur(25px);
@@ -44,10 +45,9 @@
   left: 50%;
   opacity: 0.85;
   position: absolute;
-  top: 52%;
   transform: translateX(-50%);
   width: 100px;
-  z-index: 0;
+  z-index: 1;
 }
 
 #hero .container {
