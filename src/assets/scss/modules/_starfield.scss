@@ -6,14 +6,18 @@ $width: 3000;
 $height: 960;
 
 .stars-wrapper {
+  aspect-ratio: 16 / 9;
   background: var(--base-200);
-  clip-path: ellipse(65vw 45vw at 50% 25vw);
-  height: 100%;
-  inset: 0;
+  border-radius: 50%;
+  height: auto;
+  left: 50%;
+  max-width: 120vw;
   overflow: hidden;
   perspective: 340px;
   position: absolute;
-  width: 100%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 120vw;
   z-index: 0;
 }
 
