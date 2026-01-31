@@ -7,17 +7,18 @@
 
 #hero::before {
   aspect-ratio: 16 / 9;
-  background: #5b2c91;
+  background: var(--canvas);
   border-radius: 50%;
-  box-shadow: 0 0 60px 30px rgba(200, 150, 255, 0.8),
-              0 0 100px 50px rgba(180, 130, 255, 0.4);
+  box-shadow: 0 0 20px 8px var(--base-700),           /* Light purple tight at edge */
+              0 0 40px 15px var(--base-800),          /* Lighter purple spreading */
+              0 0 80px 30px rgba(189, 173, 224, 0.3); /* Very light purple fading out */
   content: '';
   display: block;
   left: 50%;
   max-width: 120vw;
   position: absolute;
   top: 0;
-  transform: translate(-50%, -50%); /* Less negative = lower */
+  transform: translate(-50%, -50%);
   width: 120vw;
   z-index: 0;
 }
