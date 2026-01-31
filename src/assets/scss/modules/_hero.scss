@@ -64,22 +64,22 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 0;
+  z-index: 0; /* Behind everything */
 }
 
 .hero-glow::before {
   aspect-ratio: 1 / 1.5;
   background: radial-gradient(ellipse 100% 100% at 50% 50%,
-                              var(--base-600) 0%,
-                              var(--base-500) 30%,
-                              transparent 70%);
+                              var(--glow-mid) 0%,
+                              var(--base-600) 40%,
+                              transparent 80%);
   content: '';
   display: block;
-  filter: blur(60px);
-  height: 300px;
-  opacity: 0.6;
+  filter: blur(80px);
+  height: 400px;
+  opacity: 0.7;
   position: absolute;
-  right: -10%;
-  top: 40%;
-  width: 200px;
+  right: -5%;
+  top: 35%;
+  width: 300px;
 }
