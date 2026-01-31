@@ -6,6 +6,42 @@
   position: relative;
 }
 
+/* Content Layer - Top */
+#hero .container {
+  position: relative;
+  z-index: 4;
+}
+
+/* Circle Layer - With corona glow */
+#hero::before {
+  aspect-ratio: 16 / 9;
+  background: var(--canvas);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 8px var(--base-700),
+              0 0 40px 15px var(--base-800),
+              0 0 80px 30px rgba(189, 173, 224, 0.3);
+  content: '';
+  display: block;
+  left: 50%;
+  max-width: 120vw;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 120vw;
+  z-index: 3;
+}
+
+/* Purple Side Glows Layer */
+.hero-glow {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 .hero-glow::before {
   aspect-ratio: 1 / 1.2;
   background: 
@@ -29,8 +65,9 @@
   width: 400px;
 }
 
+/* White Bottom Glow Layer */
 #hero::after {
-  aspect-ratio: 4 / 1; /* Much wider and flatter */
+  aspect-ratio: 4 / 1;
   background: 
     radial-gradient(ellipse 40% 60% at 50% 50%, 
                     var(--color-white) 0%,
@@ -53,38 +90,6 @@
   opacity: 0.9;
   position: absolute;
   transform: translateX(-50%);
-  width: 600px; /* Much wider */
-  z-index: 1;
-}
-
-#hero .container {
-  position: relative;
-  z-index: 3;
-}
-
-.hero-glow {
-  height: 100%;
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 0; /* Behind everything */
-}
-
-.hero-glow::before {
-  aspect-ratio: 1 / 1.5;
-  background: radial-gradient(ellipse 100% 100% at 50% 50%,
-                              var(--glow-mid) 0%,
-                              var(--base-600) 40%,
-                              transparent 80%);
-  content: '';
-  display: block;
-  filter: blur(80px);
-  height: 400px;
-  opacity: 0.7;
-  position: absolute;
-  right: -5%;
-  top: 35%;
-  width: 300px;
+  width: 600px;
+  z-index: 0;
 }
