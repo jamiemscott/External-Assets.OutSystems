@@ -122,19 +122,19 @@
 }
 
 .hero-starburst {
-  background: repeating-conic-gradient(from 0deg at 50% 50%,
+  background: repeating-conic-gradient(from 0deg at 80% 20%,
                                        transparent 0deg,
                                        var(--base-700) 2deg,
                                        var(--base-800) 4deg,
                                        transparent 6deg,
                                        transparent 30deg);
   filter: blur(30px);
-  height: 600px;
+  height: 1000px;
   opacity: 0.5;
   pointer-events: none;
   position: absolute;
-  right: -20%;
-  top: -20%;
-  width: 600px;
+  right: -40%;
+  top: -60%;
+  width: 1000px;
   z-index: 4;
 }
