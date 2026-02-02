@@ -7,13 +7,13 @@
 }
 
 /* Content Layer - Top */
-#hero .container {
+.hero .container {
   position: relative;
   z-index: 4;
 }
 
 /* Circle Layer - With corona glow */
-#hero::before {
+.hero::before {
   aspect-ratio: 16 / 9;
   background: var(--canvas);
   border-radius: 50%;
@@ -90,7 +90,7 @@
 }
 
 /* White Bottom Glow Layer */
-#hero::after {
+.hero::after {
   aspect-ratio: 4 / 1;
   background: 
     radial-gradient(ellipse 30% 50% at 50% 50%, 
