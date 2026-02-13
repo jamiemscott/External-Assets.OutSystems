@@ -1,0 +1,177 @@
+// News Bar
+// ========
+// Closeable announcement bar using the CSS Popover API.
+//
+// Markup:
+// <aside id="news-bar" class="news-bar" popover="manual" role="region" aria-label="Announcement">
+//   <div class="news-bar__content">
+//     <p class="news-bar__message">
+//       <span class="news-bar__badge">New</span>
+//       Announcement text - <a href="#" class="news-bar__link">Learn more</a>
+//     </p>
+//     <button type="button" class="news-bar__close" popovertarget="news-bar" popovertargetaction="hide" aria-label="Dismiss announcement">
+//       <svg>...</svg>
+//     </button>
+//   </div>
+// </aside>
+//
+// Styleguide 3.3
+
+.news-bar {
+  // Popover reset - remove default popover styles
+  background: transparent;
+  border: none;
+  inset: unset;
+  margin: 0;
+  padding: 0;
+
+  // Positioning - Fixed at top
+  height: var(--news-bar-height);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 101;
+
+  // Background with gradient
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--base-400) 80%, transparent),
+    color-mix(in oklch, var(--base-500) 80%, transparent),
+    color-mix(in oklch, var(--base-400) 80%, transparent)
+  );
+  backdrop-filter: blur(8px);
+
+  // Bottom border
+  border-bottom: 1px solid color-mix(in oklch, var(--base-600) 40%, transparent);
+
+  // Transition for open/close
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  // Hidden state (before popover opens)
+  &:not(:popover-open) {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+  }
+}
+
+.news-bar__content {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: var(--content-max-width, 1200px);
+  padding-inline: 1.5rem;
+}
+
+.news-bar__message {
+  align-items: center;
+  color: var(--grey-700);
+  display: flex;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  gap: 0.75rem;
+  margin: 0;
+}
+
+// "New" Badge
+.news-bar__badge {
+  align-items: center;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 4px;
+  color: var(--color-white);
+  display: inline-flex;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  padding-block: 2px;
+  padding-inline: 0.5rem;
+  text-transform: uppercase;
+}
+
+// Link within message
+.news-bar__link {
+  color: var(--color-white);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--glow-core);
+  }
+
+  &:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--glow-mid);
+    outline-offset: 2px;
+  }
+}
+
+// Close Button
+.news-bar__close {
+  // Reset button styles
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  // Layout
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  // Sizing
+  height: 32px;
+  width: 32px;
+
+  // Colors
+  border-radius: 4px;
+  color: var(--grey-600);
+
+  // Transitions
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  // Hover state
+  &:hover {
+    background: color-mix(in oklch, var(--color-white) 10%, transparent);
+    color: var(--color-white);
+  }
+
+  // Focus state
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--glow-mid);
+    outline-offset: 2px;
+  }
+
+  // Icon sizing
+  svg {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+// Body offset when news bar is open
+body:has(.news-bar:popover-open) {
+  padding-top: calc(var(--news-bar-height) + var(--header-height));
+}
+
+// Header offset when news bar is open
+body:has(.news-bar:popover-open) .header {
+  top: var(--news-bar-height);
+}

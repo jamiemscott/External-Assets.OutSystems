@@ -31,36 +31,42 @@
   <link rel="stylesheet" href="assets/css/styles.css?v={{timestamp}}">
 </head>
 <body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- News Bar -->
+  <!-- @@include('partials/news-bar.html') -->
+
   <div class="layout">
   
   <!-- Header -->
-  <!-- @@include('partials/header.html') -->
-  
+  @@include('partials/header.html')
+
   <!-- Main Content -->
-  <main class="layout-grid">
+  <main id="main-content" class="layout-grid">
     
     <!-- Hero Section -->
-    @@include('partials/hero.html')
+    <!-- @@include('partials/hero.html') -->
     
     <!-- Benefits Section -->
-    @@include('partials/benefits.html')
+    <!-- @@include('partials/benefits.html') -->
     
     <!-- Services Section -->
-    @@include('partials/services.html')
+    <!-- @@include('partials/services.html') -->
     
     <!-- Community Section -->
-    @@include('partials/community.html')
+    <!-- @@include('partials/community.html') -->
     
     <!-- Testimonials Section -->
-    @@include('partials/testimonials.html')
+    <!-- @@include('partials/testimonials.html') -->
     
     <!-- FAQs Section -->
-    @@include('partials/faqs.html')
+    <!-- @@include('partials/faqs.html') -->
     
   </main>
   
   <!-- Footer -->
-  @@include('partials/footer.html')
+  <!-- @@include('partials/footer.html') -->
 
   </div>
   

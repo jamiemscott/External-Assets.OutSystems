@@ -7,6 +7,7 @@
 @use 'base/variables';
 @use 'base/mixins';
 @use 'base/reset';
+@use 'base/spacing';
 @use 'base/typography';
 
 // Layout
@@ -25,8 +26,12 @@
 @use 'modules/buttons';
 @use 'modules/cards';
 @use 'modules/forms';
+@use 'modules/galaxy-icon';
+@use 'modules/header-cta';
 @use 'modules/hero';
+@use 'modules/logo';
 @use 'modules/modals';
+@use 'modules/news-bar';
 @use 'modules/starfield';
 @use 'modules/tables';
 

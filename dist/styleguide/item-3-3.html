@@ -52,23 +52,23 @@
 <main class="kss-main" aria-label="Content">
   <article>
 
-    <div id="kssref-1-4" class="kss-section kss-section--depth-2 is-fullscreen">
+    <div id="kssref-3-3" class="kss-section kss-section--depth-2 is-fullscreen">
 
       <div class="kss-style">
         <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-1-4">
+          <a class="kss-title__permalink" href="#kssref-3-3">
             <span class="kss-title__ref">
-              1.4
+              3.3
               <span class="kss-title__permalink-hash">
                   #permalink
               </span>
             </span>
-            Action Colors
+            News Bar &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Closeable announcement bar using the CSS Popover API.
           </a>
         </h2>
 
           <p class="kss-toolbar">
-            <a href="#kssref-1-4" data-kss-guides="true">
+            <a href="#kssref-3-3" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -89,7 +89,7 @@
                 <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
               </svg>
             </a>
-            <a href="#kssref-1-4" data-kss-markup="true">
+            <a href="#kssref-3-3" data-kss-markup="true">
               <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -98,119 +98,52 @@
             </a>
           </p>
 
-          <div class="kss-description">
-            <p>Colors for interactive elements with hover and active states.</p>
-
-          </div>
 
 
       </div>
 
         <div class="kss-modifier__wrapper">
           <div class="kss-modifier__heading kss-style">
-            Examples
+            Example
           </div>
 
-            <div class="kss-modifier__default-name kss-style">
-              Default styling
-            </div>
 
           <div class="kss-modifier__example">
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--action-color); padding: 20px; color: white;">
-    Default
+            <aside id="news-bar" class="news-bar" popover="manual" role="region" aria-label="Announcement">
+  <div class="news-bar__content">
+    <p class="news-bar__message">
+      <span class="news-bar__badge">New</span>
+      Announcement text - <a href="#" class="news-bar__link">Learn more</a>
+    </p>
+    <button type="button" class="news-bar__close" popovertarget="news-bar" popovertargetaction="hide" aria-label="Dismiss announcement">
+      <svg>...</svg>
+    </button>
   </div>
-  <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
-    Hover
-  </div>
-  <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
-    Active
-  </div>
-</div>
+</aside>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
-            <div class="kss-modifier__name kss-style">
-              --action-color
-            </div>
-            <div class="kss-modifier__description kss-style">
-              Default action state
-            </div>
-            <div class="kss-modifier__example">
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--action-color); padding: 20px; color: white;">
-    Default
-  </div>
-  <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
-    Hover
-  </div>
-  <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
-    Active
-  </div>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-            <div class="kss-modifier__name kss-style">
-              --action-color-hover
-            </div>
-            <div class="kss-modifier__description kss-style">
-              Hover state (+10% lightness)
-            </div>
-            <div class="kss-modifier__example">
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--action-color); padding: 20px; color: white;">
-    Default
-  </div>
-  <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
-    Hover
-  </div>
-  <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
-    Active
-  </div>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-            <div class="kss-modifier__name kss-style">
-              --action-color-active
-            </div>
-            <div class="kss-modifier__description kss-style">
-              Active/pressed state (-10% lightness)
-            </div>
-            <div class="kss-modifier__example">
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-  <div style="background-color: var(--action-color); padding: 20px; color: white;">
-    Default
-  </div>
-  <div style="background-color: var(--action-color-hover); padding: 20px; color: white;">
-    Hover
-  </div>
-  <div style="background-color: var(--action-color-active); padding: 20px; color: white;">
-    Active
-  </div>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
         </div>
 
           <details class="kss-markup kss-style">
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--action-color); padding: 20px; color: white;&quot;</span>&gt;</span>
-    Default
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;news-bar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;news-bar&quot;</span> <span class="hljs-attr">popover</span>=<span class="hljs-string">&quot;manual&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;region&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Announcement&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;news-bar__content&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;news-bar__message&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;news-bar__badge&quot;</span>&gt;</span>New<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      Announcement text - <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;news-bar__link&quot;</span>&gt;</span>Learn more<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;news-bar__close&quot;</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">&quot;news-bar&quot;</span> <span class="hljs-attr">popovertargetaction</span>=<span class="hljs-string">&quot;hide&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Dismiss announcement&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--action-color-hover); padding: 20px; color: white;&quot;</span>&gt;</span>
-    Hover
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: var(--action-color-active); padding: 20px; color: white;&quot;</span>&gt;</span>
-    Active
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>src/assets/scss/theme/_colors.scss</code>, line 245
+          Source: <code>src/assets/scss/modules/_news-bar.scss</code>, line 1
         </div>
 
     </div>

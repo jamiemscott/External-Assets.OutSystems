@@ -1,0 +1,26 @@
+// Logo
+// ====
+// Text-based logo with CSS diamond decorations.
+//
+// Markup:
+// <a href="/" class="logo" aria-label="Sylphic - Return to homepage">
+//   <span class="logo__diamond logo__diamond--left" aria-hidden="true"></span>
+//   <span class="logo__text">Sylphic</span>
+//   <span class="logo__diamond logo__diamond--right" aria-hidden="true"></span>
+// </a>
+//
+// Styleguide 3.1
+
+.logo {
+  align-items: center;
+  color: var(--color-white);
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.25lh;
+  justify-content: flex-start;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
+  text-decoration: none;
+  text-shadow: 0 0 20px color-mix(in oklch, var(--glow-mid) 30%, transparent);
+}

@@ -1,0 +1,33 @@
+i.galaxy-icon {
+    aspect-ratio: 1 / 1;
+    background: var(--color-white);
+    border-radius: 50%;
+    display: block;
+    content: "";
+    corner-shape: scoop;
+    position: relative;
+    width: 1lh;
+
+    &::after, &::before {
+      aspect-ratio: inherit;
+      background: inherit;
+      border-radius: inherit;
+      content: "";
+      corner-shape: inherit;
+      position: absolute;
+      
+    }
+
+    &::after {
+      right: 0;
+      top: 0;
+      width: 0.3lh;
+    }
+
+    &::before {
+      bottom: -5px;
+      right: -4px;
+      width: 0.5lh;
+    }
+
+  }

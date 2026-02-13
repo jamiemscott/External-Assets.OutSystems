@@ -1,4 +1,25 @@
+// Header
+// ======
+// Fixed header container with glassmorphism effect.
+//
+// Styleguide 2.1
+
 header[role="banner"] {
+  border-block-end: 1px solid rgba(from var(--color-white) r g b / 0.2);
   grid-column: full-width;
   grid-row: header;
+  padding-block: var(--spacing-block);
+  z-index: 1000;
+
+  & > div {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  nav {
+    margin-inline: auto
+  }
+
 }

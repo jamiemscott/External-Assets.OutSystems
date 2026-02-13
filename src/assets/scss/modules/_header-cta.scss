@@ -1,0 +1,97 @@
+// Header CTA
+// ==========
+// Primary action button in header with gradient styling.
+//
+// Markup:
+// <div class="header-cta">
+//   <a href="#signup" class="header-cta__button">Sign Up</a>
+// </div>
+//
+// Styleguide 3.2
+
+.header-cta {
+  align-items: center;
+  display: flex;
+}
+
+.header-cta__button {
+  // Layout
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+  justify-content: center;
+
+  // Sizing
+  min-width: 100px;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+
+  // Typography
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+
+  // Colors
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: var(--color-white);
+
+  // Shape
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  // Effects
+  box-shadow:
+    0 4px 16px -4px color-mix(in oklch, var(--gradient-end) 40%, transparent),
+    inset 0 1px 0 color-mix(in oklch, var(--color-white) 15%, transparent);
+
+  // Transitions
+  transition:
+    box-shadow 0.2s ease,
+    filter 0.2s ease,
+    transform 0.2s ease;
+
+  // Hover state
+  &:hover {
+    box-shadow:
+      0 8px 24px -4px color-mix(in oklch, var(--gradient-end) 50%, transparent),
+      inset 0 1px 0 color-mix(in oklch, var(--color-white) 20%, transparent);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+
+  // Active state
+  &:active {
+    box-shadow:
+      0 2px 8px -2px color-mix(in oklch, var(--gradient-end) 30%, transparent),
+      inset 0 1px 0 color-mix(in oklch, var(--color-white) 10%, transparent);
+    filter: brightness(0.95);
+    transform: translateY(0);
+  }
+
+  // Focus state
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--glow-core);
+    outline-offset: 3px;
+  }
+}
+
+// Outline variant
+.header-cta__button--outline {
+  background: transparent;
+  border: 1px solid var(--base-600);
+  box-shadow: none;
+  color: var(--color-white);
+
+  &:hover {
+    background: color-mix(in oklch, var(--base-600) 20%, transparent);
+    border-color: var(--base-700);
+    filter: none;
+    transform: none;
+  }
+}
