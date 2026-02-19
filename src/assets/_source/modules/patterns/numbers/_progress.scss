@@ -1,0 +1,189 @@
+/*! 6.5.4. Progress */
+/*! 6.5.4.1 Progress Bar */
+.osui-progress-bar{
+  --progress-value:0%;
+  min-height:var(--thickness);
+  position:relative;
+}
+.osui-progress-bar{
+  -servicestudio-min-height:var(--thickness, 8px);
+}
+.osui-progress-bar__container{
+  min-height:var(--thickness);
+  position:relative;
+}
+.osui-progress-bar__container{
+  -servicestudio-min-height:var(--thickness, 8px);
+}
+.osui-progress-bar__container.animate-entrance .osui-progress-bar__value:before{
+  -webkit-transition-delay:var(--progress-initial-speed, 0.5s);
+       -o-transition-delay:var(--progress-initial-speed, 0.5s);
+          transition-delay:var(--progress-initial-speed, 0.5s);
+}
+.osui-progress-bar__container.animate-entrance .osui-progress-bar__value:before, .osui-progress-bar__container.animate-progress-change .osui-progress-bar__value:before{
+  -webkit-transition-duration:var(--progress-speed, 0.35s);
+       -o-transition-duration:var(--progress-speed, 0.35s);
+          transition-duration:var(--progress-speed, 0.35s);
+}
+.osui-progress-bar__value{
+  border-radius:calc(var(--shape) / 2);
+  height:var(--thickness);
+  left:0;
+  overflow:hidden;
+  position:absolute;
+  right:0;
+}
+.osui-progress-bar__value{
+  -servicestudio-height:var(--thickness, 8px);
+}
+.osui-progress-bar__value:after, .osui-progress-bar__value:before{
+  border-radius:calc(var(--shape) / 2);
+  content:"";
+  height:100%;
+  left:0;
+  position:absolute;
+  top:0;
+}
+.osui-progress-bar__value:after, .osui-progress-bar__value:before{
+  -servicestudio-border-radius:var(--shape, var(--border-radius-rounded));
+}
+.osui-progress-bar__value:after{
+  background:var(--trail-color);
+  width:100%;
+}
+.osui-progress-bar__value:after{
+  -servicestudio-background:var(--trail-color, var(--background-color-neutral-3, var(--color-neutral-3)));
+}
+.osui-progress-bar__value:before{
+  background:var(--progress-gradient, var(--progress-color));
+  width:var(--progress-value);
+  z-index:var(--layer-local-tier-1);
+}
+.osui-progress-bar__value:before{
+  -servicestudio-background:var(--progress-color, var(--background-color-primary, var(--color-primary)));
+  -servicestudio-width:var(--progress-value, 50%);
+}
+.osui-progress-bar__content{
+  left:0;
+  padding:var(--space-none) var(--space-s);
+  position:absolute;
+  top:50%;
+  -webkit-transform:translateY(-50%);
+      -ms-transform:translateY(-50%);
+          transform:translateY(-50%);
+  width:100%;
+  z-index:var(--layer-local-tier-1);
+}
+.osui-progress-bar__content{
+  -servicestudio-text-align:center;
+}
+.is-rtl .osui-progress-bar__value:before{
+  left:inherit;
+  right:0;
+}
+.os-high-contrast .osui-progress-bar__container{
+  min-height:calc(2 * var(--thickness));
+}
+.os-high-contrast .osui-progress-bar__value{
+  border:var(--border-size-m) solid var(--border-color-neutral-7, var(--color-neutral-7));
+  height:calc(2 * var(--thickness));
+}
+.os-high-contrast .osui-progress-bar__value:before, .os-high-contrast .osui-progress-bar__value:after{
+  border:var(--border-size-m) solid var(--border-color-neutral-7, var(--color-neutral-7));
+  top:calc(-1 * var(--border-size-m));
+  left:calc(-1 * var(--border-size-m));
+}
+/*! 6.5.4.2 Progress Circle */
+[data-block*=ProgressCircle]{
+  display:inline-block;
+}
+.osui-progress-circle{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  height:var(--progress-circle-size);
+  position:relative;
+  width:var(--progress-circle-size);
+}
+.osui-progress-circle__container{
+  display:inline-block;
+  height:var(--circle-size);
+  margin:0 auto;
+  position:relative;
+  width:var(--circle-size);
+  z-index:var(--layer-global-screen);
+}
+.osui-progress-circle__container > div{
+  display:block;
+  min-height:inherit;
+  min-width:inherit;
+}
+.osui-progress-circle__container__progress-path, .osui-progress-circle__container__trail-path{
+  cx:50%;
+  cy:50%;
+  fill:transparent;
+  left:0;
+  position:absolute;
+  r:var(--radius);
+  stroke-width:var(--thickness);
+  top:0;
+  -webkit-transform:rotate(-90deg);
+      -ms-transform:rotate(-90deg);
+          transform:rotate(-90deg);
+  -webkit-transform-origin:center;
+      -ms-transform-origin:center;
+          transform-origin:center;
+}
+.osui-progress-circle__container__progress-path{
+  stroke:var(--progress-circle-gradient-url, var(--progress-color, var(--border-color-primary, var(--color-primary))));
+  stroke-dasharray:var(--stroke-dasharray);
+  stroke-dashoffset:var(--stroke-dashoffset);
+  stroke-linecap:var(--shape);
+  -webkit-transition:stroke-dashoffset 0;
+  -o-transition:stroke-dashoffset 0;
+  transition:stroke-dashoffset 0;
+}
+.osui-progress-circle__container__progress-path.animate-entrance, .osui-progress-circle__container__progress-path.animate-progress-change{
+  -webkit-transition-duration:var(--progress-speed, 0.35s);
+       -o-transition-duration:var(--progress-speed, 0.35s);
+          transition-duration:var(--progress-speed, 0.35s);
+}
+.osui-progress-circle__container__progress-path.animate-entrance{
+  -webkit-transition-delay:var(--progress-initial-speed, 0.5s);
+       -o-transition-delay:var(--progress-initial-speed, 0.5s);
+          transition-delay:var(--progress-initial-speed, 0.5s);
+}
+.osui-progress-circle__container__trail-path{
+  stroke:var(--trail-color, var(--border-color-neutral-3, var(--color-neutral-3)));
+}
+.osui-progress-circle__content{
+  left:50%;
+  position:absolute;
+  text-align:center;
+  top:50%;
+  -webkit-transform:translate(-50%, -50%);
+      -ms-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
+  width:80%;
+  z-index:var(--layer-local-tier-1);
+}
+.osui-progress-circle .osui-inline-svg{
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  height:var(--circle-size) !important;
+  position:relative;
+  width:var(--circle-size);
+}
+.osui-progress-circle .osui-inline-svg svg{
+  height:var(--circle-size);
+  width:var(--circle-size);
+}
+.is-rtl .osui-progress-circle .svg-wrapper{
+  -webkit-transform:scaleX(-1);
+      -ms-transform:scaleX(-1);
+          transform:scaleX(-1);
+}

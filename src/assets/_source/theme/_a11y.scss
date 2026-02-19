@@ -1,0 +1,39 @@
+/*! 7.1. a11y (Accessibility) */
+.wcag-hide-text{
+  border:0;
+  clip:rect(0 0 0 0);
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  white-space:nowrap;
+  width:1px;
+}
+.wcag-hide-text{
+  -servicestudio-display:none;
+}
+.wcag-hide-text.focus-trap-top,
+.wcag-hide-text.focus-trap-bottom{
+  position:fixed;
+}
+.skip-nav{
+  left:var(--space-xl);
+  opacity:0;
+  padding:var(--space-s) var(--space-base);
+  pointer-events:none;
+  position:absolute;
+  text-transform:uppercase;
+  top:10px;
+  z-index:var(--layer-global-instant-interaction);
+}
+.skip-nav[data-showskipcontent=false]{
+  display:none;
+}
+.skip-nav[data-showskipcontent=true]{
+  display:block;
+}
+.has-accessible-features .skip-nav:focus, .has-accessible-features .skip-nav:active{
+  opacity:1;
+  pointer-events:auto;
+}

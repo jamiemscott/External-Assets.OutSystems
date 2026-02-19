@@ -1,0 +1,73 @@
+/*! 6.2.10. Flip Content */
+.osui-flip-content{
+  -webkit-perspective:200vw;
+          perspective:200vw;
+  position:relative;
+  overflow:hidden;
+}
+.osui-flip-content{
+  -servicestudio--webkit-perspective:initial;
+  -servicestudio-perspective:initial;
+}
+.firefox .osui-flip-content{
+  -webkit-transform:perspective(200vw);
+          transform:perspective(200vw);
+  -webkit-transform-style:preserve-3d;
+          transform-style:preserve-3d;
+}
+.osui-flip-content--flipped .osui-flip-content__container{
+  -webkit-transform:rotateY(-90deg);
+          transform:rotateY(-90deg);
+}
+.osui-flip-content--flipped .osui-flip-content__container__front{
+  position:absolute;
+}
+.osui-flip-content--flipped .osui-flip-content__container__back{
+  position:relative;
+  -webkit-transform:rotateY(90deg);
+          transform:rotateY(90deg);
+}
+.osui-flip-content__container{
+  cursor:default;
+  position:relative;
+  -webkit-transform-style:preserve-3d;
+          transform-style:preserve-3d;
+  -webkit-transition:all 630ms cubic-bezier(0.03, 0.01, 0.67, 1.97);
+  -o-transition:all 630ms cubic-bezier(0.03, 0.01, 0.67, 1.97);
+  transition:all 630ms cubic-bezier(0.03, 0.01, 0.67, 1.97);
+}
+.osui-flip-content__container--flip-self{
+  cursor:pointer;
+}
+.osui-flip-content__container{
+  -servicestudio--webkit-transform-style:initial;
+  -servicestudio-transform-style:initial;
+}
+.osui-flip-content__container__front, .osui-flip-content__container__back{
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  left:0;
+  top:0;
+}
+.osui-flip-content__container__front:empty, .osui-flip-content__container__back:empty{
+  -servicestudio-min-height:80px;
+}
+.osui-flip-content__container__front{
+  position:relative;
+  z-index:var(--layer-global-screen);
+}
+.osui-flip-content__container__back{
+  position:absolute;
+  width:100%;
+}
+.osui-flip-content__container__back{
+  -servicestudio-position:static;
+}
+.is-rtl .osui-flip-content--flipped .osui-flip-content__container{
+  -webkit-transform:rotateY(90deg);
+          transform:rotateY(90deg);
+}
+.is-rtl .osui-flip-content--flipped .osui-flip-content__container__back{
+  -webkit-transform:rotateY(-90deg);
+          transform:rotateY(-90deg);
+}

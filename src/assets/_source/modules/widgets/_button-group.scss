@@ -1,0 +1,109 @@
+/*! 4.13. Button Group */
+.button-group{
+  background-color:transparent;
+  border-radius:0;
+  padding:var(--space-none);
+}
+.button-group-item{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-s) solid var(--border-color-primary, var(--color-primary));
+  border-radius:0;
+  color:var(--text-color-primary, var(--color-primary));
+  cursor:pointer;
+  font-size:var(--font-size-s);
+  font-weight:var(--font-semi-bold);
+  height:40px;
+  padding:var(--space-none) var(--space-base);
+  position:relative;
+}
+.button-group-item:first-child{
+  border-radius:var(--border-radius-soft) var(--border-radius-none) var(--border-radius-none) var(--border-radius-soft);
+}
+.button-group-item[disabled]{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+  pointer-events:none;
+}
+.button-group-item[disabled].button-group-selected-item{
+  background-color:var(--background-color-neutral-2, var(--color-neutral-2));
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+.button-group-item[disabled]:not(:first-child), .button-group-item:not(:first-child){
+  border-left:var(--border-size-none);
+}
+.button-group-item:last-child{
+  border-radius:var(--border-radius-none) var(--border-radius-soft) var(--border-radius-soft) var(--border-radius-none);
+}
+.button-group-item.button-group-selected-item{
+  background-color:var(--background-color-primary, var(--color-primary));
+  color:var(--text-color-neutral-0, var(--color-neutral-0));
+}
+.button-group.not-valid{
+  position:relative;
+}
+.button-group.not-valid .validation-message{
+  bottom:-12px;
+  position:relative;
+}
+.layout-native .header-top-content .button-group-item{
+  background-color:var(--background-color-header, var(--header-color));
+  border:0;
+  border-bottom:var(--border-size-m) solid transparent;
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+}
+.layout-native .header-top-content .button-group-item:last-child{
+  border-radius:0;
+}
+.layout-native .header-top-content .button-group-item.button-group-selected-item{
+  border-bottom:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+  color:var(--text-color-neutral-10, var(--color-neutral-10));
+}
+.layout-native .header-top-content .button-group-item[disabled]{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+.layout-native .header-top-content .button-group-item[disabled].button-group-selected-item{
+  border-bottom:var(--border-size-m) solid var(--border-color-neutral-6, var(--color-neutral-6));
+}
+.tablet .button-group-item,
+.phone .button-group-item{
+  height:48px;
+}
+.is-rtl .button-group-item:first-child{
+  border-radius:var(--border-radius-none) var(--border-radius-soft) var(--border-radius-soft) var(--border-radius-none);
+}
+.is-rtl .button-group-item:not(:first-child){
+  border-left:var(--border-size-s) solid var(--border-color-primary, var(--color-primary));
+  border-right:var(--border-size-none);
+}
+.is-rtl .button-group-item:not(:first-child)[disabled]{
+  border-left:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+}
+.is-rtl .button-group-item:last-child{
+  border-radius:var(--border-radius-soft) var(--border-radius-none) var(--border-radius-none) var(--border-radius-soft);
+}
+.has-accessible-features .button-group-item:focus{
+  -webkit-box-shadow:none;
+          box-shadow:none;
+}
+.has-accessible-features .button-group-item:focus:before{
+  bottom:-1px;
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+  content:"";
+  left:-1px;
+  position:absolute;
+  right:-1px;
+  top:-1px;
+  z-index:var(--layer-global-screen);
+}
+.os-high-contrast .button-group-item.button-group-selected-item:before{
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  border:var(--border-size-l) solid var(--border-color-primary, var(--color-primary));
+}

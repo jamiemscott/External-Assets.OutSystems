@@ -1,0 +1,50 @@
+/*! 6.8.15. Section Index */
+.section-index{
+  border-left:var(--border-size-s) solid var(--border-color-neutral-5, var(--color-neutral-5));
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+}
+.section-index.is--sticky{
+  position:sticky;
+  top:var(--top-position);
+}
+.section-index-item{
+  cursor:pointer;
+}
+.section-index-item:last-child{
+  margin-bottom:var(--space-none);
+}
+.section-index-item.is--active{
+  border-left:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+  font-weight:var(--font-semi-bold);
+}
+.section-index a, .section-index a:visited{
+  border-left:var(--border-size-m) solid transparent;
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+  margin-bottom:var(--space-s);
+  padding-left:var(--space-base);
+}
+.section-index a:hover{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.layout-native .section-index.is--sticky{
+  position:fixed;
+  top:calc(var(--header-size) + var(--header-size-content) + var(--top-position) + var(--os-safe-area-top));
+}
+.android .layout-native .section-index.is--sticky{
+  top:calc(var(--header-size) + var(--header-size-content) + var(--top-position) + max(var(--status-bar-height, 0px), var(--safe-area-inset-top, 0px)));
+}
+.safari [data-block*=SectionIndex]{
+  display:contents;
+}
+.has-accessible-features .section-index a:focus{
+  background-color:transparent;
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+}

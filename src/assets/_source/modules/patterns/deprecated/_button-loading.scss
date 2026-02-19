@@ -1,0 +1,50 @@
+/*! 6.8.2. Button Loading */
+button.OSFillParent{
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+}
+.is--loading{
+  position:relative;
+}
+.is--loading .btn, .is--loading .btn *{
+  pointer-events:none;
+}
+.is--loading .btn{
+  display:inline-block;
+}
+.btn-loading{
+  display:none;
+  position:absolute;
+}
+.btn-show-label .btn-loading{
+  position:relative;
+}
+.is--loading .btn-loading{
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+}
+.is--loading:not(.btn-show-label) .btn-loading{
+  left:50%;
+  top:50%;
+  -webkit-transform:translate(-50%, -50%);
+      -ms-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
+}
+.is--loading .btn-label{
+  opacity:0;
+}
+.btn-show-label .btn-label{
+  opacity:1;
+}
+.btn-loading .loading-spinner{
+  -webkit-animation:loadingSpinner 850ms cubic-bezier(0.7, 1.05, 0.78, 0.78) infinite;
+          animation:loadingSpinner 850ms cubic-bezier(0.7, 1.05, 0.78, 0.78) infinite;
+  border:var(--border-size-m) solid currentColor;
+  border-radius:var(--border-radius-circle);
+  border-top:var(--border-size-m) solid transparent;
+  height:16px;
+  width:16px;
+  will-change:transform;
+}

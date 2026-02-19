@@ -1,0 +1,28 @@
+/*! 3.13. Section */
+.full-width-section{
+  position:relative;
+}
+.full-width-section .ThemeGrid_Container{
+  padding:var(--space-none) var(--space-xl);
+}
+.section-background{
+  left:0;
+  position:absolute;
+  top:0;
+  height:100%;
+  overflow:hidden;
+  width:100%;
+}
+.section-background:empty{
+  -servicestudio-min-height:80px;
+  -servicestudio-position:relative;
+}
+.section-background img{
+  height:100%;
+  -o-object-fit:cover;
+     object-fit:cover;
+  width:100%;
+}
+.section-content{
+  position:relative;
+}

@@ -1,0 +1,302 @@
+/*! 3.6. Layout Native - Menu */
+.layout-native.menu-visible .app-menu-content:after{
+  pointer-events:none;
+}
+.layout-native .app-menu-content:after{
+  background:transparent;
+  content:"";
+  height:100%;
+  position:absolute;
+  right:-24px;
+  top:calc(var(--header-size) + var(--header-size-content));
+  width:24px;
+}
+.desktop .layout.layout-native.layout-side.aside-expandable .app-menu-content{
+  padding-top:calc(var(--header-size) + var(--header-size-content) + var(--os-safe-area-top));
+}
+.desktop .layout.layout-native.layout-side.aside-expandable.hide-header-on-scroll:not(.header-is--visible) .app-menu-content{
+  padding-top:var(--header-size-content);
+}
+.desktop .layout-native.aside-visible .app-menu-content, .desktop .layout-native.aside-expandable .app-menu-content{
+  -webkit-box-shadow:var(--shadow-m);
+          box-shadow:var(--shadow-m);
+  z-index:var(--osui-menu-layer);
+}
+.desktop .layout-native .landscape.android.layout-side.aside-expandable .app-menu-content,
+.tablet .layout-native .landscape.android.layout-side.aside-expandable .app-menu-content{
+  padding-top:calc(var(--header-size) + var(--header-size-content) + max(var(--status-bar-height, 0px), var(--safe-area-inset-top, 0px)));
+}
+.tablet.landscape .layout-native.aside-expandable .app-menu-content{
+  display:none;
+}
+.tablet.landscape .layout-native.aside-visible .app-menu-content, .tablet.landscape .layout-native.aside-expandable .app-menu-content{
+  -webkit-box-shadow:var(--shadow-m);
+          box-shadow:var(--shadow-m);
+  left:0;
+  z-index:var(--osui-menu-layer);
+}
+.tablet.landscape .layout-native.layout-side.aside-expandable .app-menu-content{
+  padding-top:calc(var(--header-size) + var(--header-size-content) + var(--os-safe-area-top));
+}
+.tablet.landscape .layout-side.layout-native.aside-expandable.hide-header-on-scroll:not(.header-is--visible) .app-menu-content{
+  padding-top:var(--header-size-content);
+}
+.is-rtl .tablet.landscape.landscape.aside-visible .app-menu-content, .is-rtl .tablet.landscape.landscape.aside-expandable .app-menu-content{
+  right:0;
+}
+/*! 3.7. Layout Side - Menu */
+.layout-side .app-logo{
+  border-radius:var(--border-radius-soft);
+  margin-right:var(--space-s);
+  max-height:var(--header-size);
+  max-width:120px;
+}
+.layout-side .app-menu-content{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  bottom:0;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  height:auto;
+  position:fixed;
+  top:0;
+  width:var(--side-menu-size);
+  z-index:var(--osui-menu-layer);
+}
+.aside-overlay .app-menu-content{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  height:100%;
+  left:calc(-1 * var(--side-menu-size));
+  position:fixed;
+  top:0;
+  -webkit-transform:translateX(0) translateZ(0);
+          transform:translateX(0) translateZ(0);
+  -webkit-transition:-webkit-transform 130ms ease-in;
+  transition:-webkit-transform 130ms ease-in;
+  -o-transition:transform 130ms ease-in;
+  transition:transform 130ms ease-in;
+  transition:transform 130ms ease-in, -webkit-transform 130ms ease-in;
+  width:var(--side-menu-size);
+  will-change:transform;
+  z-index:var(--osui-menu-layer);
+}
+.aside-overlay.menu-visible .app-menu-content{
+  -webkit-transform:translateX(var(--side-menu-size)) translateZ(0);
+          transform:translateX(var(--side-menu-size)) translateZ(0);
+  -webkit-transition:-webkit-transform 330ms ease-out;
+  transition:-webkit-transform 330ms ease-out;
+  -o-transition:transform 330ms ease-out;
+  transition:transform 330ms ease-out;
+  transition:transform 330ms ease-out, -webkit-transform 330ms ease-out;
+}
+.desktop .layout-side:not(.layout-native):not(.aside-overlay) .app-menu-content{
+  left:0;
+  right:0;
+}
+.desktop .layout-side.aside-expandable:not(.fixed-header) .app-menu-content{
+  padding-top:var(--header-size);
+  top:0;
+}
+.desktop .aside-expandable.menu-visible .app-menu-content{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.desktop .aside-expandable.menu-visible .main{
+  margin-left:var(--side-menu-size);
+}
+.desktop .aside-expandable .app-menu-content{
+  display:none;
+}
+.tablet.landscape .layout-native.aside-expandable.menu-visible .app-menu-content{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-transform:none;
+      -ms-transform:none;
+          transform:none;
+  -webkit-transition:none;
+  -o-transition:none;
+  transition:none;
+}
+.is-rtl.desktop .aside-expandable.menu-visible .main{
+  margin-left:0;
+  margin-right:var(--side-menu-size);
+}
+.is-rtl.tablet .app-menu-content, .is-rtl.phone .app-menu-content{
+  right:calc(-1 * var(--side-menu-size));
+  -webkit-transition:all 330ms ease-out;
+  -o-transition:all 330ms ease-out;
+  transition:all 330ms ease-out;
+}
+.is-rtl:not(.portrait) .layout-side.layout-native.aside-visible .app-menu-content{
+  right:0;
+}
+.is-rtl .layout-side .app-menu-content{
+  left:auto;
+}
+.is-rtl .aside-overlay.menu-visible .app-menu-content{
+  right:0;
+  -webkit-transform:translateX(0) translateZ(0);
+          transform:translateX(0) translateZ(0);
+  -webkit-transition:all 330ms ease-out;
+  -o-transition:all 330ms ease-out;
+  transition:all 330ms ease-out;
+}
+/*! 3.8. Menu - Header Logo */
+.layout-side .header-logo{
+  height:var(--header-size);
+  padding:var(--space-none) var(--space-m);
+}
+.tablet .header-logo,
+.phone .header-logo{
+  height:var(--header-size);
+  padding:var(--space-none) var(--space-m);
+}
+/*! 3.9. Menu - App Menu Link */
+.app-menu-links{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+  height:100%;
+}
+.app-menu-links{
+  -servicestudio-align-items:center;
+  -servicestudio-display:flex;
+  -servicestudio-column-gap:var(--space-m);
+}
+.app-menu-links:empty{
+  -servicestudio-position:relative;
+}
+.app-menu-links:empty:after{
+  -servicestudio-color:var(--text-color-neutral-7, var(--color-neutral-7));
+  -servicestudio-content:"Drag screens to this container to create menu entries";
+  -servicestudio-font-size:var(--font-size-xs);
+  -servicestudio-left:50%;
+  -servicestudio-position:absolute;
+  -servicestudio-text-align:center;
+  -servicestudio-top:50%;
+  -servicestudio-transform:translateX(-50%) translateY(-50%);
+}
+.app-menu-links a{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.app-menu-links a{
+  -servicestudio-color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.app-menu-links a:hover, .app-menu-links a.active{
+  color:var(--text-color-primary, var(--color-primary));
+  text-decoration:none;
+}
+body .app-menu-content .app-menu-links{
+  -servicestudio-align-items:flex-start;
+  -servicestudio-padding:var(--space-none);
+  -servicestudio-width:100% !important;
+}
+.layout .app-menu-links:empty:after{
+  -servicestudio-content:"";
+}
+.layout:not(.layout-side) .app-menu-links a{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border-bottom:var(--border-size-m) solid transparent;
+  border-top:var(--border-size-m) solid transparent;
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+}
+.layout:not(.layout-side) .app-menu-links a.active{
+  border-bottom:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+}
+.layout-side .app-menu-links a,
+.menu-visible .app-menu-links a{
+  border-bottom:0;
+  border-left:var(--border-size-m) solid transparent;
+  border-top:0;
+  margin-left:0;
+  padding:var(--space-s) var(--space-m);
+}
+.layout-side .app-menu-links{
+  -servicestudio-align-items:flex-start;
+}
+.layout-side .app-menu-links{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  -webkit-overflow-scrolling:touch;
+  overflow-y:auto;
+  padding-top:var(--space-s);
+}
+.layout-side .app-menu-links a.active{
+  border-left:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+}
+.landscape .layout-native .app-menu-links{
+  padding-left:calc(var(--os-safe-area-left) / 2);
+}
+.desktop .layout:not(.layout-side) .app-menu-links{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-wrap:wrap;
+      flex-wrap:wrap;
+}
+.phone .app-menu-links,
+.tablet .app-menu-links{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  -webkit-overflow-scrolling:touch;
+  overflow-y:auto;
+  padding-top:var(--space-s);
+}
+.phone .app-menu-links a,
+.tablet .app-menu-links a{
+  -servicestudio-margin-left:var(--space-none);
+  -servicestudio-padding:var(--space-s) var(--space-m);
+  -servicestudio-width:100%;
+}
+.phone .layout:not(.layout-side) .app-menu-links a.active,
+.tablet .layout:not(.layout-side) .app-menu-links a.active{
+  border-bottom:0;
+}
+.has-accessible-features .header a.active:focus{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.has-accessible-features .app-menu-links a:focus{
+  background-color:transparent;
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+}
+/*! 3.10. Menu - App Login Info */
+.layout-side .app-login-info{
+  padding:var(--space-base) var(--space-m);
+}
+.layout-side .user-info{
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+}
+.tablet .app-login-info,
+.phone .app-login-info{
+  padding:var(--space-base) var(--space-m);
+}
+.tablet .user-info,
+.phone .user-info{
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+}

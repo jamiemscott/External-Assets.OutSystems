@@ -1,0 +1,201 @@
+/*! 6.5.5. Rating */
+.rating{
+  position:relative;
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  -ms-flex-wrap:wrap;
+      flex-wrap:wrap;
+  font-size:var(--rating-size);
+  pointer-events:none;
+}
+.rating{
+  -servicestudio-display:inline-flex;
+}
+.rating.rating-small{
+  --rating-size:8px;
+}
+.rating.rating-small .rating-item{
+  padding-right:calc(var(--rating-size) + var(--space-xs));
+}
+.rating.rating-medium{
+  --rating-size:24px;
+}
+.rating.is-edit:not(:has(fieldset[disabled=true])){
+  pointer-events:initial;
+}
+.rating.is-edit:not(:has(fieldset[disabled=true])) .rating-item{
+  cursor:pointer;
+  pointer-events:auto;
+}
+.rating fieldset{
+  border:none;
+  display:contents;
+  margin:0;
+  padding:0;
+}
+.rating fieldset[disabled=true] .rating-item-filled, .rating fieldset[disabled=true] .rating-item-half{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+.rating fieldset[disabled=true] .rating-item-filled .icon, .rating fieldset[disabled=true] .rating-item-half .icon{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+.rating fieldset[disabled=true] .rating-item-empty{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+.rating fieldset[disabled=true] .rating-item-empty .icon{
+  color:var(--text-color-neutral-4, var(--color-neutral-4));
+}
+.rating-item{
+  display:inline-block;
+  height:var(--rating-size);
+  padding-right:calc(var(--rating-size) + var(--space-s));
+  position:relative;
+  width:var(--rating-size);
+}
+.rating-item-filled, .rating-item-half, .rating-item-empty{
+  left:0;
+  line-height:1;
+  position:absolute;
+  top:0;
+  -webkit-transition:opacity linear 150ms;
+  -o-transition:opacity linear 150ms;
+  transition:opacity linear 150ms;
+}
+.rating-item-filled, .rating-item-half, .rating-item-empty{
+  -servicestudio-margin-right:var(--space-s);
+  -servicestudio-min-height:24px;
+  -servicestudio-min-width:24px;
+  -servicestudio-opacity:1 !important;
+  -servicestudio-position:relative;
+}
+.rating-item-filled{
+  opacity:1;
+  z-index:var(--layer-local-tier-1);
+}
+.rating-item-empty, .rating-item-half{
+  opacity:0;
+  z-index:var(--layer-global-screen);
+}
+.rating-item:last-of-type{
+  padding-right:0;
+}
+.rating-item img{
+  max-width:none;
+}
+.rating input:checked + .rating-item .rating-item-empty, .rating input:checked ~ .rating-item .rating-item-filled{
+  opacity:0;
+}
+.rating.is-half input:checked ~ .rating-item .rating-item-half{
+  opacity:0;
+}
+.rating:hover input + .rating-item .rating-item-filled{
+  opacity:1;
+}
+.rating input:first-of-type + .rating-item{
+  background:transparent;
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+  height:100%;
+  left:0;
+  opacity:0;
+  pointer-events:none;
+  position:absolute;
+  top:0;
+  width:100%;
+}
+.rating input:first-of-type:focus:checked + .rating-item{
+  opacity:1;
+}
+.rating input{
+}
+.rating input:checked + .rating-item .rating-item-filled, .rating input:checked + .rating-item .rating-item-half, .rating input:checked ~ .rating-item .rating-item-empty, .rating input:hover ~ .rating-item .rating-item-empty, .rating input:focus ~ .rating-item .rating-item-empty, .rating input:focus + .rating-item .rating-item-filled{
+  opacity:1;
+}
+.rating input:hover ~ .rating-item .rating-item-filled, .rating input:hover ~ .rating-item .rating-item-half{
+  opacity:0;
+}
+.rating input:hover + .rating-item .rating-item-filled{
+  opacity:1;
+}
+.rating.is-half .rating-item-half{
+  z-index:var(--layer-local-tier-1);
+}
+.rating.is-half input:checked + .rating-item .rating-item-half{
+  opacity:1;
+}
+.rating.is-half input:checked + .rating-item .rating-item-filled{
+  opacity:0;
+}
+.rating.is-half input:hover ~ .rating-item .rating-item-filled,
+.rating.is-half input:hover ~ .rating-item .rating-item-half{
+  opacity:0;
+}
+.rating.is-half:hover input:checked + .rating-item .rating-item-filled,
+.rating.is-half input:hover + .rating-item .rating-item-filled{
+  opacity:1;
+}
+.rating.is-half:hover input:hover ~ .rating-item .rating-item-filled{
+  opacity:0;
+}
+.rating.is-half:hover input:hover + .rating-item .rating-item-filled{
+  opacity:1;
+}
+.rating .icon-states{
+  -servicestudio-display:flex;
+}
+.rating .icon-states span{
+  -servicestudio-display:flex;
+}
+.rating{
+  --rating-size:16px;
+}
+.form .rating span.wcag-hide-text{
+  position:absolute;
+}
+.ios .rating .rating-item > *{
+  display:block;
+  pointer-events:none;
+}
+.is-rtl .rating .rating-item{
+  padding-left:calc(var(--rating-size) + var(--space-s));
+  padding-right:0;
+  -webkit-transform:scaleX(-1);
+      -ms-transform:scaleX(-1);
+          transform:scaleX(-1);
+}
+.has-accessible-features .rating.is-half input:focus + .rating-item .rating-item-filled,
+.has-accessible-features .rating.is-half input:focus + .rating-item .rating-item-filled *, .has-accessible-features .rating:not(.is-half) input:focus + .rating-item .rating-item-half,
+.has-accessible-features .rating:not(.is-half) input:focus + .rating-item .rating-item-half *,
+.has-accessible-features .rating input:checked + .rating-item .rating-item-empty,
+.has-accessible-features .rating input:checked + .rating-item .rating-item-empty *{
+  -webkit-box-shadow:none;
+          box-shadow:none;
+}
+.has-accessible-features .rating.is-half input:focus + .rating-item .rating-item-half,
+.has-accessible-features .rating.is-half input:focus + .rating-item .rating-item-half *, .has-accessible-features .rating:not(.is-half) input:focus + .rating-item .rating-item-filled,
+.has-accessible-features .rating:not(.is-half) input:focus + .rating-item .rating-item-filled *{
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+}
+.has-accessible-features fieldset[disabled=true] .rating-item-filled, .has-accessible-features fieldset[disabled=true] .rating-item-half{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+}
+.has-accessible-features fieldset[disabled=true] .rating-item-filled .icon, .has-accessible-features fieldset[disabled=true] .rating-item-half .icon{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+}
+.has-accessible-features fieldset[disabled=true] .rating-item-empty{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+}
+.has-accessible-features fieldset[disabled=true] .rating-item-empty .icon{
+  color:var(--text-color-neutral-5, var(--color-neutral-5));
+}
+.chrome .osui-tabs .rating .wcag-hide-text,
+.edge .osui-tabs .rating .wcag-hide-text{
+  margin:unset;
+}
+.os-high-contrast .has-accessible-features .rating.is-half input:focus + .rating-item .rating-item-half,
+.os-high-contrast .has-accessible-features .rating.is-half input:focus + .rating-item .rating-item-half *, .os-high-contrast .has-accessible-features .rating:not(.is-half) input:focus + .rating-item .rating-item-filled,
+.os-high-contrast .has-accessible-features .rating:not(.is-half) input:focus + .rating-item .rating-item-filled *{
+  outline:var(--border-size-l) solid var(--border-color-focus-outer, var(--color-focus-outer));
+}

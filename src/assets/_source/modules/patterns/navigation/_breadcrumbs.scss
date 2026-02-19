@@ -1,0 +1,30 @@
+/*! 6.4.2. Breadcrumbs */
+.breadcrumbs-content{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.breadcrumbs-item{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+}
+.breadcrumbs-item .icon{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  font-size:var(--font-size-xs);
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  margin:var(--space-none) var(--space-s);
+  width:auto;
+}

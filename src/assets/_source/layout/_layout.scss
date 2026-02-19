@@ -1,0 +1,141 @@
+/*! ==============================================================================
+3. Page Layout
+=============================================================================== */
+/*! 3.1. Layout */
+html,
+body,
+#reactContainer,
+#transitionContainer,
+.screen-container{
+  height:100%;
+}
+.screen-container{
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+.layout{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  min-height:100vh;
+}
+.layout.layout-top, .layout.layout-side:not(.layout-native){
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+}
+.layout.layout-left{
+  -webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:row;
+          flex-direction:row;
+}
+.layout.layout-side .main{
+  margin-left:var(--side-menu-size);
+}
+.layout.layout-side.aside-overlay .main{
+  margin-left:0;
+}
+.layout.layout-native{
+  -servicestudio-min-height:100vh !important;
+}
+.layout.layout-native .main{
+  width:100%;
+}
+.layout.aside-expandable .main{
+  margin-left:0;
+}
+.layout .main{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+}
+.main,
+.fixed-header .main{
+  padding-top:0;
+}
+.layout-native .aside-navigation,
+.layout-top .aside-navigation{
+  -servicestudio-display:none !important;
+}
+.android .layout-native .footer{
+  height:calc(var(--safe-area-inset-bottom, 0px) + var(--bottom-bar-size));
+}
+.ios .layout{
+  min-height:100%;
+}
+.ios .layout-native .footer{
+  height:calc(var(--os-safe-area-bottom) + var(--bottom-bar-size));
+}
+.ios .layout .header{
+  padding-top:var(--os-safe-area-top);
+}
+.desktop .layout-native.aside-visible, .desktop .layout-native.aside-expandable,
+.tablet .layout-native.aside-visible,
+.tablet .layout-native.aside-expandable{
+  --side-menu-size:264px;
+}
+.desktop .layout-native.aside-visible .main, .desktop .layout-native.aside-expandable .main{
+  width:calc(100% - var(--side-menu-size));
+}
+.tablet.landscape .layout-native.menu-visible.aside-visible .main, .tablet.landscape .layout-native.menu-visible.aside-expandable .main{
+  margin-left:var(--side-menu-size);
+  width:calc(100% - var(--side-menu-size));
+}
+.tablet.landscape .layout-side.layout-native.aside-expandable.menu-visible .main{
+  margin-left:var(--side-menu-size);
+}
+.tablet.landscape .layout-side.layout-native.aside-expandable .main{
+  margin-right:0;
+}
+.tablet .layout-side .main,
+.phone .layout-side .main{
+  margin-left:0;
+}
+.phone .layout:not(.layout-native) [class*=ThemeGrid_Width]:not(.no-responsive){
+  margin:var(--space-none) var(--space-none) var(--space-base) var(--space-none);
+  width:100%;
+}
+.is-rtl.tablet .layout-native.aside-visible .main, .is-rtl.tablet .layout-native.aside-expandable .main{
+  margin-left:0;
+}
+.is-rtl.tablet .layout-side .main{
+  margin-right:0;
+}
+.is-rtl.tablet.landscape .layout-side.layout-native.aside-expandable.menu-visible .main{
+  margin-left:0;
+  margin-right:var(--side-menu-size);
+}
+.is-rtl.tablet.landscape .layout-side.layout-native.aside-expandable .main{
+  margin-right:0;
+}
+.is-rtl.phone .layout-side .main{
+  margin-right:0;
+}
+.is-rtl .layout-side .main{
+  margin-left:0;
+  margin-right:var(--side-menu-size);
+}
+.is-rtl .layout-side.aside-overlay .main{
+  margin-right:0;
+}
+.is-rtl .aside-expandable .main{
+  margin-right:0;
+}
+.layout .main-content .layout{
+  -servicestudio-min-width:calc(100vw - var(--space-xl) * 2);
+}
+.phone .layout .main-content .layout{
+  -servicestudio-min-width:calc(100vw - var(--space-base) * 2);
+}
+.phone .layout .main-content .layout.layout-native{
+  -servicestudio-min-width:100vw;
+}

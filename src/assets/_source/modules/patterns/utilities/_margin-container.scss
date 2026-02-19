@@ -1,0 +1,13 @@
+/*! 6.6.4. Margin Container */
+.margin-container{
+  padding:var(--space-m);
+}
+.layout-native .margin-container{
+  padding:var(--space-l);
+}
+.tablet .layout-native .margin-container{
+  padding:var(--space-m);
+}
+.phone .layout-native .margin-container{
+  padding:var(--space-base);
+}

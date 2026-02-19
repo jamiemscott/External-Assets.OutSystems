@@ -1,0 +1,90 @@
+/*! 6.4.5. Section Index */
+.osui-section-index{
+  --top-position:calc(var(--header-size) + var(--header-size-content) + max(var(--status-bar-height, 0px), var(--safe-area-inset-top, 0px)));
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  position:relative;
+}
+.osui-section-index::before{
+  background-color:var(--background-color-neutral-5, var(--color-neutral-5));
+  bottom:0;
+  content:"";
+  left:0;
+  position:absolute;
+  top:0;
+  width:1px;
+}
+.osui-section-index.osui-section-index--is-sticky{
+  position:sticky;
+  top:var(--top-position);
+}
+.osui-section-index-item, .osui-section-index-item:visited{
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+  cursor:pointer;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  padding-bottom:var(--space-xs);
+  padding-left:var(--space-m);
+  padding-top:var(--space-xs);
+  position:relative;
+}
+.osui-section-index-item:hover{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.osui-section-index-item--is-active{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+  font-weight:var(--font-semi-bold);
+}
+.osui-section-index-item--is-active::before{
+  background-color:var(--background-color-primary, var(--color-primary));
+  bottom:0;
+  content:"";
+  left:0;
+  position:absolute;
+  top:0;
+  width:2px;
+}
+.osui-section-index-item__target{
+  scroll-margin:var(--target-scroll-margin);
+}
+.has-accessible-features .osui-section-index-item:focus{
+  background-color:transparent;
+  -webkit-box-shadow:0 0 0 var(--border-size-l) var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 0 0 var(--border-size-l) var(--background-color-focus-outer, var(--color-focus-outer));
+}
+.os-high-contrast .osui-section-index::before{
+  border-left:var(--border-size-s) solid var(--border-color-focus-outer, var(--color-focus-outer));
+}
+.os-high-contrast .osui-section-index-item--is-active::before{
+  border-left:var(--border-size-l) solid var(--border-color-focus-outer, var(--color-focus-outer));
+}
+.is-rtl .osui-section-index::before{
+  left:auto;
+  right:0;
+}
+.is-rtl .osui-section-index-item, .is-rtl .osui-section-index-item:visited{
+  padding-left:var(--space-none);
+  padding-right:var(--space-m);
+}
+.is-rtl .osui-section-index-item--is-active::before{
+  left:auto;
+  right:0;
+}
+.phone .osui-section-index--is-sticky{
+  left:calc(var(--os-safe-area-right) + var(--space-base));
+  padding:0 var(--space-base) 0 0;
+  position:fixed;
+  top:var(--top-position);
+  z-index:var(--layer-local-tier-1);
+}
+.phone .is-rtl .osui-section-index--is-sticky{
+  left:initial;
+  right:calc(var(--os-safe-area-right) + var(--space-base));
+  padding:0 0 var(--space-base) 0;
+}

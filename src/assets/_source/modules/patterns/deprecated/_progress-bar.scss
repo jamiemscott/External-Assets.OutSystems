@@ -1,0 +1,19 @@
+/*! 6.8.12. Progress Bar */
+.progress{
+  background-color:var(--background-color-primary, var(--color-primary));
+  -webkit-transform-origin:left;
+      -ms-transform-origin:left;
+          transform-origin:left;
+  -webkit-transition:all 750ms ease-out;
+  -o-transition:all 750ms ease-out;
+  transition:all 750ms ease-out;
+  will-change:width;
+}
+.progress-bar{
+  background-color:var(--background-color-neutral-3, var(--color-neutral-3));
+  overflow:hidden;
+  position:relative;
+}
+.progress-bar-text{
+  display:none;
+}

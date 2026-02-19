@@ -1,0 +1,43 @@
+/*! 3.12. ThemeGrid_Container */
+.ThemeGrid_Container{
+  margin:var(--space-none) auto;
+  width:100%;
+}
+.header .ThemeGrid_Container{
+  padding:var(--space-none) var(--space-xl);
+}
+.layout .main-content.ThemeGrid_Container{
+  padding:var(--space-xl);
+}
+.layout .footer.ThemeGrid_Container{
+  padding:var(--space-base) var(--space-xl);
+}
+.tablet .header .ThemeGrid_Container{
+  padding:var(--space-none) var(--space-m);
+}
+.tablet .main-content.ThemeGrid_Container{
+  padding:var(--space-m);
+}
+.tablet .footer.ThemeGrid_Container{
+  padding:var(--space-base) var(--space-m);
+}
+.phone .header .ThemeGrid_Container{
+  padding-left:calc(var(--os-safe-area-left) + var(--space-base));
+  padding-right:calc(var(--os-safe-area-right) + var(--space-base));
+}
+.phone .main-content.ThemeGrid_Container{
+  padding-bottom:var(--space-base);
+  padding-left:calc(var(--os-safe-area-left) + var(--space-base));
+  padding-right:calc(var(--os-safe-area-right) + var(--space-base));
+  padding-top:var(--space-base);
+}
+.phone .footer.ThemeGrid_Container{
+  padding-left:calc(var(--os-safe-area-left) + var(--space-base));
+  padding-right:calc(var(--os-safe-area-right) + var(--space-base));
+}
+.layout-native .main-content.ThemeGrid_Container{
+  padding:var(--space-none);
+}
+.android .main:has(.footer:empty) .content{
+  padding-bottom:var(--safe-area-inset-bottom, 0px);
+}

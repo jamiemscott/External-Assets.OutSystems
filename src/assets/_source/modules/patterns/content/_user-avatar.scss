@@ -1,0 +1,40 @@
+/*! 6.2.16. User Avatar */
+.avatar{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  color:var(--text-color-neutral-0, var(--color-neutral-0));
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  font-weight:var(--font-semi-bold);
+  height:32px;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  line-height:1;
+  text-transform:uppercase;
+  width:32px;
+}
+.avatar.background-transparent{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.avatar.background-neutral-0{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.avatar.background-neutral-1, .avatar.background-neutral-2, .avatar.background-neutral-3, .avatar.background-neutral-4{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.avatar-small{
+  font-size:var(--font-size-xs);
+  height:24px;
+  width:24px;
+}
+.avatar-medium{
+  font-size:var(--font-size-base);
+  height:40px;
+  width:40px;
+}
+.avatar span{
+  width:auto;
+}

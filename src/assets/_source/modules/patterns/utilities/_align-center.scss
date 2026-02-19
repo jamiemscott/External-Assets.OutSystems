@@ -1,0 +1,33 @@
+/*! 6.6. Utilities */
+/*! 6.6.1. Align Center */
+.vertical-align{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:row;
+          flex-direction:row;
+}
+.vertical-align > span.input-text,
+.vertical-align > label ~ span{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+}
+.vertical-align span{
+  display:inherit;
+}
+[style*="text-align: center"] .vertical-align{
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+[style*="text-align: right"] .vertical-align{
+  -webkit-box-pack:end;
+      -ms-flex-pack:end;
+          justify-content:flex-end;
+}

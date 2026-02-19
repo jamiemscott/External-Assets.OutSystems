@@ -1,0 +1,33 @@
+/*! 6.2.4. Blank Slate */
+.blank-slate{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  -ms-flex-pack:distribute;
+      justify-content:space-around;
+  text-align:center;
+}
+.blank-slate.large{
+  height:100%;
+}
+.blank-slate.large .blank-slate-icon{
+  font-size:120px;
+}
+.blank-slate.large .blank-slate-actions{
+  padding:var(--space-xxl) var(--space-base);
+}
+.blank-slate-description{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+  padding:var(--space-none) var(--space-base);
+}
+.blank-slate-actions{
+  padding:var(--space-base);
+}
+.blank-slate-icon{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+  font-size:70px;
+}

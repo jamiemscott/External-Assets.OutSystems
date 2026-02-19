@@ -1,0 +1,193 @@
+/*! 6.8.3. Carousel */
+.carousel{
+  overflow:hidden;
+  position:relative;
+  -webkit-transition:all 400ms ease;
+  -o-transition:all 400ms ease;
+  transition:all 400ms ease;
+  will-change:transform;
+}
+.carousel{
+  -servicestudio-max-height:100vh;
+  -servicestudio-max-height:none !important;
+  -servicestudio-min-height:80px !important;
+}
+.carousel:empty{
+  -servicestudio-min-height:200px;
+}
+.carousel:not(.no-swipe) .carousel-container-content:hover{
+  cursor:-webkit-grab;
+  cursor:grab;
+}
+.carousel.init{
+  opacity:0;
+}
+.carousel.init{
+  -servicestudio-opacity:1;
+}
+.carousel > .list:not([data-virtualization-disabled]) > *, .carousel > .list:not([data-animation-disabled]) > *{
+  -servicestudio-display:none !important;
+}
+.carousel > .list:not([data-virtualization-disabled]), .carousel > .list:not([data-animation-disabled]){
+  -servicestudio-min-height:225px;
+  -servicestudio-pointer-events:none;
+}
+.carousel > .list:not([data-virtualization-disabled]):after, .carousel > .list:not([data-animation-disabled]):after{
+  -servicestudio-background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  -servicestudio-background-position:center;
+  -servicestudio-background-repeat:no-repeat;
+  -servicestudio-background-size:291px 225px;
+  -servicestudio-content:" ";
+  -servicestudio-height:100%;
+  -servicestudio-left:0;
+  -servicestudio-min-height:225px;
+  -servicestudio-position:absolute;
+  -servicestudio-top:0;
+  -servicestudio-width:100%;
+}
+.carousel--animatable{
+  -webkit-transition:all 250ms linear;
+  -o-transition:all 250ms linear;
+  transition:all 250ms linear;
+  will-change:transform;
+}
+.carousel [data-block*=Card] + [data-block*=Card] .card{
+  margin-top:var(--space-none);
+}
+.carousel .carousel-container{
+  --carousel-width:100%;
+  width:var(--carousel-width);
+  background-color:transparent;
+  white-space:nowrap;
+}
+.carousel .carousel-container{
+  -servicestudio-min-height:80px !important;
+  -servicestudio-white-space:normal;
+}
+.carousel .carousel-container .list.list-group{
+  background-color:transparent;
+  white-space:nowrap;
+}
+.carousel .carousel-container .list.list-group{
+  -servicestudio-white-space:normal;
+}
+.carousel .carousel-container{
+}
+.carousel .carousel-container > .carousel-container-content > *:not(.list), .carousel .carousel-container > .carousel-container-content > .list > div{
+  display:inline-block;
+  white-space:normal;
+  width:100%;
+}
+.carousel .carousel-container .carousel-container-content > .list:not([data-virtualization-disabled]) > *,
+.carousel .carousel-container .carousel-container-content > .list:not([data-animation-disabled]) > *{
+  -servicestudio-display:none !important;
+}
+.carousel .carousel-container .carousel-container-content > .list:not([data-virtualization-disabled]),
+.carousel .carousel-container .carousel-container-content > .list:not([data-animation-disabled]){
+  -servicestudio-min-height:225px;
+  -servicestudio-pointer-events:none;
+}
+.carousel .carousel-container .carousel-container-content > .list:not([data-virtualization-disabled]):after,
+.carousel .carousel-container .carousel-container-content > .list:not([data-animation-disabled]):after{
+  -servicestudio-background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  -servicestudio-background-position:center;
+  -servicestudio-background-repeat:no-repeat;
+  -servicestudio-background-size:291px 225px;
+  -servicestudio-content:" ";
+  -servicestudio-height:100%;
+  -servicestudio-left:0;
+  -servicestudio-min-height:225px;
+  -servicestudio-position:absolute;
+  -servicestudio-top:0;
+  -servicestudio-width:100%;
+}
+.carousel .carousel-container-content{
+  -servicestudio-min-height:80px !important;
+}
+.carousel .carousel-container-content .OSFillParent{
+  display:inline-block;
+}
+.carousel .carousel-container-content .grid-gallery .OSFillParent{
+  display:inherit;
+}
+.carousel .carousel-navigation{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border-radius:var(--border-radius-circle);
+  -webkit-box-shadow:var(--shadow-xs);
+          box-shadow:var(--shadow-xs);
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+  cursor:pointer;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  font-size:var(--font-size-h4);
+  height:40px;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  opacity:1;
+  position:absolute;
+  top:50%;
+  -webkit-transform:translateY(-25px);
+      -ms-transform:translateY(-25px);
+          transform:translateY(-25px);
+  -webkit-transition:opacity 150ms linear;
+  -o-transition:opacity 150ms linear;
+  transition:opacity 150ms linear;
+  width:40px;
+  will-change:opacity;
+  z-index:var(--layer-local-tier-2);
+}
+.carousel .carousel-navigation.disabled{
+  opacity:0.3;
+}
+.carousel .carousel-navigation.hidden{
+  display:none;
+}
+.carousel .carousel-navigation.carousel-navigation-left{
+  left:24px;
+}
+.carousel .carousel-navigation.carousel-navigation-right{
+  right:24px;
+  text-align:right;
+}
+.carousel .carousel-dots-container{
+  margin-top:var(--space-base);
+  text-align:center;
+}
+.carousel .carousel-dots-container.disabled{
+  display:none;
+}
+.carousel .carousel-dots-container .carousel-dot{
+  background-color:var(--background-color-neutral-5, var(--color-neutral-5));
+  border-radius:var(--border-radius-circle);
+  cursor:pointer;
+  display:inline-block;
+  height:8px;
+  margin:0 var(--space-xs);
+  width:8px;
+}
+.carousel .carousel-dots-container .carousel-dot.active{
+  background-color:var(--background-color-primary, var(--color-primary));
+}
+.carousel-is-moving .hide-on-drag{
+  opacity:0;
+  -webkit-transition:opacity 250ms ease;
+  -o-transition:opacity 250ms ease;
+  transition:opacity 250ms ease;
+}
+.carousel .list.list-group{
+  overflow:initial;
+}
+.carousel{
+}
+.carousel svg{
+  max-width:100%;
+}
+.has-accessible-features .carousel .carousel-navigation:focus{
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+}

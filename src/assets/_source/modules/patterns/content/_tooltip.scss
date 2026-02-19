@@ -1,0 +1,75 @@
+/*! 6.2.15. Tooltip */
+.osui-tooltip{
+  --osui-tooltip-background-color:var(--background-color-neutral-9, var(--color-neutral-9));
+  --osui-tooltip-arrow-size:10px;
+  --osui-floating-offset:var(--space-s);
+  display:inline-block;
+  position:relative;
+}
+.osui-tooltip{
+  -servicestudio-vertical-align:middle;
+}
+.osui-tooltip .osui-balloon{
+  background-color:var(--osui-tooltip-background-color);
+  border-radius:var(--border-radius-soft);
+  color:var(--text-color-neutral-0, var(--color-neutral-0));
+  font-size:var(--font-size-s);
+  font-weight:var(--font-regular);
+  line-height:initial;
+  max-width:250px;
+  padding:var(--space-s);
+}
+.osui-tooltip .osui-balloon[class*=top]:after{
+  left:0;
+  top:calc(var(--osui-floating-offset) * 2);
+}
+.osui-tooltip .osui-balloon[class*=left]:after{
+  left:calc(var(--osui-floating-offset) * 2);
+  top:0;
+}
+.osui-tooltip .osui-balloon[class*=bottom-end]:after{
+  left:0;
+}
+.osui-tooltip .osui-balloon:after{
+  content:"";
+  position:absolute;
+  left:calc(0px - var(--osui-floating-offset) * 2);
+  top:calc(0px - var(--osui-floating-offset) * 2);
+  width:100%;
+  height:100%;
+  z-index:var(--layer-global-negative);
+}
+.osui-tooltip .osui-balloon{
+  -servicestudio-left:initial;
+  -servicestudio-max-height:initial;
+  -servicestudio-opacity:1;
+  -servicestudio-overflow:initial;
+  -servicestudio-pointer-events:initial;
+}
+.osui-tooltip__balloon-arrow{
+  position:absolute;
+  width:var(--osui-tooltip-arrow-size);
+  height:var(--osui-tooltip-arrow-size);
+  background-color:var(--osui-tooltip-background-color);
+  -webkit-transform:rotate(45deg);
+      -ms-transform:rotate(45deg);
+          transform:rotate(45deg);
+  z-index:var(--layer-global-negative);
+}
+.osui-tooltip__content{
+  cursor:pointer;
+}
+.osui-tooltip__content:empty{
+  -servicestudio-min-width:80px;
+}
+.osui-tooltip__balloon-wrapper__balloon{
+  text-wrap:wrap;
+}
+.os-high-contrast .osui-tooltip .osui-balloon{
+  border:var(--border-size-s) solid var(--osui-tooltip-background-color);
+}
+.os-high-contrast .osui-tooltip__balloon-arrow{
+  border:0 solid var(--osui-tooltip-background-color);
+  border-right-width:var(--border-size-s);
+  border-bottom-width:var(--border-size-s);
+}

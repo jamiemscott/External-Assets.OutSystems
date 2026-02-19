@@ -1,0 +1,162 @@
+/*! ==============================================================================
+2. HTML Elements
+=============================================================================== */
+/*! 2.1. Links */
+a{
+  text-decoration:none;
+  -webkit-text-decoration-skip:objects;
+}
+a, a:visited{
+  color:var(--text-color-primary, var(--color-primary));
+  -webkit-transition:all 180ms linear;
+  -o-transition:all 180ms linear;
+  transition:all 180ms linear;
+}
+a:hover, a:focus{
+  color:var(--text-color-primary-hover, var(--color-primary-hover));
+  text-decoration:underline;
+}
+a[disabled]{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+.phone a:hover, .phone a:focus,
+.tablet a:hover,
+.tablet a:focus{
+  text-decoration:none;
+}
+.has-accessible-features a:focus{
+  background-color:var(--background-color-focus-outer, var(--color-focus-outer));
+  -webkit-box-shadow:0 2px var(--background-color-focus-inner, var(--color-focus-inner));
+          box-shadow:0 2px var(--background-color-focus-inner, var(--color-focus-inner));
+  color:var(--text-color-neutral-10, var(--color-neutral-10));
+}
+.has-accessible-features a:focus, .has-accessible-features a:focus:hover{
+  text-decoration:none;
+}
+.has-accessible-features a[disabled]{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+/*! 2.2. Images */
+img{
+  max-width:100%;
+}
+figure{
+  margin:0;
+}
+/*! 2.3. Headings */
+h1,
+.heading1,
+h2,
+.heading2,
+h3,
+.heading3,
+h4,
+.heading4,
+h5,
+.heading5,
+h6,
+.heading6,
+.font-size-display{
+  font-weight:var(--font-semi-bold);
+  line-height:1.25;
+  margin:0;
+}
+h1,
+.heading1{
+  font-size:var(--font-size-h1);
+}
+h2,
+.heading2{
+  font-size:var(--font-size-h2);
+}
+h3,
+.heading3{
+  font-size:var(--font-size-h3);
+}
+h4,
+.heading4{
+  font-size:var(--font-size-h4);
+}
+h5,
+.heading5{
+  font-size:var(--font-size-h5);
+}
+h6,
+.heading6{
+  font-size:var(--font-size-h6);
+}
+.font-size-display{
+  font-size:var(--font-size-display);
+}
+.font-size-h1{
+  font-size:var(--font-size-h1);
+}
+.font-size-h2{
+  font-size:var(--font-size-h2);
+}
+.font-size-h3{
+  font-size:var(--font-size-h3);
+}
+.font-size-h4{
+  font-size:var(--font-size-h4);
+}
+.font-size-h5{
+  font-size:var(--font-size-h5);
+}
+.font-size-h6{
+  font-size:var(--font-size-h6);
+}
+.tablet h1,
+.tablet .heading1{
+  font-size:calc(var(--font-size-h1) - 2px);
+}
+.tablet h2,
+.tablet .heading2{
+  font-size:calc(var(--font-size-h2) - 2px);
+}
+.tablet h3,
+.tablet .heading3{
+  font-size:calc(var(--font-size-h3) - 2px);
+}
+.tablet h4,
+.tablet .heading4{
+  font-size:calc(var(--font-size-h4) - 1px);
+}
+.tablet h5,
+.tablet .heading5{
+  font-size:calc(var(--font-size-h5) - 1px);
+}
+.tablet h6,
+.tablet .heading6{
+  font-size:calc(var(--font-size-h6) - 1px);
+}
+.tablet .font-size-display{
+  font-size:calc(var(--font-size-display) - 2px);
+}
+.phone h1,
+.phone .heading1{
+  font-size:calc(var(--font-size-h1) - 4px);
+}
+.phone h2,
+.phone .heading2{
+  font-size:calc(var(--font-size-h2) - 4px);
+}
+.phone h3,
+.phone .heading3{
+  font-size:calc(var(--font-size-h3) - 4px);
+}
+.phone h4,
+.phone .heading4{
+  font-size:calc(var(--font-size-h4) - 2px);
+}
+.phone h5,
+.phone .heading5{
+  font-size:calc(var(--font-size-h5) - 2px);
+}
+.phone h6,
+.phone .heading6{
+  font-size:calc(var(--font-size-h6) - 2px);
+}
+.phone .font-size-display{
+  font-size:calc(var(--font-size-display) - 4px);
+}

@@ -1,0 +1,57 @@
+/*! 6.4.3. OverflowMenu */
+.osui-overflow-menu{
+  display:inline-block;
+  --osui-overflow-menu-min-width:170px;
+  --border-radius-rounded:16px;
+}
+.osui-overflow-menu__trigger{
+  --osui-floating-offset:var(--space-s);
+  border:var(--border-size-s) solid transparent;
+  border-radius:var(--osui-overflow-menu-shape);
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+  width:32px;
+}
+.osui-overflow-menu__trigger *{
+  pointer-events:none;
+}
+.osui-overflow-menu--is-open .osui-overflow-menu__trigger{
+  background-color:var(--background-color-neutral-4, var(--color-neutral-4));
+}
+.osui-overflow-menu__balloon{
+  min-width:var(--osui-overflow-menu-min-width);
+  overflow:hidden;
+  z-index:var(--layer-global-instant-interaction);
+}
+.osui-overflow-menu__balloon a{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.osui-overflow-menu__balloon a:hover{
+  background:var(--background-color-neutral-4, var(--color-neutral-4));
+  text-decoration:none;
+}
+.osui-overflow-menu__balloon a{
+  -servicestudio-align-items:center;
+  -servicestudio-display:inline-flex !important;
+  -servicestudio-color:var(--text-color-neutral-9, var(--color-neutral-9));
+  -servicestudio-padding:var(--space-s) var(--space-base);
+}
+.osui-overflow-menu__balloon a:not([class^=padding-]){
+  padding:var(--space-s) var(--space-base);
+}
+html:has(.popup-backdrop) .osui-overflow-menu__balloon{
+  z-index:var(--layer-global-off-canvas);
+}
+.tablet .osui-overflow-menu,
+.phone .osui-overflow-menu{
+  --border-radius-rounded:100%;
+}
+.tablet .osui-overflow-menu .osui-overflow-menu__trigger.btn,
+.phone .osui-overflow-menu .osui-overflow-menu__trigger.btn{
+  width:40px;
+}
+.os-high-contrast .osui-overflow-menu__balloon{
+  border:var(--border-size-s) solid var(--border-color-neutral-7, var(--color-neutral-7));
+}
+.os-high-contrast .osui-overflow-menu__balloon a:hover{
+  outline:var(--border-size-l) solid var(--border-color-focus-outer, var(--color-focus-outer));
+}

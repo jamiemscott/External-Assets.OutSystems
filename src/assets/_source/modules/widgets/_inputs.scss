@@ -1,0 +1,106 @@
+/*! ==============================================================================
+4. Widgets
+=============================================================================== */
+/*! 4.1. Inputs and TextAreas */
+::-webkit-input-placeholder{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+}
+::-moz-placeholder{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+}
+:-ms-input-placeholder{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+}
+.form-control[data-input], .form-control[data-textarea]{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-s) solid var(--border-color-neutral-5, var(--color-neutral-5));
+  border-radius:var(--border-radius-soft);
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+  font-size:var(--font-size-s);
+  -webkit-transition:all 180ms linear;
+  -o-transition:all 180ms linear;
+  transition:all 180ms linear;
+}
+.form-control[data-input]:hover, .form-control[data-textarea]:hover{
+  border:var(--border-size-s) solid var(--border-color-neutral-6, var(--color-neutral-6));
+}
+.form-control[data-input]:focus, .form-control[data-textarea]:focus{
+  border:var(--border-size-s) solid var(--border-color-primary, var(--color-primary));
+}
+.form-control[data-input][disabled], .form-control[data-textarea][disabled]{
+  background-color:var(--background-color-neutral-2, var(--color-neutral-2));
+  border:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+.form-control[data-input]{
+  height:40px;
+  padding:var(--space-none) var(--space-base);
+}
+.form-control[data-textarea]{
+  height:auto;
+  padding:var(--space-base);
+  resize:auto;
+}
+.form-control.input-small[data-input]{
+  font-size:var(--font-size-xs);
+  height:32px;
+  padding:var(--space-none) var(--space-s);
+}
+.form-control.input-small[data-textarea]{
+  font-size:var(--font-size-xs);
+  padding:var(--space-s);
+}
+.form-control.input{
+}
+.form-control.input-large[data-input]{
+  font-size:var(--font-size-base);
+  height:48px;
+}
+.form-control.input-large[data-textarea]{
+  font-size:var(--font-size-base);
+}
+.form-control{
+}
+.form-control.not-valid[data-input], .form-control.not-valid[data-textarea]{
+  border:var(--border-size-s) solid var(--border-color-error, var(--color-error));
+}
+.tablet .form-control[data-input],
+.phone .form-control[data-input]{
+  font-size:var(--font-size-base);
+  height:48px;
+}
+.tablet .form-control[data-input].input-small,
+.phone .form-control[data-input].input-small{
+  font-size:var(--font-size-xs);
+  height:32px;
+}
+.tablet .form-control[data-textarea],
+.phone .form-control[data-textarea]{
+  font-size:var(--font-size-base);
+  height:auto;
+}
+.tablet .form-control[data-textarea].input-small,
+.phone .form-control[data-textarea].input-small{
+  font-size:var(--font-size-xs);
+}
+.layout-native .header-top-content .form-control[data-input]{
+  background-color:var(--background-color-header, var(--header-color));
+  border:0;
+  border-bottom:var(--border-size-s) solid transparent;
+  border-radius:0;
+}
+.layout-native .header-top-content .form-control[data-input]:focus{
+  border-bottom:var(--border-size-s) solid var(--border-color-primary, var(--color-primary));
+}
+.has-accessible-features .form-control[data-input], .has-accessible-features .form-control[data-textarea]{
+  border-color:var(--border-color-neutral-7, var(--color-neutral-7));
+}
+.has-accessible-features .form-control[data-input]:hover, .has-accessible-features .form-control[data-textarea]:hover{
+  border-color:var(--border-color-neutral-8, var(--color-neutral-8));
+}
+.has-accessible-features .form-control[data-input]:focus, .has-accessible-features .form-control[data-textarea]:focus{
+  border-color:var(--border-color-focus-inner, var(--color-focus-inner));
+}
+.has-accessible-features .form-control[data-input].not-valid, .has-accessible-features .form-control[data-input].not-valid:hover, .has-accessible-features .form-control[data-input].not-valid:focus, .has-accessible-features .form-control[data-textarea].not-valid, .has-accessible-features .form-control[data-textarea].not-valid:hover, .has-accessible-features .form-control[data-textarea].not-valid:focus{
+  border-color:var(--border-color-error, var(--color-error));
+}

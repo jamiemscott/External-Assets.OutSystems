@@ -1,0 +1,41 @@
+/*! 6.5. Numbers */
+/*! 6.5.1. Badge */
+.badge{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  color:var(--text-color-neutral-0, var(--color-neutral-0));
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  font-weight:var(--font-semi-bold);
+  height:32px;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  line-height:1;
+  min-width:32px;
+}
+.badge.background-neutral-0{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.badge.background-neutral-1, .badge.background-neutral-2, .badge.background-neutral-3, .badge.background-neutral-4{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.badge.background-transparent{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.badge-small{
+  font-size:var(--font-size-xs);
+  height:24px;
+  min-width:24px;
+  padding:var(--space-none) var(--space-xs);
+}
+.badge-medium{
+  font-size:var(--font-size-base);
+  height:40px;
+  min-width:40px;
+}
+.badge span{
+  width:auto;
+}

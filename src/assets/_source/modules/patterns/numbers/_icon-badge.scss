@@ -1,0 +1,32 @@
+/*! 6.5.3. Icon Badge */
+.icon-badge{
+  display:inline-block;
+  position:relative;
+}
+.icon-badge .badge{
+  left:45%;
+  position:absolute;
+  top:0;
+  border-radius:var(--border-radius-rounded);
+  font-size:var(--font-size-xs);
+  height:18px;
+  min-width:18px;
+  padding:var(--space-none) var(--space-xs);
+  -webkit-transform:translateY(-40%);
+      -ms-transform:translateY(-40%);
+          transform:translateY(-40%);
+  white-space:nowrap;
+}
+.icon-badge .badge [data-expression]{
+  white-space:nowrap;
+}
+.icon-badge .icon{
+  font-size:var(--font-size-h4);
+}
+.icon-badge div:first-child:empty{
+  -servicestudio-height:30px;
+  -servicestudio-width:30px;
+}
+.layout-native .bottom-bar-wrapper .icon-badge .icon{
+  font-size:inherit;
+}

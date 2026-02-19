@@ -1,0 +1,37 @@
+/*! 6.1.2. Gallery */
+.osui-gallery, .osui-gallery > .list{
+  display:grid;
+  grid-gap:var(--gallery-gap);
+  grid-template-columns:repeat(var(--gallery-desktop-items), minmax(0, 1fr));
+}
+.osui-gallery > *{
+  margin-top:0;
+}
+.osui-gallery > .list{
+  grid-column-end:calc(var(--gallery-desktop-items) + 1);
+  grid-column-start:1;
+  overflow:initial;
+}
+.osui-gallery > .list .card,
+.osui-gallery > .list .animate{
+  height:100%;
+}
+.osui-gallery > .list .card-background{
+  -servicestudio-height:100% !important;
+}
+.osui-gallery > img{
+  -o-object-fit:cover;
+     object-fit:cover;
+}
+.tablet .osui-gallery, .tablet .osui-gallery > .list{
+  grid-template-columns:repeat(var(--gallery-tablet-items), minmax(0, 1fr));
+}
+.tablet .osui-gallery > .list{
+  grid-column-end:calc(var(--gallery-tablet-items) + 1);
+}
+.phone .osui-gallery, .phone .osui-gallery > .list{
+  grid-template-columns:repeat(var(--gallery-phone-items), minmax(0, 1fr));
+}
+.phone .osui-gallery > .list{
+  grid-column-end:calc(var(--gallery-phone-items) + 1);
+}

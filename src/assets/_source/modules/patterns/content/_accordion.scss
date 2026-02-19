@@ -1,0 +1,243 @@
+/*! 6.2. Content */
+/*! 6.2.1. Accordion */
+.osui-accordion :first-child:not(.list) > .osui-accordion-item,
+.osui-accordion .list :first-child > .osui-accordion-item{
+  border-radius:var(--border-radius-none);
+  border-top-left-radius:var(--border-radius-soft);
+  border-top-right-radius:var(--border-radius-soft);
+}
+.osui-accordion :last-child:not(.list) > .osui-accordion-item,
+.osui-accordion .list :last-child > .osui-accordion-item{
+  border-bottom-width:var(--border-size-s);
+  border-radius:var(--border-radius-none);
+  border-bottom-left-radius:var(--border-radius-soft);
+  border-bottom-right-radius:var(--border-radius-soft);
+}
+.osui-accordion :only-child > .osui-accordion-item,
+.osui-accordion .list :only-child > .osui-accordion-item{
+  border-radius:var(--border-radius-soft);
+}
+.osui-accordion :first-child:not(.list) > .osui-accordion-item::after{
+  border-top-left-radius:var(--border-radius-soft);
+  border-top-right-radius:var(--border-radius-soft);
+}
+.osui-accordion .osui-accordion-item,
+.osui-accordion .list .osui-accordion-item{
+  border-radius:var(--border-radius-none);
+}
+.osui-accordion .osui-accordion-item{
+  border-bottom-width:var(--border-size-none);
+}
+.osui-accordion .osui-accordion-item::after{
+  border-top-left-radius:var(--border-radius-none);
+  border-top-right-radius:var(--border-radius-none);
+}
+.osui-accordion .osui-accordion-item{
+  -servicestudio-border-bottom-width:var(--border-size-s);
+}
+/*! 6.2.2. Accordion Item */
+.osui-accordion-item{
+  --accordion-active-border-size:2px;
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  border-bottom-width:var(--border-size-s);
+  border-radius:var(--border-radius-soft);
+  position:relative;
+}
+.osui-accordion-item__click_zone{
+  cursor:pointer;
+}
+.osui-accordion-item--toggle-with-icon .osui-accordion-item__title{
+  cursor:default;
+}
+.osui-accordion-item--toggle-with-icon .osui-accordion-item__icon{
+  cursor:pointer;
+}
+.osui-accordion-item:after{
+  background-color:transparent;
+  border-color:transparent;
+  border-style:solid;
+  border-top-left-radius:var(--border-radius-soft);
+  border-top-right-radius:var(--border-radius-soft);
+  border-width:var(--accordion-active-border-size) var(--border-size-none) var(--border-size-none) var(--border-size-none);
+  content:"";
+  left:0;
+  height:100%;
+  pointer-events:none;
+  position:absolute;
+  opacity:0;
+  top:-1px;
+  width:100%;
+}
+.osui-accordion-item--is-open > .osui-accordion-item__title{
+  font-weight:var(--font-semi-bold);
+}
+.osui-accordion-item--is-open > .osui-accordion-item__title > .osui-accordion-item__icon--caret{
+  -webkit-transform:rotate(180deg);
+      -ms-transform:rotate(180deg);
+          transform:rotate(180deg);
+}
+.osui-accordion-item--is-open > .osui-accordion-item__title > .osui-accordion-item__icon--plus-minus:after{
+  -webkit-transform:rotate(90deg);
+      -ms-transform:rotate(90deg);
+          transform:rotate(90deg);
+}
+.osui-accordion-item--is-open.osui-accordion-item--is-disabled::after{
+  border-color:var(--border-color-neutral-6, var(--color-neutral-6));
+}
+.osui-accordion-item--is-open::after{
+  border-color:var(--border-color-primary, var(--color-primary));
+  opacity:1;
+  -webkit-transition:opacity 300ms ease-in;
+  -o-transition:opacity 300ms ease-in;
+  transition:opacity 300ms ease-in;
+}
+.osui-accordion-item--is-disabled{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+  pointer-events:none;
+}
+.osui-accordion-item--is-disabled .osui-accordion-item__icon{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+}
+.osui-accordion-item--is-disabled .osui-accordion-item__icon--plus-minus:after, .osui-accordion-item--is-disabled .osui-accordion-item__icon--plus-minus:before{
+  background-color:var(--background-color-neutral-6, var(--color-neutral-6));
+}
+.osui-accordion-item__title{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  direction:ltr;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  font-size:var(--font-size-h6);
+  line-height:1;
+  padding:var(--space-m);
+  width:100%;
+}
+.osui-accordion-item__title__placeholder{
+  -o-text-overflow:ellipsis;
+     text-overflow:ellipsis;
+  width:100%;
+}
+.osui-accordion-item__title--is-left{
+  -webkit-box-orient:horizontal;
+  -webkit-box-direction:reverse;
+      -ms-flex-direction:row-reverse;
+          flex-direction:row-reverse;
+}
+.osui-accordion-item__title--is-left .osui-accordion-item__title__placeholder{
+  padding-left:var(--space-s);
+}
+.osui-accordion-item__icon{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  color:var(--text-color-primary, var(--color-primary));
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  font-family:FontAwesome;
+  font-size:var(--font-size-h4);
+  font-weight:var(--font-regular);
+  height:16px;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  -webkit-transition:all 300ms ease-in-out;
+  -o-transition:all 300ms ease-in-out;
+  transition:all 300ms ease-in-out;
+  width:16px;
+}
+.osui-accordion-item__icon--caret:after{
+  content:"\f107";
+}
+.osui-accordion-item__icon--plus-minus:after{
+  background-color:var(--background-color-primary, var(--color-primary));
+  content:" ";
+  height:100%;
+  -webkit-transition:-webkit-transform 300ms ease-in-out;
+  transition:-webkit-transform 300ms ease-in-out;
+  -o-transition:transform 300ms ease-in-out;
+  transition:transform 300ms ease-in-out;
+  transition:transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  width:2px;
+}
+.osui-accordion-item__icon--plus-minus:before{
+  background-color:var(--background-color-primary, var(--color-primary));
+  content:" ";
+  height:2px;
+  position:absolute;
+  width:16px;
+}
+.osui-accordion-item__icon--custom:not(.osui-accordion-item__click_zone){
+  pointer-events:none;
+  -servicestudio-height:auto;
+  -servicestudio-width:auto;
+}
+.osui-accordion-item__icon--hidden{
+  display:none;
+  height:0;
+  width:0;
+  -servicestudio-z-index:var(--layer-global-negative);
+}
+.osui-accordion-item__content{
+  display:block;
+  overflow:hidden;
+  padding:var(--space-none) var(--space-m);
+}
+.osui-accordion-item__content--is-collapsed{
+  height:0;
+  visibility:hidden;
+}
+.osui-accordion-item__content--is-collapsed > div{
+  display:none;
+}
+.osui-accordion-item__content--is-expanded{
+  height:auto;
+  padding:var(--space-none) var(--space-m) var(--space-m);
+  visibility:visible;
+}
+.osui-accordion-item__content--is-animating{
+  -webkit-transition:all 300ms ease-in-out;
+  -o-transition:all 300ms ease-in-out;
+  transition:all 300ms ease-in-out;
+}
+.osui-accordion-item__content{
+}
+.osui-accordion-item__content [data-block*=AnimatedLabel]:first-child .animated-label{
+  margin-top:var(--space-s);
+}
+.osui-accordion-item .choices__list.choices__list--dropdown,
+.osui-accordion-item [data-dropdown] > div.dropdown-list{
+  position:initial;
+}
+.osui-accordion-item .osui-accordion{
+  margin-top:var(--accordion-active-border-size);
+}
+.phone .osui-accordion-item .osui-accordion-item__title{
+  font-size:calc(var(--font-size-base));
+}
+.layout-native .osui-accordion-item__title{
+  padding:var(--space-base);
+}
+.layout-native .osui-accordion-item__content{
+  padding:var(--space-none) var(--space-base);
+}
+.layout-native .osui-accordion-item__content--is-collapsed{
+  padding:var(--space-none) var(--space-base);
+}
+.layout-native .osui-accordion-item__content--is-expanded{
+  padding:var(--space-none) var(--space-base) var(--space-base);
+}
+.has-accessible-features .osui-accordion-item__title:focus, .has-accessible-features .osui-accordion-item__content:focus{
+  -webkit-box-shadow:none;
+          box-shadow:none;
+}
+.has-accessible-features .osui-accordion-item__title:focus-visible, .has-accessible-features .osui-accordion-item__content:focus-visible{
+  outline:var(--border-size-l) solid var(--border-color-focus-outer, var(--color-focus-outer));
+}
+.is-rtl .osui-accordion-item__title__placeholder{
+  direction:rtl;
+  margin-right:var(--space-s);
+}

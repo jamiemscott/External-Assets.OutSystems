@@ -1,0 +1,60 @@
+/*! 6.6.8. Provider Login Button */
+/*! Patterns - Utilities - Provider Login Button */
+.btn.btn-provider-login{
+  background:var(--background-color-neutral-0, var(--color-neutral-0));
+  border-color:var(--border-color-neutral-6, var(--color-neutral-6));
+  border-radius:0;
+}
+.btn.btn-provider-login-logo-only{
+  padding:10px;
+}
+.btn.btn-provider-login-logo-only .btn-provider-login-text{
+  display:none;
+  -servicestudio-display:none !important;
+}
+.btn.btn-provider-login-logo svg{
+  height:100%;
+  width:100%;
+}
+.btn.btn-provider-login.btn-small{
+  padding:0 16px;
+}
+.btn.btn-provider-login.btn-small.btn-provider-login-logo-only{
+  padding:5px;
+}
+.btn.btn-provider-login.btn-large{
+  padding:10px 15px;
+}
+.btn.btn-provider-login.soft{
+  border-radius:var(--border-radius-soft);
+}
+.btn.btn-provider-login.rounded{
+  border-radius:var(--border-radius-rounded);
+}
+.btn.btn-provider-login .btn-provider-login-logo{
+  border-radius:50%;
+  height:20px;
+  width:20px;
+}
+.btn.btn-provider-login .btn-provider-login-text{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+  margin-left:10px;
+  white-space:nowrap;
+}
+.phone .layout .btn.btn-provider-login.btn-provider-login-logo-only{
+  width:50px;
+}
+.phone .layout .btn.btn-provider-login.btn-provider-login-logo-only.btn-small{
+  width:40px;
+}
+.phone .layout .btn.btn-provider-login.btn-provider-login-logo-only.btn-large{
+  width:55px;
+}
+.phone .layout .btn.btn-provider-login .btn-provider-login-text-name{
+  text-align:left;
+  width:70px;
+  -servicestudio-display:inline-block;
+}
+.phone .layout .btn.btn-provider-login.btn-small .btn-provider-login-text-name{
+  width:53px;
+}

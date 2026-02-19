@@ -1,0 +1,214 @@
+/*! 6.2.5. Card */
+.card{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  border-radius:var(--border-radius-soft);
+  padding:var(--space-m);
+}
+.layout-native .card{
+  padding:var(--space-base);
+}
+/*! 6.2.6. Card Background */
+.card-background{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border-radius:var(--border-radius-soft);
+  color:var(--text-color-neutral-0, var(--color-neutral-0));
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  overflow:hidden;
+  padding:var(--space-m);
+  position:relative;
+}
+.card-background{
+  -servicestudio-height:auto !important;
+}
+.card-background-content{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  position:relative;
+  width:100%;
+  z-index:var(--layer-local-tier-1);
+}
+.card-background-content{
+  -servicestudio-display:initial;
+}
+.card-background-content.top-left, .card-background-content.center-left, .card-background-content.bottom-left{
+  text-align:left;
+}
+.card-background-content.top-center, .card-background-content.center, .card-background-content.bottom-center{
+  text-align:center;
+}
+.card-background-content.top-right, .card-background-content.center-right, .card-background-content.bottom-right{
+  text-align:right;
+}
+.card-background-image, .card-background-color{
+  left:0;
+  position:absolute;
+  top:0;
+  height:100%;
+  width:100%;
+}
+.card-background-image img{
+  height:100%;
+  -o-object-fit:cover;
+     object-fit:cover;
+  -o-object-position:center center;
+     object-position:center center;
+  width:100%;
+}
+.card-background-color{
+  opacity:0.6;
+}
+.card-background-color:after{
+  background:-webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgb(0, 0, 0)));
+  background:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  content:"";
+  height:100%;
+  left:0;
+  opacity:1;
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index:var(--layer-local-tier-1);
+}
+.remove-card-gradient .card-background-color:after{
+  background:none;
+}
+.layout-native .card-background{
+  padding:var(--space-base);
+}
+.layout-native .card-background.padding-none{
+  padding:var(--space-none);
+}
+/*! 6.2.7. Card Item */
+.card-detail{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.card-detail-left{
+  max-width:120px;
+  padding-right:var(--space-base);
+}
+.card-detail-center{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+}
+.card-detail-right{
+  padding-left:var(--space-base);
+}
+.card-detail-title{
+  color:var(--text-color-neutral-10, var(--color-neutral-10));
+  font-size:var(--font-size-h5);
+  font-weight:var(--font-semi-bold);
+}
+.card-detail-text{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+  overflow:hidden;
+  -o-text-overflow:ellipsis;
+     text-overflow:ellipsis;
+}
+.is-rtl .card-detail-left{
+  padding-left:var(--space-base);
+  padding-right:0;
+}
+.is-rtl .card-detail-right{
+  padding-left:0;
+  padding-right:var(--space-base);
+}
+/*! 6.2.8. Card Sectioned */
+.card-sectioned{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+  padding:var(--space-none);
+}
+.card-sectioned-top{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+}
+.card-sectioned.flex-direction-row .card-image{
+  padding:var(--space-m) var(--space-none) var(--space-m) var(--space-m);
+}
+.card-sectioned.flex-direction-row .card-image.padding-none{
+  padding:var(--space-none);
+}
+.card-sectioned.flex-direction-row .card-sectioned-right .card-image{
+  -webkit-box-ordinal-group:3;
+      -ms-flex-order:2;
+          order:2;
+  padding:var(--space-m) var(--space-m) var(--space-m) var(--space-none);
+}
+.card-sectioned.flex-direction-row .card-sectioned-right .card-image.padding-none{
+  padding:var(--space-none);
+}
+.card-image{
+  padding:var(--space-m) var(--space-m) var(--space-none);
+}
+.card-image img{
+  display:block;
+  margin:0 auto;
+}
+.card-title{
+  font-size:var(--font-size-h4);
+  font-weight:var(--font-semi-bold);
+  padding:var(--space-m) var(--space-m) var(--space-none) var(--space-m);
+}
+.card-content{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+  padding:var(--space-m);
+}
+.card-bottom{
+  padding:var(--space-none) var(--space-m) var(--space-m);
+}
+.layout-native .card-sectioned{
+  padding:0;
+}
+.layout-native .card-sectioned.flex-direction-row .card-image{
+  padding:var(--space-base) var(--space-none) var(--space-base) var(--space-base);
+}
+.layout-native .card-sectioned.flex-direction-row .card-image.padding-none{
+  padding:var(--space-none);
+}
+.layout-native .card-title{
+  padding:var(--space-base) var(--space-base) var(--space-none) var(--space-base);
+}
+.layout-native .card-image{
+  padding:var(--space-base) var(--space-base) var(--space-none);
+}
+.layout-native .card-image.padding-none{
+  padding:var(--space-none);
+}
+.layout-native .card-content{
+  padding:var(--space-base);
+}
+.layout-native .card-content.padding-none{
+  padding:var(--space-none);
+}
+.layout-native .card-bottom{
+  padding:var(--space-none) var(--space-base) var(--space-base);
+}
+.tablet .card-title{
+  font-size:calc(var(--font-size-h4) - 1px);
+}
+.phone .card-title{
+  font-size:calc(var(--font-size-h4) - 2px);
+}

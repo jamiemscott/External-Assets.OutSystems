@@ -1,0 +1,130 @@
+/*! 6.3. Interaction */
+/*! 6.3.1. Action Sheet */
+.action-sheet{
+  bottom:0;
+  left:0;
+  margin-top:0;
+  padding-bottom:calc(var(--os-safe-area-bottom) + var(--space-base));
+  padding-left:calc(var(--os-safe-area-left) + var(--space-base));
+  padding-right:calc(var(--os-safe-area-right) + var(--space-base));
+  padding-top:var(--space-base);
+  pointer-events:auto;
+  position:absolute;
+  -webkit-transform:translateY(100%);
+      -ms-transform:translateY(100%);
+          transform:translateY(100%);
+  width:100%;
+  will-change:transform;
+  z-index:var(--layer-global-off-canvas);
+}
+.action-sheet{
+  -servicestudio--webkit-transform:translateY(0);
+  -servicestudio-transform:translateY(0);
+}
+.action-sheet-container{
+  height:100%;
+  left:0;
+  overflow:hidden;
+  pointer-events:none;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:var(--layer-global-off-canvas);
+}
+.action-sheet-container{
+  -servicestudio-margin-top:-20px;
+}
+.action-sheet-container:after{
+  background-color:var(--background-color-overlay, var(--overlay-background));
+  content:"";
+  display:block;
+  height:100%;
+  left:0;
+  opacity:0;
+  pointer-events:none;
+  position:absolute;
+  top:0;
+  -webkit-transition:opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
+  -o-transition:opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
+  transition:opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
+  width:100%;
+  will-change:opacity;
+}
+.action-sheet-container:after{
+  -servicestudio-opacity:1;
+}
+.action-sheet-container--visible{
+  pointer-events:auto;
+}
+.action-sheet-container--visible.action-sheet-container:after{
+  opacity:1;
+}
+.action-sheet-container--visible .action-sheet{
+  -webkit-transform:none;
+      -ms-transform:none;
+          transform:none;
+}
+.action-sheet-container--visible.action-sheet-container--animatable .action-sheet{
+  -webkit-transition:all 330ms ease-out;
+  -o-transition:all 330ms ease-out;
+  transition:all 330ms ease-out;
+}
+.action-sheet-container--animatable .action-sheet{
+  -webkit-transition:all 130ms ease-in;
+  -o-transition:all 130ms ease-in;
+  transition:all 130ms ease-in;
+}
+.action-sheet-buttons{
+  border-radius:var(--border-radius-soft);
+  display:block;
+  overflow:hidden;
+  position:relative;
+  -webkit-transform:translateZ(0);
+          transform:translateZ(0);
+}
+.action-sheet-actions{
+  -servicestudio-min-height:40px;
+}
+.action-sheet-actions .btn{
+  border:none;
+  border-radius:0;
+  margin-top:1px;
+  width:100%;
+}
+.action-sheet-actions:first-child .btn{
+  margin-top:0;
+}
+.action-sheet-cancel .btn{
+  border:none;
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+}
+.desktop .action-sheet-buttons, .desktop .action-sheet-cancel{
+  max-width:500px;
+}
+.desktop .action-sheet-buttons, .desktop .action-sheet-cancel,
+.tablet .action-sheet-buttons,
+.tablet .action-sheet-cancel{
+  margin:var(--space-none) auto;
+}
+.desktop .action-sheet-cancel,
+.tablet .action-sheet-cancel{
+  margin:var(--space-base) auto var(--space-none);
+}
+.tablet .action-sheet-buttons, .tablet .action-sheet-cancel{
+  max-width:600px;
+}
+.os-high-contrast .action-sheet-container--visible .action-sheet{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-l) solid var(--border-color-focus-outer, var(--color-focus-outer));
+}
+.os-high-contrast .action-sheet-actions{
+  --osui-action-sheet-actions-layer:0;
+  position:relative;
+  z-index:var(--osui-action-sheet-actions-layer);
+}
+.os-high-contrast .action-sheet-actions:has(.btn:focus){
+  z-index:calc(var(--osui-action-sheet-actions-layer) + var(--layer-local-tier-1));
+}
+.os-high-contrast .action-sheet-buttons{
+  overflow:visible;
+}

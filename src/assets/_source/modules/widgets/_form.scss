@@ -1,0 +1,69 @@
+/*! 4.11. Form */
+.form.OSFillParent .form-control[class*=ThemeGrid_Width].not-valid ~ span.validation-message{
+  left:22px;
+}
+.form label{
+  margin-bottom:var(--space-s);
+}
+.form .dropdown,
+.form .search-input,
+.form input[data-input],
+.form textarea[data-textarea],
+.form [data-switch]{
+  margin-bottom:var(--space-m);
+}
+.form span{
+  position:relative;
+}
+.form span.validation-message{
+  bottom:-32px;
+  left:0;
+  position:absolute;
+  white-space:nowrap;
+  width:100%;
+}
+.form > span.input-text .form-control[class*=ThemeGrid_Width].not-valid + span.validation-message{
+  left:0;
+}
+.form textarea[data-textarea] + span.validation-message{
+  bottom:7px;
+}
+.form .upload-file span.validation-message{
+  bottom:8px;
+  position:relative;
+}
+.form .dropdown-container[class*=ThemeGrid_Width].not-valid span.validation-message{
+  bottom:4px;
+}
+.form .dropdown-container.not-valid span.validation-message, .form .dropdown-container.dropdown-expanded.not-valid span.validation-message{
+  bottom:-19px;
+}
+.form .radio-group.not-valid{
+  position:relative;
+}
+.form .radio-group.not-valid span.validation-message{
+  bottom:-10px;
+}
+.firefox textarea[data-textarea] + span.validation-message{
+  bottom:4px;
+}
+span.validation-message{
+  color:var(--text-color-error, var(--color-error));
+  font-size:var(--font-size-xs);
+  margin-left:var(--space-none);
+}
+.form-control[class*=ThemeGrid_Width].not-valid + span.validation-message{
+  left:10px;
+}
+.phone .layout-native .form.OSFillParent .form-control[class*=ThemeGrid_Width].not-valid + span.validation-message{
+  left:6px;
+}
+.phone .form.OSFillParent span.input-text .form-control[class*=ThemeGrid_Width].not-valid + span.validation-message,
+.phone .form span.input-text .form-control[class*=ThemeGrid_Width].not-valid.ThemeGrid_MarginGutter + span.validation-message,
+.phone .form-control[class*=ThemeGrid_Width].not-valid + span.validation-message{
+  left:0;
+}
+.is-rtl form.OSFillParent .form-control[class*=ThemeGrid_Width].not-valid ~ span.validation-message{
+  left:initial;
+  right:22px;
+}

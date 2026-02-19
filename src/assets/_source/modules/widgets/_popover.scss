@@ -1,0 +1,41 @@
+/*! 4.14. Popover */
+[data-popover] [data-icon]{
+  vertical-align:initial;
+}
+[data-popover] > .popover-top{
+  border:var(--border-size-none);
+  padding:var(--space-none);
+}
+[data-popover] > .popover-bottom{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  border-radius:var(--border-radius-soft);
+  -webkit-box-shadow:var(--shadow-s);
+          box-shadow:var(--shadow-s);
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+  max-width:350px;
+  min-width:auto;
+  padding:var(--space-base);
+  z-index:var(--layer-global-elevated);
+}
+.is-rtl [data-popover] > .popover-top{
+  display:inline;
+}
+/*! 4.15. Popover - ODC */
+[data-popover] > .popover-bottom.align-bottom.align-center{
+  -webkit-transform:translateX(-50%) translateY(-100%);
+      -ms-transform:translateX(-50%) translateY(-100%);
+          transform:translateX(-50%) translateY(-100%);
+}
+.is-rtl [data-popover] > .popover-bottom.align-center{
+  margin-left:initial;
+  margin-right:-50%;
+  -webkit-transform:translateX(50%);
+      -ms-transform:translateX(50%);
+          transform:translateX(50%);
+}
+.is-rtl [data-popover] > .popover-bottom.align-center.align-bottom{
+  -webkit-transform:translateX(50%) translateY(-100%);
+      -ms-transform:translateX(50%) translateY(-100%);
+          transform:translateX(50%) translateY(-100%);
+}

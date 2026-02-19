@@ -1,0 +1,87 @@
+/*! 6.4. Navigation */
+/*! 6.4.1. Bottom Bar Item */
+.bottom-bar-wrapper{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border-top:var(--border-size-s) solid var(--border-color-neutral-3, var(--color-neutral-3));
+  height:100%;
+}
+.bottom-bar{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.bottom-bar:empty:after{
+  color:var(--text-color-neutral-7, var(--color-neutral-7));
+  content:"Add Bottom Bar Items to this Container";
+  display:block;
+  font-size:12px;
+  padding:20px;
+  text-align:center;
+}
+.bottom-bar > a, .bottom-bar > div{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+  max-width:150px;
+  overflow:hidden;
+}
+.bottom-bar > a{
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+}
+.bottom-bar > a.active{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.bottom-bar-item{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  height:100%;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  overflow:hidden;
+  padding:0 var(--space-s);
+  position:relative;
+}
+.bottom-bar-item-icon{
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  font-size:var(--font-size-h6);
+  height:auto;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+.bottom-bar-item-text{
+  font-size:10px;
+  overflow:hidden;
+  -o-text-overflow:ellipsis;
+     text-overflow:ellipsis;
+  white-space:nowrap;
+  word-wrap:break-word;
+}
+.android .layout-native .bottom-bar-wrapper{
+  padding-bottom:var(--safe-area-inset-bottom, 0px);
+}
+.layout-native .bottom-bar-wrapper{
+  padding-bottom:var(--os-safe-area-bottom);
+}
+.layout-native .bottom-bar{
+  height:100%;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+.layout-native .footer{
+  height:var(--bottom-bar-size);
+}
+.has-accessible-features .bottom-bar > a:focus{
+  background-color:transparent;
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+}

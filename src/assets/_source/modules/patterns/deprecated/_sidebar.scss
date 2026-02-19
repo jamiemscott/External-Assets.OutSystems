@@ -1,0 +1,93 @@
+/*! 6.8.16. Sidebar */
+.sidebar{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  -webkit-box-shadow:var(--shadow-l);
+          box-shadow:var(--shadow-l);
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  height:100%;
+  margin:var(--space-none);
+  position:fixed;
+  right:0;
+  top:0;
+  -webkit-transform:translateX(102%);
+      -ms-transform:translateX(102%);
+          transform:translateX(102%);
+  -webkit-transition:all 130ms ease-in;
+  -o-transition:all 130ms ease-in;
+  transition:all 130ms ease-in;
+  width:500px;
+  will-change:transform;
+  z-index:var(--layer-global-off-canvas);
+}
+.sidebar{
+  -servicestudio-bottom:20px;
+  -servicestudio-height:auto;
+  -servicestudio-margin-left:auto;
+  -servicestudio-position:relative;
+  -servicestudio-transform:none;
+  -servicestudio-webkit-transform:none;
+}
+.sidebar:before{
+  background-color:transparent;
+  content:"";
+  height:100%;
+  left:-24px;
+  position:fixed;
+  width:24px;
+}
+.sidebar-header, .sidebar-content{
+  padding:var(--space-base) var(--space-m);
+}
+.sidebar-content{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.active-screen.screen-container .sidebar.sidebar-open{
+  -webkit-transform:none;
+      -ms-transform:none;
+          transform:none;
+  -webkit-transition:all 330ms ease-out;
+  -o-transition:all 330ms ease-out;
+  transition:all 330ms ease-out;
+  will-change:transform;
+}
+.desktop .sidebar:before{
+  display:none;
+}
+.android .layout-native .sidebar{
+  padding-top:max(var(--status-bar-height, 0px), var(--safe-area-inset-top, 0px));
+}
+.ios .layout-native .sidebar{
+  padding-bottom:var(--os-safe-area-bottom);
+  padding-top:var(--os-safe-area-top);
+}
+.ios .phone.landscape .layout-native .sidebar:before{
+  left:calc((var(--os-safe-area-left) + 12px) * -1);
+  width:calc(var(--os-safe-area-left) + 12px);
+}
+.landscape .layout-native .sidebar{
+  padding-bottom:var(--os-safe-area-bottom);
+}
+.tablet .sidebar.full-width,
+.phone .sidebar.full-width{
+  width:100%;
+}
+.tablet .sidebar.full-width-vw,
+.phone .sidebar.full-width-vw{
+  width:100vw;
+}
+.tablet .layout-native .sidebar{
+  width:336px;
+}
+.phone .sidebar{
+  width:85vw;
+}

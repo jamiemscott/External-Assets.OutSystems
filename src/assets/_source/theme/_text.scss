@@ -1,0 +1,73 @@
+/*! 7.7. Text */
+.break-word{
+  word-break:break-word;
+}
+.text-align-left{
+  text-align:left;
+}
+.text-align-center{
+  text-align:center;
+}
+.text-align-right{
+  text-align:right;
+}
+.white-space-nowrap{
+  white-space:nowrap;
+}
+.is-rtl [align=right],
+.is-rtl .text-align-right{
+  text-align:left;
+}
+.is-rtl [align=left],
+.is-rtl .text-align-left{
+  text-align:right;
+}
+/*! 7.8. Typography */
+.font-size-base{
+  font-size:var(--font-size-base);
+}
+.font-size-s{
+  font-size:var(--font-size-s);
+}
+.font-size-xs{
+  font-size:var(--font-size-xs);
+}
+.font-size-label{
+  font-size:var(--font-size-label);
+}
+.font-light{
+  font-weight:var(--font-light);
+}
+.font-regular{
+  font-weight:var(--font-regular);
+}
+.font-semi-bold{
+  font-weight:var(--font-semi-bold);
+}
+.font-bold{
+  font-weight:var(--font-bold);
+}
+.bold{
+  font-weight:var(--font-bold);
+}
+.italic{
+  font-style:italic;
+}
+.oblique{
+  font-style:oblique;
+}
+.text-lowercase{
+  text-transform:lowercase;
+}
+.text-uppercase{
+  text-transform:uppercase;
+}
+.text-capitalize{
+  text-transform:capitalize;
+}
+.text-ellipsis{
+  overflow:hidden;
+  -o-text-overflow:ellipsis;
+     text-overflow:ellipsis;
+  white-space:nowrap;
+}

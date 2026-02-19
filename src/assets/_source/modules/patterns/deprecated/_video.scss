@@ -1,0 +1,13 @@
+/*! 6.8.21. Video */
+.video-preview{
+  display:block;
+}
+.video-wrapper.hide-controls{
+  pointer-events:none;
+}
+.video-wrapper.hide-controls::-webkit-media-controls-panel, .video-wrapper.hide-controls::-webkit-media-controls-panel-container{
+  display:none !important;
+}
+/*! ==============================================================================
+7. Usefull Classes
+=============================================================================== */

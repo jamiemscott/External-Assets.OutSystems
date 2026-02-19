@@ -1,0 +1,88 @@
+/*! 4.17. Feedback Message */
+.feedback-message{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border-radius:var(--border-radius-soft);
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  font-size:var(--font-size-h6);
+  font-weight:var(--font-regular);
+  left:50%;
+  max-width:600px;
+  min-width:400px;
+  padding:var(--space-base);
+}
+.feedback-message i{
+  -ms-flex-item-align:start;
+      align-self:flex-start;
+  font-size:var(--font-size-h5);
+  margin-top:2px;
+  position:relative;
+}
+.feedback-message-text{
+  padding-left:var(--space-base);
+}
+div.feedback-message-error{
+  background-color:var(--background-color-error, var(--color-error));
+}
+div.feedback-message-info{
+  background-color:var(--background-color-info, var(--color-info));
+}
+div.feedback-message-success{
+  background-color:var(--background-color-success, var(--color-success));
+}
+div.feedback-message-warning{
+  background-color:var(--background-color-warning, var(--color-warning));
+  color:var(--text-color-neutral-10, var(--color-neutral-10));
+}
+.phone .feedback-message{
+  -webkit-animation-name:feedbackMessageSlideDownPhone;
+          animation-name:feedbackMessageSlideDownPhone;
+  border-radius:0;
+  max-width:100%;
+  min-width:100%;
+}
+.phone .feedback-message.feedback-message-autoclose{
+  -webkit-animation-name:feedbackMessageSlideDownThenUpPhone;
+          animation-name:feedbackMessageSlideDownThenUpPhone;
+}
+.phone.ios .feedback-message{
+  padding-top:calc(var(--os-safe-area-top) + var(--space-base));
+}
+.android .feedback-message{
+  padding-top:calc(max(var(--status-bar-height, 0px), var(--safe-area-inset-top, 0px)) + var(--space-base));
+}
+.android.landscape .feedback-message{
+  -webkit-animation-name:feedbackMessageSlideDownPhone;
+          animation-name:feedbackMessageSlideDownPhone;
+}
+.is-rtl.phone .feedback-message{
+  -webkit-animation-name:feedbackMessageSlideDownPhoneRTL;
+          animation-name:feedbackMessageSlideDownPhoneRTL;
+  border-radius:0;
+  left:0;
+  max-width:100%;
+  min-width:100%;
+}
+.is-rtl.phone .feedback-message.feedback-message-autoclose{
+  -webkit-animation-name:feedbackMessageSlideDownThenUpPhoneRTL;
+          animation-name:feedbackMessageSlideDownThenUpPhoneRTL;
+}
+.os-high-contrast .feedback-message{
+  border-width:var(--border-size-l);
+  border-style:solid;
+}
+.os-high-contrast .feedback-message.feedback-message-error{
+  border-color:var(--border-color-error, var(--color-error));
+}
+.os-high-contrast .feedback-message.feedback-message-info{
+  border-color:var(--border-color-info, var(--color-info));
+}
+.os-high-contrast .feedback-message.feedback-message-success{
+  border-color:var(--border-color-success, var(--color-success));
+}
+.os-high-contrast .feedback-message.feedback-message-warning{
+  border-color:var(--border-color-warning, var(--color-warning));
+}

@@ -1,0 +1,34 @@
+/*! 6.8.9. Gallery */
+.grid-gallery, .grid-gallery > .list{
+  display:grid;
+  grid-gap:var(--grid-gap);
+  grid-template-columns:repeat(var(--grid-desktop), 1fr);
+}
+.grid-gallery > *{
+  margin-top:0;
+}
+.grid-gallery > .list{
+  grid-column-end:calc(var(--grid-desktop) + 1);
+  grid-column-start:1;
+  overflow:initial;
+}
+.grid-gallery > .list .card,
+.grid-gallery > .list .animate{
+  height:100%;
+}
+.grid-gallery > img{
+  -o-object-fit:cover;
+     object-fit:cover;
+}
+.tablet .grid-gallery, .tablet .grid-gallery > .list{
+  grid-template-columns:repeat(var(--grid-tablet), 1fr);
+}
+.tablet .grid-gallery > .list{
+  grid-column-end:calc(var(--grid-tablet) + 1);
+}
+.phone .grid-gallery, .phone .grid-gallery > .list{
+  grid-template-columns:repeat(var(--grid-phone), 1fr);
+}
+.phone .grid-gallery > .list{
+  grid-column-end:calc(var(--grid-phone) + 1);
+}

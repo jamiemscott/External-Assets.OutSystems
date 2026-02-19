@@ -1,0 +1,33 @@
+/*! 4.16. Popup */
+[data-popup]{
+  -servicestudio-top:0;
+}
+[data-popup-backdrop]{
+  z-index:var(--osui-popup-layer);
+}
+.popup-backdrop{
+  background-color:var(--background-color-overlay, var(--overlay-background));
+}
+.popup-dialog{
+  border:0;
+  border-radius:var(--border-radius-soft);
+  -webkit-box-shadow:var(--shadow-xl);
+          box-shadow:var(--shadow-xl);
+  margin:var(--space-m);
+  max-height:calc(100% - var(--space-xl));
+  max-width:500px;
+  overflow:visible;
+  padding:var(--space-m);
+  width:100%;
+}
+.popup-dialog{
+  -servicestudio-margin:auto;
+  -servicestudio-overflow:hidden;
+}
+.layout-native .popup-backdrop, .layout-native .popup-dialog{
+  padding:var(--space-base);
+}
+.os-high-contrast .popup-dialog{
+  border:var(--border-size-s) solid var(--border-color-neutral-0, var(--color-neutral-0));
+  border-radius:var(--border-radius-soft);
+}

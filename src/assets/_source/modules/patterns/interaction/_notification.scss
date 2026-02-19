@@ -1,0 +1,155 @@
+/*! 6.3.13. Notification */
+.osui-notification{
+  --osui-notification-margin:var(--space-m);
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border-radius:var(--border-radius-soft);
+  border:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  -webkit-box-shadow:var(--shadow-xl);
+          box-shadow:var(--shadow-xl);
+  color:var(--text-color-neutral-10, var(--color-neutral-10));
+  max-width:calc(100vw - var(--osui-notification-margin) * 2);
+  opacity:0;
+  padding:var(--space-m);
+  pointer-events:none;
+  position:fixed;
+  -webkit-transition:opacity 300ms ease-out, -webkit-transform 300ms ease-out;
+  transition:opacity 300ms ease-out, -webkit-transform 300ms ease-out;
+  -o-transition:transform 300ms ease-out, opacity 300ms ease-out;
+  transition:transform 300ms ease-out, opacity 300ms ease-out;
+  transition:transform 300ms ease-out, opacity 300ms ease-out, -webkit-transform 300ms ease-out;
+  -webkit-user-select:none;
+     -moz-user-select:none;
+      -ms-user-select:none;
+          user-select:none;
+  width:var(--notification-width);
+  z-index:var(--osui-notification-layer);
+}
+.osui-notification{
+  -servicestudio-opacity:1;
+  -servicestudio-position:relative;
+}
+.osui-notification-preview{
+  -servicestudio-position:relative;
+}
+.osui-notification-preview.bottom .is-bottom, .osui-notification-preview.bottom-right .is-bottom-right, .osui-notification-preview.bottom-left .is-bottom-left, .osui-notification-preview.center .is-center, .osui-notification-preview.right .is-right, .osui-notification-preview.left .is-left, .osui-notification-preview.top .is-top, .osui-notification-preview.top-right .is-top-right, .osui-notification-preview.top-left .is-top-left{
+  -servicestudio-display:block;
+}
+.osui-notification-preview [class*=is-]{
+  -servicestudio-display:none;
+}
+.osui-notification--is-top{
+  left:50%;
+  -webkit-transform:translate(-50%, -100%);
+      -ms-transform:translate(-50%, -100%);
+          transform:translate(-50%, -100%);
+}
+.osui-notification--is-top, .osui-notification--is-top-right, .osui-notification--is-top-left{
+  top:calc(var(--os-safe-area-top) + var(--osui-notification-margin));
+}
+.osui-notification--is-top-right{
+  right:calc(var(--os-safe-area-right) + var(--osui-notification-margin));
+  -webkit-transform:translateX(100%);
+      -ms-transform:translateX(100%);
+          transform:translateX(100%);
+}
+.osui-notification--is-top-left{
+  left:calc(var(--os-safe-area-left) + var(--osui-notification-margin));
+  -webkit-transform:translateX(-100%);
+      -ms-transform:translateX(-100%);
+          transform:translateX(-100%);
+}
+.osui-notification--is-center{
+  top:50%;
+  left:50%;
+  -webkit-transform:translate(-50%, -100%);
+      -ms-transform:translate(-50%, -100%);
+          transform:translate(-50%, -100%);
+}
+.osui-notification--is-right, .osui-notification--is-left{
+  top:50%;
+}
+.osui-notification--is-right{
+  right:calc(var(--os-safe-area-right) + var(--osui-notification-margin));
+  -webkit-transform:translate(100%, -50%);
+      -ms-transform:translate(100%, -50%);
+          transform:translate(100%, -50%);
+}
+.osui-notification--is-left{
+  left:calc(var(--os-safe-area-left) + var(--osui-notification-margin));
+  -webkit-transform:translate(-100%, -50%);
+      -ms-transform:translate(-100%, -50%);
+          transform:translate(-100%, -50%);
+}
+.osui-notification--is-bottom{
+  left:50%;
+  -webkit-transform:translate(-50%, 100%);
+      -ms-transform:translate(-50%, 100%);
+          transform:translate(-50%, 100%);
+}
+.osui-notification--is-bottom, .osui-notification--is-bottom-right, .osui-notification--is-bottom-left{
+  bottom:calc(var(--os-safe-area-bottom) + var(--osui-notification-margin));
+}
+.osui-notification--is-bottom-right{
+  right:calc(var(--os-safe-area-right) + var(--osui-notification-margin));
+  -webkit-transform:translateX(100%);
+      -ms-transform:translateX(100%);
+          transform:translateX(100%);
+}
+.osui-notification--is-bottom-left{
+  left:calc(var(--os-safe-area-left) + var(--osui-notification-margin));
+  -webkit-transform:translateX(-100%);
+      -ms-transform:translateX(-100%);
+          transform:translateX(-100%);
+}
+.osui-notification--is-open{
+  opacity:1;
+  pointer-events:auto;
+}
+.osui-notification--is-open.osui-notification--is-top{
+  -webkit-transform:translate(-50%);
+      -ms-transform:translate(-50%);
+          transform:translate(-50%);
+}
+.osui-notification--is-open.osui-notification--is-top-right, .osui-notification--is-open.osui-notification--is-top-left{
+  -webkit-transform:translate(0, 0);
+      -ms-transform:translate(0, 0);
+          transform:translate(0, 0);
+}
+.osui-notification--is-open.osui-notification--is-center{
+  -webkit-transform:translate(-50%, -50%);
+      -ms-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
+}
+.osui-notification--is-open.osui-notification--is-right, .osui-notification--is-open.osui-notification--is-left{
+  -webkit-transform:translate(0, -50%);
+      -ms-transform:translate(0, -50%);
+          transform:translate(0, -50%);
+}
+.osui-notification--is-open.osui-notification--is-bottom{
+  -webkit-transform:translate(-50%, 0);
+      -ms-transform:translate(-50%, 0);
+          transform:translate(-50%, 0);
+}
+.osui-notification--is-open.osui-notification--is-bottom-right, .osui-notification--is-open.osui-notification--is-bottom-left{
+  -webkit-transform:translateX(0);
+      -ms-transform:translateX(0);
+          transform:translateX(0);
+}
+.slide-from-left-enter .layout-native .osui-notification,
+.slide-from-left-leave .layout-native .osui-notification,
+.slide-from-right-enter .layout-native .osui-notification,
+.slide-from-right-leave .layout-native .osui-notification,
+.slide-from-top-enter .layout-native .osui-notification,
+.slide-from-top-leave .layout-native .osui-notification,
+.slide-from-bottom-enter .layout-native .osui-notification,
+.slide-from-bottom-leave .layout-native .osui-notification,
+.fade-enter .layout-native .osui-notification,
+.fade-leave .layout-native .osui-notification{
+  display:none;
+}
+.phone .osui-notification{
+  --osui-notification-margin:var(--space-base);
+}
+.android .layout-native .osui-notification--is-open{
+  margin-top:max(var(--status-bar-height, 0px), var(--safe-area-inset-top, 0px));
+}

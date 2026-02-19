@@ -1,0 +1,68 @@
+/*! 6.6.6. Pull to Refresh */
+.pull-to-refresh{
+  color:var(--text-color-neutral-6, var(--color-neutral-6));
+  font-size:var(--font-size-h3);
+  left:0;
+  padding:var(--space-s);
+  position:absolute;
+  text-align:center;
+  width:100%;
+}
+.pull-to-refresh{
+  -servicestudio-display:none;
+}
+.pull-to-refresh-loading{
+  display:none;
+  text-align:center;
+}
+.pull-to-refresh .genericon{
+  -webkit-transition:all 0.25s ease;
+  -o-transition:all 0.25s ease;
+  transition:all 0.25s ease;
+}
+.ptr-loading .content,
+.ptr-loading .pull-to-refresh, .ptr-reset .content,
+.ptr-reset .pull-to-refresh{
+  -webkit-transition:all 0.25s ease;
+  -o-transition:all 0.25s ease;
+  transition:all 0.25s ease;
+}
+.ptr-loading .pull-to-refresh .genericon, .ptr-reset .pull-to-refresh .genericon{
+  display:none;
+}
+.ptr-loading .pull-to-refresh-loading{
+  display:block;
+}
+.ptr-loading:not(.osui-bottom-sheet--is-active) .content{
+  -webkit-transform:translate3D(0, 50px, 0);
+      -ms-transform:translate3D(0, 50px, 0);
+          transform:translate3D(0, 50px, 0);
+}
+.ptr-loading:not(.osui-bottom-sheet--is-active) .osui-bottom-sheet, .ptr-reset:not(.osui-bottom-sheet--is-active) .osui-bottom-sheet{
+  display:none;
+}
+.ptr-reset{
+  -webkit-transform:translate3D(0, 0, 0);
+      -ms-transform:translate3D(0, 0, 0);
+          transform:translate3D(0, 0, 0);
+}
+.ptr-refresh .pull-to-refresh .genericon{
+  -webkit-transform:rotate(180deg);
+      -ms-transform:rotate(180deg);
+          transform:rotate(180deg);
+}
+.slide-from-left-enter .layout-native .pull-to-refresh,
+.slide-from-left-leave .layout-native .pull-to-refresh,
+.slide-from-right-enter .layout-native .pull-to-refresh,
+.slide-from-right-leave .layout-native .pull-to-refresh,
+.slide-from-top-enter .layout-native .pull-to-refresh,
+.slide-from-top-leave .layout-native .pull-to-refresh,
+.slide-from-bottom-enter .layout-native .pull-to-refresh,
+.slide-from-bottom-leave .layout-native .pull-to-refresh,
+.fade-enter .layout-native .pull-to-refresh,
+.fade-leave .layout-native .pull-to-refresh{
+  display:none;
+}
+.ios.ptr-refresh .layout-native.ios-bounce .main{
+  overflow:hidden;
+}

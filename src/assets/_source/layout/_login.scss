@@ -1,0 +1,97 @@
+/*! 3.14. Login */
+.login-screen{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  background-color:var(--background-color-primary, var(--color-primary));
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  height:100%;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+.login-screen > img{
+  left:0;
+  position:absolute;
+  top:0;
+  height:100%;
+  -o-object-fit:cover;
+     object-fit:cover;
+  width:100%;
+}
+.login-form{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border-radius:var(--border-radius-soft);
+  -webkit-box-shadow:var(--shadow-l);
+          box-shadow:var(--shadow-l);
+  min-width:435px;
+  padding:var(--space-xxl);
+  z-index:var(--layer-global-screen);
+}
+.layout-native .login-screen{
+  background-color:var(--background-color-login, var(--color-background-login));
+  padding:var(--os-safe-area-top) var(--os-safe-area-right) var(--os-safe-area-bottom) var(--os-safe-area-left);
+}
+.layout-native .login-form{
+  border-radius:0;
+  -webkit-box-shadow:none;
+          box-shadow:none;
+}
+.login-button [data-block*=ButtonLoading], .login-button [data-block*=ButtonLoading] > div{
+  -servicestudio-width:100% !important;
+}
+.android .layout-native .login-screen{
+  padding-top:max(var(--status-bar-height, 0px), var(--safe-area-inset-top, 0px));
+  padding-bottom:var(--safe-area-inset-bottom, 0px);
+  padding-left:var(--safe-area-inset-left, 0px);
+  padding-right:var(--safe-area-inset-right, 0px);
+}
+.phone .login-form{
+  margin:var(--space-none) var(--space-base);
+  min-width:auto;
+  padding:var(--space-l);
+  width:100%;
+}
+.phone .layout-native .login-form{
+  background:transparent;
+  margin:0;
+}
+.phone .layout-native .login-button .btn{
+  padding-bottom:var(--os-safe-area-bottom);
+}
+.phone .layout-native.blank .login-button .btn{
+  padding-bottom:var(--space-none);
+}
+/*! 3.15. iOS Scroll Bounce */
+.ios .layout-native.ios-bounce:not(.hide-header-on-scroll) .main{
+  display:grid;
+  grid-template:auto 1fr auto/1fr;
+  grid-template-areas:"header" "content" "footer";
+  max-height:var(--viewport-height, 100vh);
+  width:100%;
+}
+.ios .layout-native.ios-bounce:not(.hide-header-on-scroll) .main{
+  -servicestudio-max-height:100% !important;
+}
+.ios .layout-native.ios-bounce:not(.hide-header-on-scroll) .header{
+  grid-area:header;
+  position:relative;
+}
+.ios .layout-native.ios-bounce:not(.hide-header-on-scroll) [data-block="Private.PullToRefresh"]{
+  display:contents;
+}
+.ios .layout-native.ios-bounce:not(.hide-header-on-scroll) .pull-to-refresh{
+  top:calc(var(--header-size) + var(--header-size-content) + var(--os-safe-area-top));
+}
+.ios .layout-native.ios-bounce:not(.hide-header-on-scroll) .content{
+  background-color:var(--background-color-body, var(--color-background-body));
+  grid-area:content;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+.ios .layout-native.ios-bounce:not(.hide-header-on-scroll) .content-bottom{
+  grid-area:footer;
+  position:relative;
+}

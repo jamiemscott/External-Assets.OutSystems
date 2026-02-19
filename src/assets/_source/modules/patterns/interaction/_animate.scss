@@ -1,0 +1,80 @@
+/*! 6.3.2. Animate */
+.animate:not(.flatpickr-calendar){
+  -webkit-animation-duration:1000ms;
+          animation-duration:1000ms;
+  -webkit-animation-fill-mode:both;
+          animation-fill-mode:both;
+  display:inline-block;
+  -webkit-transition-timing-function:ease-out;
+       -o-transition-timing-function:ease-out;
+          transition-timing-function:ease-out;
+  visibility:hidden;
+  width:100%;
+  will-change:transform;
+}
+.animate:not(.flatpickr-calendar).slow{
+  -webkit-animation-duration:1500ms;
+          animation-duration:1500ms;
+}
+.animate:not(.flatpickr-calendar).fast{
+  -webkit-animation-duration:500ms;
+          animation-duration:500ms;
+}
+.bottom-to-top{
+  -webkit-animation-name:bottomtotop;
+          animation-name:bottomtotop;
+  visibility:visible !important;
+}
+.bounce{
+  -webkit-animation-name:bounce;
+          animation-name:bounce;
+  visibility:visible !important;
+}
+.fade-in{
+  -webkit-animation-name:fadein;
+          animation-name:fadein;
+  visibility:visible !important;
+}
+.left-to-right{
+  -webkit-animation-name:lefttoright;
+          animation-name:lefttoright;
+  visibility:visible !important;
+}
+.right-to-left{
+  -webkit-animation-name:righttoleft;
+          animation-name:righttoleft;
+  visibility:visible !important;
+}
+.top-to-bottom{
+  -webkit-animation-name:toptobottom;
+          animation-name:toptobottom;
+  visibility:visible !important;
+}
+.scale{
+  -webkit-animation-name:scale;
+          animation-name:scale;
+  visibility:visible !important;
+}
+.scale-down{
+  -webkit-animation-name:scaledown;
+          animation-name:scaledown;
+  visibility:visible !important;
+}
+.scale-up{
+  -webkit-animation-name:scaleup;
+          animation-name:scaleup;
+  visibility:visible !important;
+}
+.spinner{
+  -webkit-animation:spinner 1000ms infinite linear;
+          animation:spinner 1000ms infinite linear;
+  visibility:visible !important;
+}
+.spinner.slow{
+  -webkit-animation:spinner 1500ms infinite linear;
+          animation:spinner 1500ms infinite linear;
+}
+.spinner.fast{
+  -webkit-animation:spinner 500ms infinite linear;
+          animation:spinner 500ms infinite linear;
+}

@@ -1,0 +1,79 @@
+/*! 4.6. List */
+.list.list-group{
+  overflow:hidden;
+  position:relative;
+}
+/*! 4.7. List Item */
+.list-item{
+  border-bottom:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  overflow:hidden;
+  padding:var(--space-m);
+  position:relative;
+}
+.list-item:last-of-type{
+  border-bottom:none;
+}
+.list-item.list-item-no-click-effect .scale-animation{
+  background:transparent !important;
+  opacity:0 !important;
+}
+.list-item .scale-animation{
+  -webkit-animation:list-item-scale-animation 1500ms;
+          animation:list-item-scale-animation 1500ms;
+  background-color:rgba(0, 0, 0, 0.1);
+  border-radius:100px;
+  display:block;
+  height:10px;
+  left:50%;
+  pointer-events:none;
+  position:absolute;
+  top:50%;
+  width:10px;
+  will-change:transform;
+  z-index:var(--layer-global-screen);
+}
+.list .list-item{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+}
+.layout-native .list-item{
+  padding:var(--space-base);
+}
+.desktop .list .list-item:hover:not(.list-item-no-hover):not(.list-item-selected){
+  background-color:var(--background-color-neutral-2, var(--color-neutral-2));
+}
+.desktop .list .list-item-selected,
+.tablet.landscape .list .list-item-selected{
+  background:var(--background-color-primary, var(--color-primary)) var(--background-color-primary-lightest, var(--color-primary-lightest));
+}
+.desktop .list .list-item-selected .list-item-content-title,
+.tablet.landscape .list .list-item-selected .list-item-content-title{
+  color:var(--text-color-neutral-10, var(--color-neutral-10));
+}
+.desktop .list .list-item-selected .list-item-content-text,
+.tablet.landscape .list .list-item-selected .list-item-content-text{
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+}
+.desktop .list .list-item-selected .list-item-content-right .icon,
+.tablet.landscape .list .list-item-selected .list-item-content-right .icon{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.os-high-contrast.desktop .list .list-item:hover,
+.os-high-contrast.desktop .list .list-item-selected, .os-high-contrast.tablet.landscape .list .list-item:hover,
+.os-high-contrast.tablet.landscape .list .list-item-selected{
+  position:relative;
+}
+.os-high-contrast.desktop .list .list-item:hover:before,
+.os-high-contrast.desktop .list .list-item-selected:before, .os-high-contrast.tablet.landscape .list .list-item:hover:before,
+.os-high-contrast.tablet.landscape .list .list-item-selected:before{
+  border:var(--border-size-s) solid var(--border-color-focus-outer, var(--color-focus-outer));
+  border-right-width:0;
+  border-left-width:var(--border-size-l);
+  bottom:0;
+  content:"";
+  display:block;
+  left:0;
+  pointer-events:none;
+  position:absolute;
+  right:0;
+  top:0;
+}

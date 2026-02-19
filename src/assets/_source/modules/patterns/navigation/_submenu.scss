@@ -1,0 +1,349 @@
+/*! 6.4.6. Submenu */
+.osui-submenu{
+  cursor:pointer;
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  position:relative;
+}
+.osui-submenu{
+  -servicestudio-height:auto !important;
+}
+.osui-submenu:first-of-type:not(.osui-submenu--is-open) .osui-submenu__items{
+  display:none;
+  opacity:0;
+}
+.osui-submenu:first-of-type:not(.osui-submenu--is-open) .osui-submenu__header .osui-submenu__header__icon{
+  top:-1px;
+  -webkit-transform:rotate(-45deg);
+  -ms-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+}
+.osui-submenu:hover .osui-submenu__header__icon:before{
+  border:var(--border-size-s) solid var(--border-color-neutral-9, var(--color-neutral-9));
+  border-right:0;
+  border-top:0;
+}
+.osui-submenu.active--is-open .osui-submenu__header__item{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.osui-submenu.active .osui-submenu__header{
+  border-bottom:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+}
+.osui-submenu.active .osui-submenu__header__item,
+.osui-submenu.active .osui-submenu__header__item a{
+  color:var(--text-color-primary, var(--color-primary));
+  text-decoration:none;
+}
+.osui-submenu.active .osui-submenu__header__icon:before{
+  border:var(--border-size-s) solid var(--border-color-primary, var(--color-primary));
+  border-right:0;
+  border-top:0;
+}
+.osui-submenu--is-open .osui-submenu__header__icon{
+  top:3px;
+  -webkit-transform:rotate(135deg);
+      -ms-transform:rotate(135deg);
+          transform:rotate(135deg);
+}
+.osui-submenu--is-open .osui-submenu__items{
+  opacity:1;
+  pointer-events:auto;
+  -webkit-transform:translateY(0px);
+      -ms-transform:translateY(0px);
+          transform:translateY(0px);
+}
+.osui-submenu--is-dropdown .osui-submenu__header__icon{
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+}
+.osui-submenu--is-hover.osui-submenu--is-open .osui-submenu__header{
+  position:relative;
+}
+.osui-submenu--is-hover.osui-submenu--is-open .osui-submenu__header:after{
+  content:"";
+  height:100%;
+  left:0;
+  position:absolute;
+  right:0;
+  top:100%;
+}
+.osui-submenu__header{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border-bottom:var(--border-size-m) solid transparent;
+  border-top:var(--border-size-m) solid transparent;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  padding:var(--space-none) var(--space-s);
+  -webkit-transition:all 150ms linear;
+  -o-transition:all 150ms linear;
+  transition:all 150ms linear;
+}
+.osui-submenu__header__icon{
+  display:none;
+  margin-left:var(--space-s);
+  position:relative;
+  top:-1px;
+  -webkit-transform:rotate(-45deg);
+      -ms-transform:rotate(-45deg);
+          transform:rotate(-45deg);
+  -webkit-transition:all 150ms linear;
+  -o-transition:all 150ms linear;
+  transition:all 150ms linear;
+}
+.osui-submenu__header__icon:before{
+  border:var(--border-size-s) solid var(--border-color-neutral-8, var(--color-neutral-8));
+  border-right:0;
+  border-top:0;
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+  content:"";
+  height:6px;
+  -webkit-transition:all 150ms linear;
+  -o-transition:all 150ms linear;
+  transition:all 150ms linear;
+  width:6px;
+}
+.osui-submenu__header__item{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  height:100%;
+  position:relative;
+  -webkit-transition:all 150ms linear;
+  -o-transition:all 150ms linear;
+  transition:all 150ms linear;
+  -servicestudio-min-width:100px;
+  -servicestudio-margin-left:calc(var(--space-s) * -1);
+}
+.osui-submenu__header__item a{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  height:100%;
+}
+.osui-submenu__header__item a:hover{
+  text-decoration:none;
+}
+.osui-submenu__items{
+  background-color:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  border-radius:var(--border-radius-soft);
+  -webkit-box-shadow:var(--shadow-m);
+          box-shadow:var(--shadow-m);
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  left:0;
+  min-width:100px;
+  opacity:0;
+  padding:var(--space-s) var(--space-none);
+  pointer-events:none;
+  position:absolute;
+  top:calc(100% + var(--space-xs));
+  -webkit-transform:translateY(-8px);
+      -ms-transform:translateY(-8px);
+          transform:translateY(-8px);
+  -webkit-transition:all 130ms ease-out;
+  -o-transition:all 130ms ease-out;
+  transition:all 130ms ease-out;
+  z-index:var(--layer-global-elevated);
+}
+.osui-submenu__items{
+  -servicestudio-opacity:1 !important;
+  -servicestudio-pointer-events:auto !important;
+  -servicestudio-top:100% !important;
+  -servicestudio-transform:translateY(0px) !important;
+}
+.osui-submenu__items a{
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+  margin:0;
+  padding:var(--space-s) var(--space-base);
+  white-space:nowrap;
+}
+.osui-submenu__items a.active{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.layout:not(.layout-side) .app-menu-links .osui-submenu a{
+  border-bottom:none;
+}
+.layout .header .osui-submenu__items{
+  -servicestudio-display:none !important;
+}
+.layout-side .app-menu-links .osui-submenu a{
+  border-left:none;
+}
+.layout-side .app-menu-links .osui-submenu{
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  width:100%;
+}
+.layout-side .app-menu-links .osui-submenu.active .osui-submenu__header{
+  border-left:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+}
+.layout-side .app-menu-links .osui-submenu--is-open > .osui-submenu__items{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.layout-side .app-menu-links .osui-submenu .osui-submenu__header{
+  border-bottom:0;
+  border-left:var(--border-size-m) solid transparent;
+  border-top:0;
+  padding:var(--space-s) var(--space-m);
+}
+.layout-side .app-menu-links .osui-submenu .osui-submenu__header__item{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+}
+.layout-side .app-menu-links .osui-submenu__items{
+  border:none;
+  -webkit-box-shadow:none;
+          box-shadow:none;
+  display:none;
+  opacity:1;
+  padding:var(--space-xs) var(--space-m);
+  pointer-events:auto;
+  position:relative;
+  top:0;
+  -webkit-transform:translateY(0);
+      -ms-transform:translateY(0);
+          transform:translateY(0);
+}
+.layout-side .app-menu-links .osui-submenu__items a{
+  padding:var(--space-s) var(--space-base);
+}
+.layout-side .app-menu-links .osui-submenu__header a,
+.menu-visible .app-menu-links .osui-submenu__header a{
+  padding:var(--space-none);
+}
+.desktop .osui-submenu:hover .osui-submenu__header__item{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.desktop .osui-submenu.active .osui-submenu__header:hover .osui-submenu__header__item{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.desktop .osui-submenu__header:hover{
+  border-bottom:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+}
+.desktop .osui-submenu__header__item a:hover{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.desktop .osui-submenu__items a:hover{
+  background-color:var(--background-color-neutral-2, var(--color-neutral-2));
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.desktop .osui-submenu__items a.active:hover{
+  color:var(--text-color-primary, var(--color-primary));
+}
+.desktop .layout:not(.layout-side) .app-menu-links .osui-submenu{
+  height:100%;
+}
+.desktop .layout-side .app-menu-links .osui-submenu__header:hover{
+  border-bottom:none;
+  border-left:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+}
+.has-accessible-features .osui-submenu:focus-within{
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+  box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+  outline:0;
+}
+.tablet .has-accessible-features .osui-submenu:focus-within,
+.phone .has-accessible-features .osui-submenu:focus-within{
+  -webkit-box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+  box-shadow:0 0 0 3px var(--background-color-focus-outer, var(--color-focus-outer));
+  outline:0;
+}
+.tablet .osui-submenu,
+.phone .osui-submenu{
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  width:100%;
+}
+.tablet .osui-submenu.active .osui-submenu__header,
+.phone .osui-submenu.active .osui-submenu__header{
+  border-left:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+  border-bottom:0;
+}
+.tablet .osui-submenu--is-open .osui-submenu__items,
+.phone .osui-submenu--is-open .osui-submenu__items{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.tablet .osui-submenu__header,
+.phone .osui-submenu__header{
+  border-bottom:0;
+  border-left:var(--border-size-m) solid transparent;
+  border-top:0;
+  padding:var(--space-s) var(--space-m);
+}
+.tablet .osui-submenu__header__item,
+.phone .osui-submenu__header__item{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+}
+.tablet .osui-submenu__items,
+.phone .osui-submenu__items{
+  border:none;
+  -webkit-box-shadow:none;
+          box-shadow:none;
+  display:none;
+  opacity:1;
+  padding:var(--space-xs) var(--space-m);
+  pointer-events:auto;
+  position:relative;
+  top:0;
+  -webkit-transform:translateY(0);
+      -ms-transform:translateY(0);
+          transform:translateY(0);
+}
+.is-rtl .layout-side .osui-submenu .osui-submenu__header{
+  border-left:0;
+  border-right:var(--border-size-m) solid transparent;
+}
+.is-rtl .layout-side .osui-submenu.active .osui-submenu__header{
+  border-left:var(--border-size-none);
+  border-right:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+}
+.is-rtl.tablet .osui-submenu.active .osui-submenu__header, .is-rtl.phone .osui-submenu.active .osui-submenu__header{
+  border-left:0;
+  border-right:var(--border-size-m) solid var(--border-color-primary, var(--color-primary));
+}
+.is-rtl.tablet .osui-submenu .osui-submenu__header, .is-rtl.phone .osui-submenu .osui-submenu__header{
+  border-left:0;
+  border-right:var(--border-size-m) solid transparent;
+}
+.is-rtl .osui-submenu__header__icon{
+  margin-left:var(--space-none);
+  margin-right:var(--space-s);
+}
+.os-high-contrast .layout:not(.layout-side) .app-menu-links .osui-submenu a{
+  border-top:none;
+  border-bottom:none;
+}
+.os-high-contrast .osui-submenu__header{
+  border-top:none;
+}

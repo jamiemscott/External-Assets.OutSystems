@@ -1,0 +1,46 @@
+/*! 6.2.3. Alert */
+.alert{
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border-radius:var(--border-radius-soft);
+  color:var(--text-color-neutral-0, var(--color-neutral-0));
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  padding:var(--space-base);
+}
+.alert .alert-icon{
+  -ms-flex-item-align:start;
+      align-self:flex-start;
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  font-size:24px;
+  margin-right:var(--space-base);
+}
+.alert .fa-fw{
+  width:auto;
+}
+.alert .alert-message{
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+}
+.alert-info{
+  background-color:var(--background-color-info, var(--color-info));
+}
+.alert-success{
+  background-color:var(--background-color-success, var(--color-success));
+}
+.alert-error{
+  background-color:var(--background-color-error, var(--color-error));
+}
+.alert-warning{
+  background-color:var(--background-color-warning, var(--color-warning));
+  color:var(--text-color-neutral-10, var(--color-neutral-10));
+}
+.is-rtl .alert-icon{
+  margin-left:var(--space-base);
+  margin-right:0;
+}

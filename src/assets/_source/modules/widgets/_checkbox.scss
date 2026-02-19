@@ -1,0 +1,74 @@
+/*! 4.3. Checkbox */
+[data-checkbox]{
+  height:24px;
+  padding:var(--space-none);
+  width:24px;
+}
+[data-checkbox]:before{
+  background:var(--background-color-neutral-0, var(--color-neutral-0));
+  border:var(--border-size-s) solid var(--border-color-neutral-5, var(--color-neutral-5));
+  border-radius:var(--border-radius-soft);
+  height:22px;
+  opacity:1;
+  -webkit-transition:all 180ms linear;
+  -o-transition:all 180ms linear;
+  transition:all 180ms linear;
+  width:22px;
+}
+[data-checkbox]:hover:before{
+  border:var(--border-size-s) solid var(--border-color-neutral-6, var(--color-neutral-6));
+}
+[data-checkbox]:checked:before{
+  background:var(--background-color-primary, var(--color-primary));
+  border:var(--border-size-s) solid var(--border-color-primary, var(--color-primary));
+}
+[data-checkbox]:checked:after{
+  border:var(--border-size-l) solid var(--border-color-neutral-0, var(--color-neutral-0));
+  border-right:var(--border-size-none) !important;
+  border-top:var(--border-size-none) !important;
+  display:block;
+  height:4px;
+  left:5px;
+  top:7px;
+  width:12px;
+}
+[data-checkbox][disabled]{
+  pointer-events:none;
+}
+[data-checkbox][disabled]:before, [data-checkbox][disabled]:checked:before{
+  background-color:var(--background-color-neutral-2, var(--color-neutral-2));
+  border:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+}
+[data-checkbox][disabled]:checked:after{
+  border:var(--border-size-l) solid var(--border-color-neutral-6, var(--color-neutral-6));
+}
+.tablet [data-checkbox],
+.phone [data-checkbox]{
+  height:32px;
+  width:32px;
+}
+.tablet [data-checkbox]:before,
+.phone [data-checkbox]:before{
+  height:30px;
+  width:30px;
+}
+.tablet [data-checkbox]:checked:after,
+.phone [data-checkbox]:checked:after{
+  left:9px;
+  top:11px;
+}
+.has-accessible-features [data-checkbox]{
+  border-radius:var(--border-radius-soft);
+}
+.has-accessible-features [data-checkbox]:before{
+  border-color:var(--border-color-neutral-7, var(--color-neutral-7));
+}
+.has-accessible-features [data-checkbox]:hover:before{
+  border-color:var(--border-color-neutral-8, var(--color-neutral-8));
+}
+.has-accessible-features [data-checkbox]:checked:before{
+  border-color:var(--border-color-primary, var(--color-primary));
+}
+.has-accessible-features [data-checkbox]:focus:before{
+  border-color:var(--border-color-focus-inner, var(--color-focus-inner));
+}

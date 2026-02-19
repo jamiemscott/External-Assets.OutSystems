@@ -1,0 +1,35 @@
+/*! 6.8.10. Horizontal Scroll */
+.horizontal-scroll{
+  overflow-x:auto;
+  overflow-y:hidden;
+  white-space:nowrap;
+}
+.horizontal-scroll{
+  -servicestudio-min-height:80px;
+  -servicestudio-white-space:normal;
+}
+.horizontal-scroll > *:not(table){
+  display:inline-block;
+  -webkit-transform:translateZ(0);
+          transform:translateZ(0);
+}
+.horizontal-scroll > .list > *{
+  display:inline-block;
+  -webkit-transform:translateZ(0);
+          transform:translateZ(0);
+}
+.horizontal-scroll > .list > :not(:first-child){
+  margin-left:var(--space-base);
+}
+.horizontal-scroll > .list > [data-block*=Card] + [data-block*=Card] .card{
+  margin-top:var(--space-none);
+}
+.horizontal-scroll .list{
+  background-color:transparent;
+}
+.horizontal-scroll > :not(:first-child){
+  margin-left:var(--space-base);
+}
+.horizontal-scroll > [data-block*=Card] + [data-block*=Card] .card{
+  margin-top:var(--space-none);
+}

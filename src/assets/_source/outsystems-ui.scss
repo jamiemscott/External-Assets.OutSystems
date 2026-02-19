@@ -1,0 +1,204 @@
+@charset "UTF-8";
+/*!
+OutSystems UI 2.27.0 • ODC Platform
+Website:
+ • https://www.outsystems.com/outsystems-ui
+GitHub:
+ • https://github.com/OutSystems/outsystems-ui
+
+SMACSS partial structure generated for theming purposes.
+Modify variables in base/_variables.scss to create theme overrides.
+*/
+
+// ============================================================
+// BASE
+// Foundation styles: CSS custom properties, resets, and raw
+// HTML element defaults. No classes, IDs or module selectors.
+// ============================================================
+@import "base/variables";
+@import "base/reset";
+@import "base/elements";
+
+// ============================================================
+// LAYOUT
+// Major structural regions of the page: the application
+// chrome, header, navigation menus, main content area,
+// grid container, section wrapper, and login screen.
+// ============================================================
+@import "layout/layout";
+@import "layout/header";
+@import "layout/menu";
+@import "layout/content";
+@import "layout/grid";
+@import "layout/section";
+@import "layout/login";
+
+// ============================================================
+// MODULES – WIDGETS
+// Native OutSystems UI form controls and interactive widgets.
+// ============================================================
+@import "modules/widgets/inputs";
+@import "modules/widgets/switch";
+@import "modules/widgets/checkbox";
+@import "modules/widgets/radio-button";
+@import "modules/widgets/dropdown";
+@import "modules/widgets/button";
+@import "modules/widgets/button-group";
+@import "modules/widgets/list";
+@import "modules/widgets/table";
+@import "modules/widgets/form";
+@import "modules/widgets/upload";
+@import "modules/widgets/popover";
+@import "modules/widgets/popup";
+@import "modules/widgets/feedback-message";
+
+// ============================================================
+// MODULES – PROVIDERS
+// Third-party library CSS: Flatpickr, NoUiSlider, Splide,
+// VirtualSelect.
+// ============================================================
+@import "modules/providers/flatpickr";
+@import "modules/providers/nouislider";
+@import "modules/providers/splide";
+@import "modules/providers/virtual-select";
+
+// ============================================================
+// MODULES – PATTERNS – ADAPTIVE
+// Responsive layout patterns.
+// ============================================================
+@import "modules/patterns/adaptive/columns";
+@import "modules/patterns/adaptive/gallery";
+@import "modules/patterns/adaptive/master-detail";
+
+// ============================================================
+// MODULES – PATTERNS – CONTENT
+// Content-display UI patterns.
+// ============================================================
+@import "modules/patterns/content/accordion";
+@import "modules/patterns/content/alert";
+@import "modules/patterns/content/blank-slate";
+@import "modules/patterns/content/card";
+@import "modules/patterns/content/chat-message";
+@import "modules/patterns/content/flip-content";
+@import "modules/patterns/content/floating-content";
+@import "modules/patterns/content/list-item-content";
+@import "modules/patterns/content/section";
+@import "modules/patterns/content/tag";
+@import "modules/patterns/content/tooltip";
+@import "modules/patterns/content/user-avatar";
+
+// ============================================================
+// MODULES – PATTERNS – INTERACTION
+// Patterns requiring user interaction: pickers, sheets,
+// carousels, sliders, sidebars, search, video, etc.
+// ============================================================
+@import "modules/patterns/interaction/action-sheet";
+@import "modules/patterns/interaction/animate";
+@import "modules/patterns/interaction/animated-label";
+@import "modules/patterns/interaction/balloon";
+@import "modules/patterns/interaction/bottom-sheet";
+@import "modules/patterns/interaction/carousel";
+@import "modules/patterns/interaction/datepicker";
+@import "modules/patterns/interaction/dropdown";
+@import "modules/patterns/interaction/floating-actions";
+@import "modules/patterns/interaction/input-with-icon";
+@import "modules/patterns/interaction/lightbox-image";
+@import "modules/patterns/interaction/monthpicker";
+@import "modules/patterns/interaction/notification";
+@import "modules/patterns/interaction/range-slider";
+@import "modules/patterns/interaction/scrollable-area";
+@import "modules/patterns/interaction/sidebar";
+@import "modules/patterns/interaction/search";
+@import "modules/patterns/interaction/stacked-cards";
+@import "modules/patterns/interaction/timepicker";
+@import "modules/patterns/interaction/video";
+
+// ============================================================
+// MODULES – PATTERNS – NAVIGATION
+// Navigation and wayfinding patterns.
+// ============================================================
+@import "modules/patterns/navigation/bottom-bar-item";
+@import "modules/patterns/navigation/breadcrumbs";
+@import "modules/patterns/navigation/overflow-menu";
+@import "modules/patterns/navigation/pagination";
+@import "modules/patterns/navigation/section-index";
+@import "modules/patterns/navigation/submenu";
+@import "modules/patterns/navigation/tabs";
+@import "modules/patterns/navigation/timeline";
+@import "modules/patterns/navigation/wizard";
+
+// ============================================================
+// MODULES – PATTERNS – NUMBERS
+// Numeric indicator and progress patterns.
+// ============================================================
+@import "modules/patterns/numbers/badge";
+@import "modules/patterns/numbers/counter";
+@import "modules/patterns/numbers/icon-badge";
+@import "modules/patterns/numbers/progress";
+@import "modules/patterns/numbers/rating";
+
+// ============================================================
+// MODULES – PATTERNS – UTILITIES (Pattern-level)
+// Small helper patterns used within the UI library.
+// ============================================================
+@import "modules/patterns/utilities/align-center";
+@import "modules/patterns/utilities/button-loading";
+@import "modules/patterns/utilities/center-content";
+@import "modules/patterns/utilities/margin-container";
+@import "modules/patterns/utilities/separator";
+@import "modules/patterns/utilities/pull-to-refresh";
+@import "modules/patterns/utilities/list-updating";
+@import "modules/patterns/utilities/provider-login-button";
+
+// ============================================================
+// MODULES – PATTERNS – ADVANCED
+// Server-side rendered dropdown patterns.
+// ============================================================
+@import "modules/patterns/advanced/dropdown-serverside";
+@import "modules/patterns/advanced/dropdown-serverside-item";
+
+// ============================================================
+// MODULES – PATTERNS – DEPRECATED
+// Legacy patterns maintained for backwards compatibility.
+// These should not be used in new development.
+// ============================================================
+@import "modules/patterns/deprecated/accordion";
+@import "modules/patterns/deprecated/button-loading";
+@import "modules/patterns/deprecated/carousel";
+@import "modules/patterns/deprecated/datepicker";
+@import "modules/patterns/deprecated/dropdown-search-tags";
+@import "modules/patterns/deprecated/dropdown-tags";
+@import "modules/patterns/deprecated/flip-content";
+@import "modules/patterns/deprecated/gallery";
+@import "modules/patterns/deprecated/horizontal-scroll";
+@import "modules/patterns/deprecated/notification";
+@import "modules/patterns/deprecated/progress-bar";
+@import "modules/patterns/deprecated/progress-circle";
+@import "modules/patterns/deprecated/section-index";
+@import "modules/patterns/deprecated/sidebar";
+@import "modules/patterns/deprecated/search";
+@import "modules/patterns/deprecated/submenu";
+@import "modules/patterns/deprecated/tabs";
+@import "modules/patterns/deprecated/tooltip";
+@import "modules/patterns/deprecated/video";
+
+// ============================================================
+// THEME
+// Global utility / helper classes. These override base and
+// module styles and should remain last in the cascade for
+// colour, typography, spacing, display, and a11y utilities.
+// ============================================================
+@import "theme/a11y";
+@import "theme/colors";
+@import "theme/text";
+@import "theme/spacing";
+@import "theme/display";
+
+// ============================================================
+// STATE
+// Screen transitions, keyframe animations, and
+// Service Studio preview styles.
+// ============================================================
+@import "state/transitions";
+@import "state/keyframes";
+@import "state/service-studio";

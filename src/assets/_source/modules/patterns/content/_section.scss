@@ -1,0 +1,44 @@
+/*! 6.2.13. Section */
+.section-title{
+  background-color:transparent;
+  border-bottom:var(--border-size-s) solid var(--border-color-neutral-4, var(--color-neutral-4));
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+  font-size:var(--font-size-h2);
+  font-weight:var(--font-semi-bold);
+  padding:var(--space-none) var(--space-none) var(--space-s) var(--space-none);
+  position:relative;
+  text-transform:none;
+  width:100%;
+}
+.section-content{
+  padding:var(--space-s) var(--space-none) var(--space-none);
+}
+.section-group.is--sticky .section-title{
+  position:sticky;
+  top:calc(var(--section-top-position) + var(--os-safe-area-top));
+  z-index:calc(var(--layer-below) + var(--layer-global-navigation));
+}
+.section-group .section-title{
+  background-color:var(--background-color-body, var(--color-background-body));
+}
+.layout-native .section-title{
+  padding:var(--space-s) var(--space-base) var(--space-s) var(--space-base);
+}
+.layout-native .section-content{
+  padding:0;
+}
+.android .section-group.is--sticky .section-title{
+  top:calc(var(--section-top-position) + max(var(--status-bar-height, 0px), var(--safe-area-inset-top, 0px)));
+}
+.ios .section-group.is--sticky .section-title{
+  top:0;
+}
+.ios .layout-native .section-group .sticky{
+  position:static;
+}
+.tablet .section-title{
+  font-size:calc(var(--font-size-h2) - 2px);
+}
+.phone .section-title{
+  font-size:calc(var(--font-size-h2) - 4px);
+}

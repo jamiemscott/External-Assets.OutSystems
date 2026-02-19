@@ -1,0 +1,121 @@
+/*! 6.3.3. Animated Label */
+.animated-label{
+  position:relative;
+}
+.animated-label.active .animated-label-text{
+  font-size:var(--font-size-xs);
+  top:-10px;
+}
+.animated-label.active .animated-label-input .form-control[data-input]::-webkit-datetime-edit{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.animated-label.active .animated-label-input [data-textarea]{
+  padding-bottom:var(--space-xs);
+}
+.animated-label-text{
+  color:var(--text-color-neutral-8, var(--color-neutral-8));
+  font-size:var(--font-size-s);
+  pointer-events:none;
+  position:absolute;
+  top:8px;
+  -webkit-transition:all 300ms ease;
+  -o-transition:all 300ms ease;
+  transition:all 300ms ease;
+  z-index:var(--layer-global-screen);
+}
+.animated-label-text .icon{
+  padding-right:var(--space-base);
+}
+.animated-label-text{
+  -servicestudio-left:0 !important;
+  -servicestudio-position:static !important;
+}
+.animated-label-input:empty{
+  -servicestudio-min-height:40px;
+}
+.animated-label-input .form-control[data-input], .animated-label-input .form-control[data-textarea]{
+  background-color:transparent;
+  border:var(--border-size-none);
+  border-bottom:var(--border-size-s) solid var(--border-color-neutral-5, var(--color-neutral-5));
+  border-radius:var(--border-radius-none);
+  padding:var(--space-none);
+  -webkit-transition:all 100ms ease-in-out;
+  -o-transition:all 100ms ease-in-out;
+  transition:all 100ms ease-in-out;
+}
+.animated-label-input .form-control[data-input]:focus, .animated-label-input .form-control[data-textarea]:focus{
+  border-bottom:var(--border-size-s) solid var(--border-color-primary, var(--color-primary));
+}
+.animated-label-input .form-control[data-input]:focus::-webkit-datetime-edit, .animated-label-input .form-control[data-textarea]:focus::-webkit-datetime-edit{
+  color:var(--text-color-neutral-9, var(--color-neutral-9));
+}
+.animated-label-input .form-control[data-input].not-valid, .animated-label-input .form-control[data-textarea].not-valid{
+  border-bottom:var(--border-size-s) solid var(--border-color-error, var(--color-error));
+}
+.animated-label-input .form-control[data-input].not-valid:focus, .animated-label-input .form-control[data-textarea].not-valid:focus{
+  border:var(--border-size-none);
+  border-bottom:var(--border-size-s) solid var(--border-color-error, var(--color-error));
+}
+.animated-label-input .form-control[data-input], .animated-label-input .form-control[data-textarea]{
+}
+.animated-label-input .form-control[data-input]::-webkit-datetime-edit, .animated-label-input .form-control[data-textarea]::-webkit-datetime-edit{
+  color:var(--text-color-transparent, var(--color-transparent));
+}
+.animated-label-input .form-control[data-input]::-webkit-calendar-picker-indicator, .animated-label-input .form-control[data-textarea]::-webkit-calendar-picker-indicator{
+  display:none;
+}
+.animated-label-input .form-control[data-input]:-webkit-autofill, .animated-label-input .form-control[data-textarea]:-webkit-autofill{
+  -webkit-animation-name:onAutoFillStart;
+          animation-name:onAutoFillStart;
+}
+.animated-label-input .form-control[data-input]:not(:-webkit-autofill), .animated-label-input .form-control[data-textarea]:not(:-webkit-autofill){
+  -webkit-animation-name:onAutoFillCancel;
+          animation-name:onAutoFillCancel;
+}
+.animated-label-input .form-control[data-textarea]{
+  margin-top:var(--space-s);
+}
+.animated-label-input .form-control[data-textarea] + span.validation-message{
+  bottom:7px;
+}
+.list.list-group > [data-block*=AnimatedLabel]:first-child .animated-label{
+  margin-top:var(--space-s);
+}
+.form .animated-label-input .form-control[data-textarea] + span.validation-message{
+  position:relative;
+  bottom:var(--space-m);
+}
+@-webkit-keyframes onAutoFillStart{}
+@keyframes onAutoFillStart{}
+@-webkit-keyframes onAutoFillCancel{}
+@keyframes onAutoFillCancel{}
+.tablet .animated-label-text,
+.phone .animated-label-text{
+  top:14px;
+}
+.tablet .form-control[data-textarea] + span.validation-message,
+.phone .form-control[data-textarea] + span.validation-message{
+  bottom:10px;
+}
+.has-accessible-features .animated-label-input .form-control[data-input]{
+  border-color:var(--border-color-neutral-7, var(--color-neutral-7));
+}
+.has-accessible-features .animated-label-input .form-control[data-input]:hover{
+  border-color:var(--border-color-neutral-8, var(--color-neutral-8));
+}
+.has-accessible-features .animated-label-input .form-control[data-input]:focus{
+  -webkit-box-shadow:0 3px 0 0 var(--background-color-focus-outer, var(--color-focus-outer));
+          box-shadow:0 3px 0 0 var(--background-color-focus-outer, var(--color-focus-outer));
+}
+.os-high-contrast .animated-label-text{
+  font-weight:var(--font-semi-bold);
+  padding:var(--space-none) var(--space-s);
+}
+.os-high-contrast .animated-label.active .animated-label-text{
+  background-color:var(--background-color-neutral-8, var(--color-neutral-8));
+  font-size:var(--font-size-s);
+  top:-16px;
+}
+.os-high-contrast .animated-label-input .form-control[data-input]{
+  padding:var(--space-none) var(--space-s);
+}
