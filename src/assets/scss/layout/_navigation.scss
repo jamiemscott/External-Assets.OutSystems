@@ -6,9 +6,15 @@
 
 .navigation {
   align-items: center;
+  background:  conic-gradient(from 180deg at 50% 50%, var(--gradient-start), var(--gradient-end));
+  border-radius: 20px;
+  corner-shape: round;
   display: flex;
+  font-family: var(--font-family-body);
   gap: 2rem;
   justify-content: space-between;
+
+  padding: 12px 24px;
 }
 
 // Navigation Menu List
